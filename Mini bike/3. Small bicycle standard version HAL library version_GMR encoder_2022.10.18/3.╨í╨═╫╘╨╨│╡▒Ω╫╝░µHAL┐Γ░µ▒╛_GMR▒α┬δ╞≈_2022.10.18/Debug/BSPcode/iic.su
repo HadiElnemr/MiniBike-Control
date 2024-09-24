@@ -1,0 +1,16 @@
+../BSPcode/iic.c:16:5:IIC_Start	8	static
+../BSPcode/iic.c:34:6:IIC_Stop	16	static
+../BSPcode/iic.c:51:5:IIC_Wait_Ack	16	static
+../BSPcode/iic.c:77:6:IIC_Ack	8	static
+../BSPcode/iic.c:92:6:IIC_NAck	8	static
+../BSPcode/iic.c:106:6:IIC_Send_Byte	16	static
+../BSPcode/iic.c:128:5:i2cWrite	24	static
+../BSPcode/iic.c:185:4:IIC_Read_Byte	24	static
+../BSPcode/iic.c:154:5:i2cRead	24	static
+../BSPcode/iic.c:212:15:I2C_ReadOneByte	16	static
+../BSPcode/iic.c:242:4:IICreadBytes	24	static
+../BSPcode/iic.c:272:4:IICwriteBytes	24	static
+../BSPcode/iic.c:297:4:IICreadByte	8	static
+../BSPcode/iic.c:310:15:IICwriteByte	16	static
+../BSPcode/iic.c:325:4:IICwriteBits	24	static
+../BSPcode/iic.c:351:4:IICwriteBit	32	static
