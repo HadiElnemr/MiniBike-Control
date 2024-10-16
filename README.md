@@ -11,3 +11,12 @@ Research Project - MiniBike Control
         - [x] 1: Control Codes with main file found in USER directory
         - [x] 2: Control Codes with main file not found in USER directory
         - [x] 3: Equipped with HAL Libraries (Hardware Abstraction Layer) which should facilitate the development of the code. But no control codes found!
+
+- [X] Read papers
+    - [X] Read & Understand Data-driven MPC for Linear Systems paper (paper 1)
+        - [ ] How to implement code?
+    - [ ] Read paper for Robustness and Adaption (paper 2)
+    - [ ] Read Bicycle B.Sc. thesis
+        - [ ] See modelling & controller
+    - [ ] Read Survey of Bicycle modelling
+
