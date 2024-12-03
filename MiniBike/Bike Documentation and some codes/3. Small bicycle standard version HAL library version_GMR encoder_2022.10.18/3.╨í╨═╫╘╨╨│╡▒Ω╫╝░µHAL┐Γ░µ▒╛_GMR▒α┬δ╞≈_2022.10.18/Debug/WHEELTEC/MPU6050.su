@@ -1,0 +1,14 @@
+../WHEELTEC/MPU6050.c:22:24:inv_row_2_scale	0	static
+../WHEELTEC/MPU6050.c:95:7:MPU6050_newValues	24	static
+../WHEELTEC/MPU6050.c:166:6:MPU6050_setClockSource	16	static
+../WHEELTEC/MPU6050.c:179:6:MPU6050_setFullScaleGyroRange	16	static
+../WHEELTEC/MPU6050.c:187:6:MPU6050_setFullScaleAccelRange	16	static
+../WHEELTEC/MPU6050.c:197:6:MPU6050_setSleepEnabled	0	static
+../WHEELTEC/MPU6050.c:205:9:MPU6050_getDeviceID	8	static
+../WHEELTEC/MPU6050.c:215:9:MPU6050_testConnection	8	static
+../WHEELTEC/MPU6050.c:225:6:MPU6050_setI2CMasterModeEnabled	0	static
+../WHEELTEC/MPU6050.c:233:6:MPU6050_setI2CBypassEnabled	0	static
+../WHEELTEC/MPU6050.c:241:6:MPU6050_initialize	8	static
+../WHEELTEC/MPU6050.c:259:6:DMP_Init	48	static,ignoring_inline_asm
+../WHEELTEC/MPU6050.c:296:6:Read_DMP	72	static
+../WHEELTEC/MPU6050.c:321:5:Read_Temperature	8	static
