@@ -5,3 +5,14 @@ Control Stuff/*
 .vscode/settings.json
 DDMPC Codes/bike_model_code_ACC/DD_MinMax_MPC_nominal_livescript.mlx
 DDMPC Codes/matlab_toolboxes/*
+ISTBaMa/BAMAtemplate.aux
+ISTBaMa/BAMAtemplate.bbl
+ISTBaMa/BAMAtemplate.log
+ISTBaMa/BAMAtemplate.out
+ISTBaMa/BAMAtemplate.synctex.gz
+ISTBaMa/BAMAtemplate.toc
+
+# exclude all main files in the Thesis folder
+Thesis/main.*
+# except the main.tex file
+!Thesis/main.tex
