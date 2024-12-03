@@ -16,3 +16,7 @@ ISTBaMa/BAMAtemplate.toc
 Thesis/main.*
 # except the main.tex file
 !Thesis/main.tex
+Thesis/abstract.aux
+Thesis/erklaerung.aux
+
+Suggested PDFs/My further pdfs/Bicycles_motorcycles_and_models.pdf
