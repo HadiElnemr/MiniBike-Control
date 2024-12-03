@@ -1,9 +1,0 @@
-../WHEELTEC/control.c:94:6:Get_RC	16	static
-../WHEELTEC/control.c:149:5:Incremental_PI_A	20	static
-../WHEELTEC/control.c:165:6:Set_Pwm	0	static
-../WHEELTEC/control.c:177:6:Pwm_Limit	0	static
-../WHEELTEC/control.c:188:6:Key	24	static
-../WHEELTEC/control.c:212:4:Turn_Off	16	static
-../WHEELTEC/control.c:231:6:Get_Angle	8	static
-../WHEELTEC/control.c:245:5:Put_Down	24	static
-../WHEELTEC/control.c:27:6:HAL_GPIO_EXTI_Callback	40	static

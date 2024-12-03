@@ -1,1 +1,7 @@
-Mini bike/misc/*
+Mini bike/*/*/misc*
+misc*
+*.zip
+Control Stuff/*
+.vscode/settings.json
+DDMPC Codes/bike_model_code_ACC/DD_MinMax_MPC_nominal_livescript.mlx
+DDMPC Codes/matlab_toolboxes/*
