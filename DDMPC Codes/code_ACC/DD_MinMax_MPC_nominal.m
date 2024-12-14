@@ -1,4 +1,4 @@
-% This is the code for the paper "Data-driven Min-Max MPC for Linear
+    % This is the code for the paper "Data-driven Min-Max MPC for Linear
 % System"
 % Toolbox: 
 % 1. Generate a sequence of data for noisy system 
