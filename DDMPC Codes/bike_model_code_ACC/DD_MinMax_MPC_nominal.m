@@ -56,7 +56,7 @@ S_x = [10000 0 0; 0 5000 0; 0 0 3000];
 %% Generate data with additive noise
 
 % length of the initial available data
-T = 23;
+T = 15;
 
 % initial state for data generate
 % x_d0 = [rand(1); -rand(1)];
@@ -88,7 +88,6 @@ x_init = [-0.01;-0.04; 0];
 
 % Number of MPC iterations
 mpciterations = 300;
-mpciterations = 100;
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8
@@ -122,7 +121,6 @@ con_c = [[-H zeros(n,n+m);zeros(n+m,n) zeros(n+m,n+m)]+Pi_tau [zeros(n,n);H;L] z
 con_d = tau(:)>=10^-12;
 con_e = [H L'; L inv(S_u)]>=10^-12*eye(n+m);
 con_f = [H H; H inv(S_x)]>=10^-12*eye(2*n);
-% con_f = [H H; H inv(S_x)]>=10^-8*eye(2*n);
 
 % initial state  
 xmeasure = x_init;
@@ -145,7 +143,7 @@ for ii=1:mpciterations
     con_b = [1 xmeasure'; xmeasure H]>=10^-7*eye(n+1);
     
     % solve the problem with LMI constraints
-    LMI = [con_b,con_c,con_d];
+    LMI = [con_b,con_c,con_d]; %,con_e,con_f
 
     % solution
     P = optimizer(LMI,gamma,option,[],{gamma,H,L,tau});
