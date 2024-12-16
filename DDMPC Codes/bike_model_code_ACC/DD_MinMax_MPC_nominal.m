@@ -31,14 +31,14 @@ l = w; % length
 A23 = (v^2*h-a*r_tau*g) * sin(lambda) / (h^2*l);
 
 % true system matrices
-A_s = [0   1   0;
+A_c = [0   1   0;
       g/h  0  A23;
        0   0   0];
-B_s = [0 ; 
+B_c = [0 ; 
        a*v*sin(lambda)/(h*l) ; % Try with negative: probably no
        1];
 
-sysc = ss(A_s,B_s, [1 0 0], 0);
+sysc = ss(A_c,B_c, [1 0 0], 0);
 sysd = c2d(sysc, 0.01);
 A_s = sysd.A;
 B_s = sysd.B;
@@ -47,11 +47,16 @@ B_s = sysd.B;
 epsilon = 10^-6;
 
 % input constraint and state constraint
-u_max = 0.001;
+u_max = 0.01;
 u_hat = 0;
 x_hat = [0;0;0];
+% S_u = 0.01;
+% S_x = [10000 0 0; 0 5000 0; 0 0 3000];
+
 S_u = 0.01;
-S_x = [10000 0 0; 0 5000 0; 0 0 3000];
+S_x = [10 0 0; 0 5 0; 0 0 3];
+% Lean/roll angle max is 40 degrees and motor disconnects after that
+
 
 %% Generate data with additive noise
 
@@ -60,7 +65,7 @@ T = 15;
 
 % initial state for data generate
 % x_d0 = [rand(1); -rand(1)];
-x_d0 = [0.0001*rand(1); -0.001*rand(1); 0.0001*rand(1)];
+x_d0 = [0.001*rand(1); -0.01*rand(1); 0.001*rand(1)]; % Change ()very small
 
 % generate the data
 [u_g, x_g, K_lqr] = data_generate(A_s,B_s,epsilon,T,x_d0,u_max);
@@ -87,7 +92,8 @@ x_init = [-0.01;-0.04; 0];
 
 
 % Number of MPC iterations
-mpciterations = 300;
+% mpciterations = 300;
+mpciterations = 100;
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8
@@ -121,6 +127,7 @@ con_c = [[-H zeros(n,n+m);zeros(n+m,n) zeros(n+m,n+m)]+Pi_tau [zeros(n,n);H;L] z
 con_d = tau(:)>=10^-12;
 con_e = [H L'; L inv(S_u)]>=10^-12*eye(n+m);
 con_f = [H H; H inv(S_x)]>=10^-12*eye(2*n);
+% ?? con_f = [S_x eye(); eye H]>=10^-12*eye(2*n); ??
 
 % initial state  
 xmeasure = x_init;
@@ -143,7 +150,7 @@ for ii=1:mpciterations
     con_b = [1 xmeasure'; xmeasure H]>=10^-7*eye(n+1);
     
     % solve the problem with LMI constraints
-    LMI = [con_b,con_c,con_d]; %,con_e,con_f
+    LMI = [con_b,con_c,con_d,con_e,con_f];
 
     % solution
     P = optimizer(LMI,gamma,option,[],{gamma,H,L,tau});
