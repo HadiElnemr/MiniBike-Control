@@ -18,16 +18,16 @@ Research Project - MiniBike Control
           - Matlab codes available
     - [ ] Read paper for Robustness and Adaption (paper 2)
     - [X] Read Bicycle B.Sc. thesis
-        - [ ] See modelling & controller
+        - [X] See modelling & controller
     - [X] Read Survey of Bicycle modelling
     - [X] Translate and Read MiniBike Documentation
 
 - [ ] Understand how to implement Data-driven MPC simulation for MiniBike
   - [ ] Use the codes from the Data-driven MPC for Linear Systems paper
-  - [ ] Find A and B matrices
-    - [ ] Measure Lambda (fork angle) and rtau
+  - [X] Find A and B matrices
+    - [X] Measure Lambda (fork angle) and rtau
     - [ ] Compare models from
-      - [ ] Morlock B.Sc. thesis
+      - [X] Morlock B.Sc. thesis
       - [ ] Survey of Bicycle Modelling
-      - [ ] MiniBike Documentation
+      - [X] MiniBike Documentation
     - [ ]
