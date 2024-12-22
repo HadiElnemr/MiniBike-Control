@@ -47,3 +47,56 @@ Models \cite{astrom}
 \textbf{Linear and Non-Linear Fourth order Models}
 
 
+
+
+\textbf{Morlock's 2.40 equation:}
+
+State-space representation:
+
+\begin{equation}
+	\ddot{\varphi} - \frac{g}{h} \varphi = \frac{av \sin \lambda}{hl} \dot{\delta} + \frac{\left(v^2 h - ar_\tau g\right) \sin \lambda}{h^2 l} \delta.
+\end{equation}
+
+
+\[
+\begin{bmatrix} 
+	\dot{\phi} \\ 
+	\ddot{\phi} \\ 
+	\dot{\delta} 
+\end{bmatrix} 
+=
+\begin{bmatrix} 
+	0 & 1 & 0 \\ 
+	\frac{g}{h} & 0 & \frac{\left(v^2 h - ar_\tau g\right) \sin \lambda}{h^2 l} \\ 
+	0 & 0 & 0 
+\end{bmatrix} 
+\begin{bmatrix} 
+	\phi \\ 
+	\dot{\phi} \\ 
+	\delta 
+\end{bmatrix}
++
+\begin{bmatrix} 
+	0 \\ 
+	\frac{av \sin \lambda}{hl} \\ 
+	1 
+\end{bmatrix} 
+\dot{\delta}.
+\]
+
+
+Generate data using LQR feedback control:
+
+Using Bryson's rule to set Q and R:
+
+\begin{equation}
+	Q = \begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & 1 & 0 \\
+		0 & 0 & 1 
+	\end{bmatrix}, 
+	R = \begin{bmatrix}
+		1
+	\end{bmatrix}	
+\end{equation}
+
