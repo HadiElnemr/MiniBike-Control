@@ -31,3 +31,9 @@ Research Project - MiniBike Control
       - [ ] Survey of Bicycle Modelling
       - [X] MiniBike Documentation
     - [ ]
+
+- [ ] Run Mini-bike
+  - [X] Produce Hex codes from Original codes
+  - [ ] Produce Hex codes from Modified codes (LQR again but with fork angle considered)
+  - [ ] Try other IDE: STM32CubeIDE
+  - [ ] Run the bike with the new codes
