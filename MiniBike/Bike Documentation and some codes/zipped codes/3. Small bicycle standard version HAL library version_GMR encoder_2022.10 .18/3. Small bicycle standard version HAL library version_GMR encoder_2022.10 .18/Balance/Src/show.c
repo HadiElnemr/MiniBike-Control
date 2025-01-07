@@ -1,53 +1,53 @@
 #include "show.h"
   /**************************************************************************
-×÷Õß£ºÆ½ºâÐ¡³µÖ®¼Ò
-ÎÒµÄÌÔ±¦Ð¡µê£ºhttp://shop114407458.taobao.com/
+ï¿½ï¿½ï¿½ß£ï¿½Æ½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ï¿½
+ï¿½Òµï¿½ï¿½Ô±ï¿½Ð¡ï¿½ê£ºhttp://shop114407458.taobao.com/
 **************************************************************************/
-unsigned char i;          //¼ÆÊý±äÁ¿
-unsigned char Send_Count; //´®¿ÚÐèÒª·¢ËÍµÄÊý¾Ý¸öÊý
+unsigned char i;          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+unsigned char Send_Count; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½
 float Vol;
 extern float Angle_Turn;
 extern float delta;
 extern int SERVO_BIAS;
 extern float phi_dot;
 /**************************************************************************
-º¯Êý¹¦ÄÜ£ºOLEDÏÔÊ¾
-Èë¿Ú²ÎÊý£ºÎÞ
-·µ»Ø  Öµ£ºÎÞ
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½OLEDï¿½ï¿½Ê¾
+ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½  Öµï¿½ï¿½ï¿½ï¿½
 **************************************************************************/
 void oled_show(void)
 {
-	
-		//=============µÚÒ»ÐÐÏÔÊ¾Ð¡³µÄ£Ê½=======================//	
+
+		//=============ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê¾Ð¡ï¿½ï¿½Ä£Ê½=======================//
 		OLED_ShowString(0,0,"Motor:");
 		if(Flag_Stop) OLED_ShowString(70,0,"OFF");
 		else					OLED_ShowString(70,0," ON");
-		//=============µÚÈýÐÐ=======================//	
+		//=============ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=======================//
 		                      OLED_ShowString(00,10,"Encoder");
 		if( Encoder<0)				OLED_ShowString(80,10,"-"),
 		                      OLED_ShowNumber(95,10,-Encoder,3,12);
 		else                 	OLED_ShowString(80,10,"+"),
 		                      OLED_ShowNumber(95,10, Encoder,3,12);
-		
-  	//=============µÚËÄÐÐ=======================//		
+
+  	//=============ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=======================//
 		                      OLED_ShowString(00,20,"SERVO");
 		if(Servo<0)		 			  OLED_ShowString(80,20,"-"),
 		                      OLED_ShowNumber(95,20,-(Servo+SERVO_BIAS),3,12);
 		else               		OLED_ShowString(80,20,"+"),
-		                      OLED_ShowNumber(95,20,(Servo+SERVO_BIAS),3,12);	
-		//=============µÚÎåÐÐÏÔÊ¾µçÑ¹=======================//
+		                      OLED_ShowNumber(95,20,(Servo+SERVO_BIAS),3,12);
+		//=============ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ñ¹=======================//
 		                      OLED_ShowString(00,30,"Volta");
 		                      OLED_ShowString(58,30,".");
 		                      OLED_ShowString(80,30,"V");
 		                      OLED_ShowNumber(45,30,Voltage/100,2,12);
 		                      OLED_ShowNumber(68,30,Voltage%100,2,12);
 		 if(Voltage%100<10) 	OLED_ShowNumber(62,30,0,2,12);
-		//=============µÚÁùÐÐÏÔÊ¾½Ç¶È=======================//
+		//=============ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ç¶ï¿½=======================//
 		                      OLED_ShowString(0,40,"Angle");
 		if(phi<0)		OLED_ShowNumber(45,40,phi+360,3,12);
 		else					        OLED_ShowNumber(45,40,phi,3,12);
-		
-		
+
+
 		OLED_ShowString(0,50,"Zhongzhi");
 		if(balance_point<0)
 		{
@@ -55,68 +55,68 @@ void oled_show(void)
 			OLED_ShowNumber(80,50,-balance_point,2,12);
 			OLED_ShowString(96,50,".");
 			OLED_ShowNumber(106,50,(-balance_point-(int)(-balance_point))*10,1,12);
-		}	
+		}
 		else
 		{
 			OLED_ShowString(70,50,"+");
 			OLED_ShowNumber(80,50,balance_point,2,12);
 			OLED_ShowString(96,50,".");
 			OLED_ShowNumber(106,50,(balance_point-(int)(balance_point))*10,1,12);
-		}			
-	
-		
-		//=============Ë¢ÐÂ=======================//
-		OLED_Refresh_Gram();	
+		}
+
+
+		//=============Ë¢ï¿½ï¿½=======================//
+		OLED_Refresh_Gram();
 	}
 /**************************************************************************
-º¯Êý¹¦ÄÜ£ºÏòAPP·¢ËÍÊý¾Ý
-Èë¿Ú²ÎÊý£ºÎÞ
-·µ»Ø  Öµ£ºÎÞ
-×÷    Õß£ºÆ½ºâÐ¡³µÖ®¼Ò
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½APPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½  Öµï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½    ï¿½ß£ï¿½Æ½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ï¿½
 **************************************************************************/
 void APP_Show(void)
-{    
+{
 		static u8 flag;
 	  int app_2,app_3,app_4;
-		app_4=(Voltage-710)*2/3;		if(app_4<0)app_4=0;if(app_4>100)app_4=100;   //¶ÔµçÑ¹Êý¾Ý½øÐÐ´¦Àí
-		app_3=Encoder/1.3; if(app_3<0)app_3=-app_3;			                   			 //¶Ô±àÂëÆ÷Êý¾Ý¾ÍÐÐÊý¾Ý´¦Àí±ãÓÚÍ¼ÐÎ»¯
+		app_4=(Voltage-710)*2/3;		if(app_4<0)app_4=0;if(app_4>100)app_4=100;   //ï¿½Ôµï¿½Ñ¹ï¿½ï¿½ï¿½Ý½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½
+		app_3=Encoder/1.3; if(app_3<0)app_3=-app_3;			                   			 //ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Î»ï¿½
 		app_2=Encoder/1.3;  if(app_2<0)app_2=-app_2;
 	  flag=!flag;
-	if(PID_Send==1)//·¢ËÍPID²ÎÊý
+	if(PID_Send==1)//ï¿½ï¿½ï¿½ï¿½PIDï¿½ï¿½ï¿½ï¿½
 	{
-		//´òÓ¡kp¡¢ki¡¢kdÒÔ¼°»úÐµÖÐÖµµ½appµ÷²Î½çÃæ
-		printf("{C%d:%d:%d:%d:%d:%d:%d:%d$",(int)(kp),(int)(ki),(int)(kd),(int)(balance_point*100),(int)(LeftControl*10),(int)(RightControl*10),0,0);//´òÓ¡µ½APPÉÏÃæ	
-		PID_Send=0;	
-	}	
-   else	if(flag==0)// ÏÔÊ¾µçÁ¿¡¢±àÂëÆ÷¡¢½Ç¶ÈÔÚÊ×Ò³
-   printf("{A%d:%d:%d:%d}$",(u8)app_2,(u8)app_3,app_4,(int)phi); //´òÓ¡µ½APPÉÏÃæ
-	 
-	 else //²¨ÐÎÏÔÊ¾½Ç¶È¡¢½ÇËÙ¶È¡¢¶æ»úPWM
-		 printf("{B%d:%d:%d}$",(int)phi,(int)phi_dot,SERVO);//´òÓ¡µ½APPÉÏÃæ ÏÔÊ¾²¨ÐÎ
+		//ï¿½ï¿½Ó¡kpï¿½ï¿½kiï¿½ï¿½kdï¿½Ô¼ï¿½ï¿½ï¿½Ðµï¿½ï¿½Öµï¿½ï¿½appï¿½ï¿½ï¿½Î½ï¿½ï¿½ï¿½
+		printf("{C%d:%d:%d:%d:%d:%d:%d:%d$",(int)(kp),(int)(ki),(int)(kd),(int)(balance_point*100),(int)(LeftControl*10),(int)(RightControl*10),0,0);//ï¿½ï¿½Ó¡ï¿½ï¿½APPï¿½ï¿½ï¿½ï¿½
+		PID_Send=0;
+	}
+   else	if(flag==0)// ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½ï¿½Ò³
+   printf("{A%d:%d:%d:%d}$",(u8)app_2,(u8)app_3,app_4,(int)phi); //ï¿½ï¿½Ó¡ï¿½ï¿½APPï¿½ï¿½ï¿½ï¿½
+
+	 else //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ç¶È¡ï¿½ï¿½ï¿½ï¿½Ù¶È¡ï¿½ï¿½ï¿½ï¿½PWM
+		 printf("{B%d:%d:%lu}$",(int)phi,(int)phi_dot,(unsigned long)SERVO);//ï¿½ï¿½Ó¡ï¿½ï¿½APPï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 }
 /**************************************************************************
-º¯Êý¹¦ÄÜ£ºÐéÄâÊ¾²¨Æ÷ÍùÉÏÎ»»ú·¢ËÍÊý¾Ý ¹Ø±ÕÏÔÊ¾ÆÁ
-Èë¿Ú²ÎÊý£ºÎÞ
-·µ»Ø  Öµ£ºÎÞ
-×÷    Õß£ºÆ½ºâÐ¡³µÖ®¼Ò
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø±ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½
+ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½  Öµï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½    ï¿½ß£ï¿½Æ½ï¿½ï¿½Ð¡ï¿½ï¿½Ö®ï¿½ï¿½
 **************************************************************************/
 void DataScope(void)
-{   
+{
     Vol=(float)Voltage/100;
-		DataScope_Get_Channel_Data( phi, 1 );       //ÏÔÊ¾½Ç¶È µ¥Î»£º¶È£¨¡ã£©
-		DataScope_Get_Channel_Data( phi_dot, 2 ); //ÏÔÊ¾½ÇËÙ¶È
-		DataScope_Get_Channel_Data( SERVO, 3 );       //ÏÔÊ¾¶æ»úµÄpwmÖµ
-//		DataScope_Get_Channel_Data( 0 , 4 );   
-//		DataScope_Get_Channel_Data(0, 5 ); //ÓÃÄúÒªÏÔÊ¾µÄÊý¾ÝÌæ»»0¾ÍÐÐÁË
-//		DataScope_Get_Channel_Data(0 , 6 );//ÓÃÄúÒªÏÔÊ¾µÄÊý¾ÝÌæ»»0¾ÍÐÐÁË
+		DataScope_Get_Channel_Data( phi, 1 );       //ï¿½ï¿½Ê¾ï¿½Ç¶ï¿½ ï¿½ï¿½Î»ï¿½ï¿½ï¿½È£ï¿½ï¿½ã£©
+		DataScope_Get_Channel_Data( phi_dot, 2 ); //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ù¶ï¿½
+		DataScope_Get_Channel_Data( SERVO, 3 );       //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½pwmÖµ
+//		DataScope_Get_Channel_Data( 0 , 4 );
+//		DataScope_Get_Channel_Data(0, 5 ); //ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//		DataScope_Get_Channel_Data(0 , 6 );//ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»»0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //		DataScope_Get_Channel_Data(0, 7 );
-//		DataScope_Get_Channel_Data( 0, 8 ); 
-//		DataScope_Get_Channel_Data(0, 9 );  
+//		DataScope_Get_Channel_Data( 0, 8 );
+//		DataScope_Get_Channel_Data(0, 9 );
 //		DataScope_Get_Channel_Data( 0 , 10);
 		Send_Count = DataScope_Data_Generate(3);
-		for( i = 0 ; i < Send_Count; i++) 
+		for( i = 0 ; i < Send_Count; i++)
 		{
-		while((USART1->SR&0X40)==0);  
-		USART1->DR = DataScope_OutPut_Buffer[i]; 
+		while((USART1->SR&0X40)==0);
+		USART1->DR = DataScope_OutPut_Buffer[i];
 		}
 }

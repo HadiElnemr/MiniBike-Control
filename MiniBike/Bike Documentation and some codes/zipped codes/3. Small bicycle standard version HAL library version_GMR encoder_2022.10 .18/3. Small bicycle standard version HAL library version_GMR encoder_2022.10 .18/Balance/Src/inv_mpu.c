@@ -15,7 +15,8 @@
 #include <sys.h>
 #include "delay.h"
 #include "usart.h"
-#include "ioi2c.h"
+// #include "ioi2c.h"
+#include "iic.h"
 
 /* The following functions must be defined for this platform:
  * i2c_write(unsigned char slave_addr, unsigned char reg_addr,
@@ -48,7 +49,7 @@
 //    /*return msp430_reg_int_cb(int_param->cb, int_param->pin, int_param->lp_exit,
 //        int_param->active_low);*/
 //		return 0;
-//}	  
+//}
 //#define log_i(...)     do {} while (0)
 //#define log_e(...)     do {} while (0)
 #define log_e    printf
@@ -539,7 +540,7 @@ const struct gyro_reg_s reg = {
 
 //const struct test_s test = {
 //    .gyro_sens      = 32768/250,
-//    .accel_sens     = 32768/16,	  
+//    .accel_sens     = 32768/16,
 //    .reg_rate_div   = 0,    /* 1kHz. */
 //    .reg_lpf        = 1,    /* 188Hz. */
 //    .reg_gyro_fsr   = 0,    /* 250dps. */
@@ -1110,7 +1111,7 @@ int mpu_reset_fifo(void)
         data = BIT_FIFO_RST | BIT_DMP_RST;
         if (i2c_write(st.hw->addr, st.reg->user_ctrl, 1, &data))
             return -1;
-       
+
         data = BIT_DMP_EN | BIT_FIFO_EN;
         if (st.chip_cfg.sensors & INV_XYZ_COMPASS)
             data |= BIT_AUX_IF_EN;
@@ -1135,7 +1136,7 @@ int mpu_reset_fifo(void)
             data = BIT_FIFO_EN | BIT_AUX_IF_EN;
         if (i2c_write(st.hw->addr, st.reg->user_ctrl, 1, &data))
             return -1;
-    
+
         if (st.chip_cfg.int_enable)
             data = BIT_DATA_RDY_EN;
         else
