@@ -1,0 +1,14 @@
+../Balance/Src/mpu6050.c:22:24:inv_row_2_scale	7
+../Balance/Src/mpu6050.c:95:7:MPU6050_newValues	7
+../Balance/Src/mpu6050.c:165:6:MPU6050_setClockSource	1
+../Balance/Src/mpu6050.c:178:6:MPU6050_setFullScaleGyroRange	1
+../Balance/Src/mpu6050.c:186:6:MPU6050_setFullScaleAccelRange	1
+../Balance/Src/mpu6050.c:196:6:MPU6050_setSleepEnabled	1
+../Balance/Src/mpu6050.c:204:9:MPU6050_getDeviceID	1
+../Balance/Src/mpu6050.c:214:9:MPU6050_testConnection	1
+../Balance/Src/mpu6050.c:224:6:MPU6050_setI2CMasterModeEnabled	1
+../Balance/Src/mpu6050.c:232:6:MPU6050_setI2CBypassEnabled	1
+../Balance/Src/mpu6050.c:240:6:MPU6050_initialize	1
+../Balance/Src/mpu6050.c:258:6:DMP_Init	12
+../Balance/Src/mpu6050.c:295:6:Read_DMP	2
+../Balance/Src/mpu6050.c:320:5:Read_Temperature	2

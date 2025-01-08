@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "iic.h": "c",
+        "ioi2c.h": "c"
+    }
+}

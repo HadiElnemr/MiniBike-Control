@@ -1,0 +1,5 @@
+../Core/Src/sys.c:5:6:WFI_SET	1
+../Core/Src/sys.c:10:6:INTX_DISABLE	1
+../Core/Src/sys.c:15:6:INTX_ENABLE	1
+../Core/Src/sys.c:21:6:MSR_MSP	1
+../Core/Src/sys.c:31:6:JTAG_Set	1
