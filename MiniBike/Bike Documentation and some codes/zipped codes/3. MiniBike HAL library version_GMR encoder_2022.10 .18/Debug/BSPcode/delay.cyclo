@@ -1,8 +1,0 @@
-../BSPcode/delay.c:26:19:HAL_InitTick	1
-../BSPcode/delay.c:44:10:HAL_GetTick	1
-../BSPcode/delay.c:58:6:HAL_Delay	7
-../BSPcode/delay.c:91:10:DWT_CNT_GET	1
-../BSPcode/delay.c:97:6:HAL_Delay_us	5
-../BSPcode/delay.c:155:6:delay_init	1
-../BSPcode/delay.c:165:6:delay_us	1
-../BSPcode/delay.c:180:6:delay_ms	2
