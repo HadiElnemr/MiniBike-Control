@@ -1,0 +1,17 @@
+../BSPcode/iic.c:13:6:IIC_Init	1
+../BSPcode/iic.c:46:5:IIC_Start	3
+../BSPcode/iic.c:64:6:IIC_Stop	1
+../BSPcode/iic.c:81:5:IIC_Wait_Ack	3
+../BSPcode/iic.c:107:6:IIC_Ack	1
+../BSPcode/iic.c:122:6:IIC_NAck	1
+../BSPcode/iic.c:137:6:IIC_Send_Byte	3
+../BSPcode/iic.c:159:5:i2cWrite	5
+../BSPcode/iic.c:217:9:IIC_Read_Byte	4
+../BSPcode/iic.c:186:5:i2cRead	5
+../BSPcode/iic.c:246:15:I2C_ReadOneByte	1
+../BSPcode/iic.c:278:9:IICreadBytes	3
+../BSPcode/iic.c:310:9:IICwriteBytes	2
+../BSPcode/iic.c:337:9:IICreadByte	1
+../BSPcode/iic.c:352:15:IICwriteByte	1
+../BSPcode/iic.c:370:9:IICwriteBits	1
+../BSPcode/iic.c:399:9:IICwriteBit	2

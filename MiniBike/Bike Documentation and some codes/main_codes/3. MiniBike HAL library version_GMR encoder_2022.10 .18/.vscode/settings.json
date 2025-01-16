@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "iic.h": "c",
+        "ioi2c.h": "c",
+        "show.h": "c",
+        "usart.h": "c",
+        "mpu6050.h": "c",
+        "cstdint": "c"
+    }
+}
