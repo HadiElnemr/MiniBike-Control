@@ -28,14 +28,14 @@ r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and in
 l = w; % length
 
 
-A23 = (v^2*h-a*r_tau*g) * sin(lambda) / (h^2*l);
+A23 = -(v^2*h-a*r_tau*g) * sin(lambda) / (h^2*l);
 
 % true system matrices
 A_c = [0   1   0;
       g/h  0  A23;
        0   0   0];
 B_c = [0 ; 
-       a*v*sin(lambda)/(h*l) ; % Try with negative: probably no
+       - a*v*sin(lambda)/(h*l) ; % Try with negative: yes
        1];
 
 sysc = ss(A_c,B_c, [1 0 0], 0);

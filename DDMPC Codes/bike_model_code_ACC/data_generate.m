@@ -11,7 +11,7 @@ R_lqr = 1.0;
 [K_lqr,~,~] = lqr(A, B, Q_lqr, R_lqr);
 [K_dlqr,~,~] = dlqr(A, B, Q_lqr, R_lqr);
 
-% display(K_lqr)
+display(K_lqr)
 %%
 
 u = zeros(m, N);
