@@ -1,9 +1,0 @@
-../Core/tim.c:81:6:MX_TIM2_Init	3
-../Core/tim.c:114:6:MX_TIM3_Init	3
-../Core/tim.c:184:6:HAL_TIM_PWM_MspInit	3
-../Core/tim.c:211:6:HAL_TIM_Encoder_MspInit	3
-../Core/tim.c:260:6:HAL_TIM_MspPostInit	3
-../Core/tim.c:33:6:MX_TIM1_Init	5
-../Core/tim.c:147:6:MX_TIM4_Init	5
-../Core/tim.c:305:6:HAL_TIM_PWM_MspDeInit	3
-../Core/tim.c:332:6:HAL_TIM_Encoder_MspDeInit	3
