@@ -89,7 +89,7 @@ void APP_Show(void)
 		PID_Send=0;
 	}
    else	if(flag==0)// ��ʾ���������������Ƕ�����ҳ
-   printf("{A%d:%d:%d:%d}$",(u8)app_2,(u8)app_3,app_4,(int)phi); //��ӡ��APP����
+   printf("{A%d:%d:%d:%d}$",(u8)app_2,(u8)app_3, app_4,(int)phi); //��ӡ��APP����
 
 	 else //������ʾ�Ƕȡ����ٶȡ����PWM
 		 printf("{B%d:%d:%lu}$",(int)phi,(int)phi_dot,(unsigned long)SERVO);//��ӡ��APP���� ��ʾ����

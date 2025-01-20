@@ -13,8 +13,10 @@ float BalancePoint_Offset = 0;                 // Offset for balance point
 float LeftControl = 3.0f;                      // Left turn control factor
 float RightControl = 3.0f;                     // Right turn control factor
 float delta = 0, delta_dot = 0, last_delta_dot = 0, last_delta_dot_2 = 0;
-float k1 = -92.2973, k2 = -8.6746, k3 = 10.5355; // LQR coefficients
+//float k1 = -92.2973, k2 = -8.6746, k3 = 10.5355; // LQR coefficients
 // float k1 = -2.0119, k2 = 0.2079, k3 = -0.4762; // LQR coefficients for fork angle model
+float k1 = -103.4593, k2 = -9.7400, k3 = 8.7622; // LQR coefficients for fork angle model (with negative sign for velocity)
+
 int ki = 4, kp = 16, kd = 4;                   // PID coefficients
 int u;                                         // PWM output variable
 
@@ -77,9 +79,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         if (Turn_Off(phi, Voltage) == 0 && Flag_Stop == 0)
         {
             Get_RC();
-            // delta_dot = -(k1 * (phi - balance_point) + k2 * phi_dot + k3 * delta);
-            // Use fork angle model to control, just Ki will change
-            // delta_dot =
+            delta_dot = -(k1 * (phi - balance_point) + k2 * phi_dot + k3 * delta);
             delta_dot *= 100;
             delta_dot = (int)delta_dot;
 
