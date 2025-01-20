@@ -1,0 +1,4 @@
+# ignore the following directory except the hex file
+3. MiniBike HAL library version_GMR encoder_2022.10 .18/Debug/
+!3. MiniBike HAL library version_GMR encoder_2022.10 .18/Debug/*.hex
+# MiniBike/Bike Documentation and some codes/zipped codes/3. MiniBike HAL library version_GMR encoder_2022.10 .18/Debug/WHEELTEC.elf
