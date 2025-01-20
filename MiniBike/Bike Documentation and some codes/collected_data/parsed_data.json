@@ -1,0 +1,7905 @@
+{
+    "A": [
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 7,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 85
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -4
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 21,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 21,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 21,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -3
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -3
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 17,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -3
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -3
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 19,
+            "phi": -3
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "42",
+            "Encoder2": 42,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 17,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 17,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 17,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": -1
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 20,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 16,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": -3
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 16,
+            "phi": -5
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 16,
+            "phi": -1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 19,
+            "phi": -4
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 19,
+            "phi": -19
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 19,
+            "phi": -84
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 19,
+            "phi": -78
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 14,
+            "phi": -78
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 14,
+            "phi": -78
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 14,
+            "phi": -78
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -80
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 5,
+            "phi": -70
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 5,
+            "phi": -46
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 5,
+            "phi": -3
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 11
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 18
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 29
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 32
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 31
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 26
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 6,
+            "phi": 23
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 18
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 10
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 11
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": 9
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 87
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 77
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 66
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 55
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 34
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 4
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -8
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 4
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 28
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 31
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -13
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -20
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -19
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -19
+        },
+        {
+            "Encoder1": "9",
+            "Encoder2": 9,
+            "Voltage": 48,
+            "phi": -16
+        },
+        {
+            "Encoder1": "9",
+            "Encoder2": 9,
+            "Voltage": 48,
+            "phi": -16
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 48,
+            "phi": -17
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -18
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -15
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -10
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -9
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -6
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -3
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 5,
+            "phi": -1
+        },
+        {
+            "Encoder1": "9",
+            "Encoder2": 9,
+            "Voltage": 5,
+            "phi": -4
+        },
+        {
+            "Encoder1": "9",
+            "Encoder2": 9,
+            "Voltage": 5,
+            "phi": -6
+        },
+        {
+            "Encoder1": "6",
+            "Encoder2": 6,
+            "Voltage": 5,
+            "phi": -5
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 16,
+            "phi": -2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 16,
+            "phi": 0
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 40,
+            "phi": 2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 40,
+            "phi": 2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 40,
+            "phi": 2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 40,
+            "phi": 2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": 3
+        },
+        {
+            "Encoder1": "15",
+            "Encoder2": 15,
+            "Voltage": 52,
+            "phi": 3
+        },
+        {
+            "Encoder1": "18",
+            "Encoder2": 18,
+            "Voltage": 36,
+            "phi": 3
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 36,
+            "phi": 1
+        },
+        {
+            "Encoder1": "42",
+            "Encoder2": 42,
+            "Voltage": 36,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 36,
+            "phi": -2
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 16,
+            "phi": -4
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 16,
+            "phi": -4
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 16,
+            "phi": -4
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 20,
+            "phi": -4
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 20,
+            "phi": -5
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": -5
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": -6
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": -7
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": -8
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 18,
+            "phi": -8
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 19,
+            "phi": -9
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 19,
+            "phi": -9
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 19,
+            "phi": -9
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": -7
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 19,
+            "phi": -3
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": 1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": 3
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": 1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 18,
+            "phi": -8
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -8
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": -2
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": -6
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 19,
+            "phi": -2
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 19,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": 1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": 1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": 1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": 1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": 1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 20,
+            "phi": 2
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 20,
+            "phi": 5
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": 8
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 17,
+            "phi": 3
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 17,
+            "phi": -3
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 17,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": 4
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 18,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 17,
+            "phi": 3
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 17,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 17,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 17,
+            "phi": 4
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 19,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 19,
+            "phi": 1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 19,
+            "phi": 4
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 18,
+            "phi": 4
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 18,
+            "phi": 4
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 18,
+            "phi": 4
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 18,
+            "phi": 10
+        },
+        {
+            "Encoder1": "6",
+            "Encoder2": 6,
+            "Voltage": 19,
+            "phi": 33
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 19,
+            "phi": 47
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 19,
+            "phi": 50
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 45,
+            "phi": 46
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 45,
+            "phi": 17
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 45,
+            "phi": 5
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 45,
+            "phi": -17
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -17
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -10
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -25
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -55
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -81
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -79
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -80
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -84
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -88
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -86
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -82
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -77
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -76
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -76
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -75
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -75
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -77
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -78
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 52,
+            "phi": -81
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 43,
+            "phi": -81
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 43,
+            "phi": -81
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 43,
+            "phi": -81
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -81
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 4,
+            "phi": -81
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 13,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 13,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 13,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 13,
+            "phi": 0
+        },
+        {
+            "Encoder1": "42",
+            "Encoder2": 42,
+            "Voltage": 13,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 14,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 14,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 14,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 13,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 13,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 13,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "42",
+            "Encoder2": 42,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": -1
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 9,
+            "phi": -1
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 8,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 11,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "49",
+            "Encoder2": 49,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "44",
+            "Encoder2": 44,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 12,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "46",
+            "Encoder2": 46,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 9,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "47",
+            "Encoder2": 47,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "43",
+            "Encoder2": 43,
+            "Voltage": 10,
+            "phi": 0
+        },
+        {
+            "Encoder1": "45",
+            "Encoder2": 45,
+            "Voltage": 10,
+            "phi": -1
+        },
+        {
+            "Encoder1": "52",
+            "Encoder2": 52,
+            "Voltage": 10,
+            "phi": -31
+        },
+        {
+            "Encoder1": "48",
+            "Encoder2": 48,
+            "Voltage": 10,
+            "phi": -35
+        },
+        {
+            "Encoder1": "21",
+            "Encoder2": 21,
+            "Voltage": 12,
+            "phi": -42
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -54
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -48
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 12,
+            "phi": -12
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": -2
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 3
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 13
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 25
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 17
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 16
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 23
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 23
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 25
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 22
+        },
+        {
+            "Encoder1": "0",
+            "Encoder2": 0,
+            "Voltage": 0,
+            "phi": 21
+        }
+    ],
+    "B": [
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "86",
+            "phi_dot": 1,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 1,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 1,
+            "Servo": 751
+        },
+        {
+            "phi": "86",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "0",
+            "phi_dot": -13,
+            "Servo": 673
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": -22,
+            "Servo": 670
+        },
+        {
+            "phi": "0",
+            "phi_dot": -12,
+            "Servo": 688
+        },
+        {
+            "phi": "1",
+            "phi_dot": 36,
+            "Servo": 744
+        },
+        {
+            "phi": "0",
+            "phi_dot": 20,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": -20,
+            "Servo": 663
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": 14,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": -25,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": -14,
+            "Servo": 672
+        },
+        {
+            "phi": "0",
+            "phi_dot": 21,
+            "Servo": 727
+        },
+        {
+            "phi": "0",
+            "phi_dot": 24,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -44,
+            "Servo": 654
+        },
+        {
+            "phi": "0",
+            "phi_dot": 27,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 682
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 685
+        },
+        {
+            "phi": "0",
+            "phi_dot": -22,
+            "Servo": 675
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": -28,
+            "Servo": 674
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 687
+        },
+        {
+            "phi": "0",
+            "phi_dot": 12,
+            "Servo": 697
+        },
+        {
+            "phi": "5",
+            "phi_dot": -99,
+            "Servo": 621
+        },
+        {
+            "phi": "17",
+            "phi_dot": -33,
+            "Servo": 621
+        },
+        {
+            "phi": "26",
+            "phi_dot": -3,
+            "Servo": 621
+        },
+        {
+            "phi": "31",
+            "phi_dot": -5,
+            "Servo": 621
+        },
+        {
+            "phi": "32",
+            "phi_dot": 7,
+            "Servo": 621
+        },
+        {
+            "phi": "28",
+            "phi_dot": -11,
+            "Servo": 621
+        },
+        {
+            "phi": "25",
+            "phi_dot": 17,
+            "Servo": 621
+        },
+        {
+            "phi": "19",
+            "phi_dot": -1,
+            "Servo": 621
+        },
+        {
+            "phi": "14",
+            "phi_dot": 7,
+            "Servo": 621
+        },
+        {
+            "phi": "11",
+            "phi_dot": 49,
+            "Servo": 621
+        },
+        {
+            "phi": "10",
+            "phi_dot": -14,
+            "Servo": 621
+        },
+        {
+            "phi": "8",
+            "phi_dot": -10,
+            "Servo": 621
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 752
+        },
+        {
+            "phi": "87",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "87",
+            "phi_dot": -1,
+            "Servo": 751
+        },
+        {
+            "phi": "83",
+            "phi_dot": -57,
+            "Servo": 751
+        },
+        {
+            "phi": "72",
+            "phi_dot": -44,
+            "Servo": 752
+        },
+        {
+            "phi": "60",
+            "phi_dot": -56,
+            "Servo": 752
+        },
+        {
+            "phi": "48",
+            "phi_dot": -123,
+            "Servo": 751
+        },
+        {
+            "phi": "17",
+            "phi_dot": -167,
+            "Servo": 751
+        },
+        {
+            "phi": "17",
+            "phi_dot": 133,
+            "Servo": 751
+        },
+        {
+            "phi": "37",
+            "phi_dot": 68,
+            "Servo": 751
+        },
+        {
+            "phi": "3",
+            "phi_dot": -262,
+            "Servo": 752
+        },
+        {
+            "phi": "0",
+            "phi_dot": 28,
+            "Servo": 751
+        },
+        {
+            "phi": "2",
+            "phi_dot": -1,
+            "Servo": 751
+        },
+        {
+            "phi": "2",
+            "phi_dot": 0,
+            "Servo": 751
+        },
+        {
+            "phi": "2",
+            "phi_dot": 4,
+            "Servo": 752
+        },
+        {
+            "phi": "2",
+            "phi_dot": 5,
+            "Servo": 751
+        },
+        {
+            "phi": "2",
+            "phi_dot": 4,
+            "Servo": 752
+        },
+        {
+            "phi": "3",
+            "phi_dot": -4,
+            "Servo": 751
+        },
+        {
+            "phi": "2",
+            "phi_dot": 0,
+            "Servo": 791
+        },
+        {
+            "phi": "3",
+            "phi_dot": 3,
+            "Servo": 827
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 772
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 742
+        },
+        {
+            "phi": "1",
+            "phi_dot": -2,
+            "Servo": 741
+        },
+        {
+            "phi": "2",
+            "phi_dot": 12,
+            "Servo": 800
+        },
+        {
+            "phi": "3",
+            "phi_dot": -9,
+            "Servo": 817
+        },
+        {
+            "phi": "1",
+            "phi_dot": 16,
+            "Servo": 758
+        },
+        {
+            "phi": "0",
+            "phi_dot": 23,
+            "Servo": 735
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 746
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 748
+        },
+        {
+            "phi": "1",
+            "phi_dot": -4,
+            "Servo": 764
+        },
+        {
+            "phi": "1",
+            "phi_dot": -2,
+            "Servo": 761
+        },
+        {
+            "phi": "1",
+            "phi_dot": -1,
+            "Servo": 763
+        },
+        {
+            "phi": "1",
+            "phi_dot": 4,
+            "Servo": 775
+        },
+        {
+            "phi": "1",
+            "phi_dot": 2,
+            "Servo": 778
+        },
+        {
+            "phi": "3",
+            "phi_dot": 25,
+            "Servo": 858
+        },
+        {
+            "phi": "7",
+            "phi_dot": 21,
+            "Servo": 881
+        },
+        {
+            "phi": "7",
+            "phi_dot": -17,
+            "Servo": 865
+        },
+        {
+            "phi": "0",
+            "phi_dot": -38,
+            "Servo": 708
+        },
+        {
+            "phi": "2",
+            "phi_dot": 7,
+            "Servo": 781
+        },
+        {
+            "phi": "4",
+            "phi_dot": -31,
+            "Servo": 803
+        },
+        {
+            "phi": "1",
+            "phi_dot": 32,
+            "Servo": 799
+        },
+        {
+            "phi": "1",
+            "phi_dot": -34,
+            "Servo": 752
+        },
+        {
+            "phi": "4",
+            "phi_dot": 40,
+            "Servo": 870
+        },
+        {
+            "phi": "0",
+            "phi_dot": -45,
+            "Servo": 735
+        },
+        {
+            "phi": "3",
+            "phi_dot": 14,
+            "Servo": 825
+        },
+        {
+            "phi": "4",
+            "phi_dot": -2,
+            "Servo": 850
+        },
+        {
+            "phi": "4",
+            "phi_dot": -3,
+            "Servo": 854
+        },
+        {
+            "phi": "4",
+            "phi_dot": 0,
+            "Servo": 858
+        },
+        {
+            "phi": "5",
+            "phi_dot": 22,
+            "Servo": 881
+        },
+        {
+            "phi": "20",
+            "phi_dot": 131,
+            "Servo": 882
+        },
+        {
+            "phi": "43",
+            "phi_dot": 120,
+            "Servo": 882
+        },
+        {
+            "phi": "49",
+            "phi_dot": 20,
+            "Servo": 882
+        },
+        {
+            "phi": "49",
+            "phi_dot": -26,
+            "Servo": 881
+        },
+        {
+            "phi": "36",
+            "phi_dot": -161,
+            "Servo": 882
+        },
+        {
+            "phi": "3",
+            "phi_dot": -94,
+            "Servo": 882
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 673
+        },
+        {
+            "phi": "0",
+            "phi_dot": 21,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 684
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 721
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -10,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": -15,
+            "Servo": 692
+        },
+        {
+            "phi": "0",
+            "phi_dot": 16,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 722
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -12,
+            "Servo": 689
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 685
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 20,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 687
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 11,
+            "Servo": 728
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 690
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": -9,
+            "Servo": 690
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 687
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 27,
+            "Servo": 726
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 722
+        },
+        {
+            "phi": "0",
+            "phi_dot": -9,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": -13,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -19,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": 13,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 14,
+            "Servo": 733
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 18,
+            "Servo": 722
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 689
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 689
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 692
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": -16,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 689
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 692
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 682
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 13,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -22,
+            "Servo": 667
+        },
+        {
+            "phi": "0",
+            "phi_dot": -12,
+            "Servo": 682
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": 11,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 680
+        },
+        {
+            "phi": "0",
+            "phi_dot": 14,
+            "Servo": 722
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 687
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 11,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 684
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 12,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 692
+        },
+        {
+            "phi": "0",
+            "phi_dot": 12,
+            "Servo": 728
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 690
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 721
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -9,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 11,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -11,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 689
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 15,
+            "Servo": 721
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -10,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": 12,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 692
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 731
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 11,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 724
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -10,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": -8,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 682
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 721
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 684
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 723
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": -11,
+            "Servo": 685
+        },
+        {
+            "phi": "0",
+            "phi_dot": 18,
+            "Servo": 735
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 688
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 687
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 714
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 695
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 690
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": -9,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 683
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 683
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": -12,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 707
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 16,
+            "Servo": 726
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 720
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 687
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 724
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 25,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 13,
+            "Servo": 718
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 715
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 6,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 713
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": -4,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 700
+        },
+        {
+            "phi": "0",
+            "phi_dot": 13,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": 17,
+            "Servo": 731
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 692
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": 10,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 694
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 719
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 708
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 17,
+            "Servo": 728
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": -5,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 691
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 724
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 697
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 709
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 9,
+            "Servo": 726
+        },
+        {
+            "phi": "0",
+            "phi_dot": 8,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 696
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 702
+        },
+        {
+            "phi": "0",
+            "phi_dot": -14,
+            "Servo": 681
+        },
+        {
+            "phi": "0",
+            "phi_dot": -1,
+            "Servo": 693
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 704
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -6,
+            "Servo": 699
+        },
+        {
+            "phi": "0",
+            "phi_dot": 7,
+            "Servo": 717
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 689
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 701
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 706
+        },
+        {
+            "phi": "0",
+            "phi_dot": 2,
+            "Servo": 698
+        },
+        {
+            "phi": "0",
+            "phi_dot": 14,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": 5,
+            "Servo": 710
+        },
+        {
+            "phi": "0",
+            "phi_dot": -7,
+            "Servo": 716
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 711
+        },
+        {
+            "phi": "0",
+            "phi_dot": 3,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 4,
+            "Servo": 712
+        },
+        {
+            "phi": "0",
+            "phi_dot": 0,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": -2,
+            "Servo": 705
+        },
+        {
+            "phi": "0",
+            "phi_dot": 1,
+            "Servo": 703
+        },
+        {
+            "phi": "0",
+            "phi_dot": -3,
+            "Servo": 696
+        },
+        {
+            "phi": "3",
+            "phi_dot": 52,
+            "Servo": 631
+        },
+        {
+            "phi": "4",
+            "phi_dot": 56,
+            "Servo": 631
+        },
+        {
+            "phi": "19",
+            "phi_dot": 75,
+            "Servo": 631
+        },
+        {
+            "phi": "22",
+            "phi_dot": -58,
+            "Servo": 631
+        },
+        {
+            "phi": "16",
+            "phi_dot": -7,
+            "Servo": 631
+        },
+        {
+            "phi": "21",
+            "phi_dot": 51,
+            "Servo": 631
+        },
+        {
+            "phi": "25",
+            "phi_dot": 9,
+            "Servo": 631
+        },
+        {
+            "phi": "24",
+            "phi_dot": 20,
+            "Servo": 631
+        },
+        {
+            "phi": "23",
+            "phi_dot": -14,
+            "Servo": 631
+        },
+        {
+            "phi": "22",
+            "phi_dot": 1,
+            "Servo": 631
+        }
+    ]
+}
