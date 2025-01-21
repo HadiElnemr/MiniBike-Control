@@ -24,21 +24,9 @@ Suggested PDFs/My further pdfs/Bicycles_motorcycles_and_models.pdf
 Thesis/chapters/*.aux
 Thesis/chapters/*.aux
 Thesis/chapters/*.log
-MiniBike/Bike Documentation and some codes/zipped codes/3. temp/*
-MiniBike/Bike Documentation and some codes/zipped codes/*
-MiniBike/Bike Documentation and some codes/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/
-MiniBike/Bike Documentation and some codes/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/3.╨í╨═╫╘╨╨│╡▒Ω╫╝░µHAL┐Γ░µ▒╛_GMR▒α┬δ╞≈_2022.10.18/Debug/
-*.o
-*.d
-*.su
-*.mk
-*.bin
-*.elf
-*.hex
-*.map
-*.lst
-*.lss
-*.sym
+
+
+
 MiniBike/Bike Documentation and some codes/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/3.╨í╨═╫╘╨╨│╡▒Ω╫╝░µHAL┐Γ░µ▒╛_GMR▒α┬δ╞≈_2022.10.18/.settings/language.settings.xml
 MiniBike/Bike Documentation and some codes/Mini bike/1.WHEELTEC bike manuel (Translation).pdf
 MiniBike/Bike Documentation and some codes/Mini bike/1.WHEELTEC 舵机自平衡自行车上手使用手册.pdf
@@ -49,5 +37,4 @@ MiniBike/Bike Documentation and some codes/Mini bike/3.基于车把转向控制�
 Thesis/chapters/chapter1.aux
 Suggested PDFs/DDMPC/Data-Driven Min-Max MPC for Linear Systems_ Robustness and Adaptation.pdf
 Suggested PDFs/DDMPC/Data-Driven_Min-Max_MPC_for_Linear_Systems.pdf
-MiniBike/Bike Documentation and some codes/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/3.╨í╨═╫╘╨╨│╡▒Ω╫╝░µHAL┐Γ░µ▒╛_GMR▒α┬δ╞≈_2022.10.18/STM32F103C8TX_FLASH.ld
-MiniBike/Bike Documentation and some codes/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/3.╨í╨═╫╘╨╨│╡▒Ω╫╝░µHAL┐Γ░µ▒╛_GMR▒α┬δ╞≈_2022.10.18/.mxproject
+MiniBike/Flymcu and driver
