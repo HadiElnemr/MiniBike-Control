@@ -38,8 +38,12 @@ B_c = [0 ;
        - a*v*sin(lambda)/(h*l) ; % Try with negative: yes
        1];
 
+% Discretise
+
+Ts = 0.020; % Sampling time as in bike simulations
 sysc = ss(A_c,B_c, [1 0 0], 0);
-sysd = c2d(sysc, 0.01);
+sysd = c2d(sysc, Ts);
+
 A_s = sysd.A;
 B_s = sysd.B;
 
@@ -144,7 +148,7 @@ L_op = [];
 tau_op = [];
 F_op = [];
 t = [];
-
+mpciterations = 15;
 for ii=1:mpciterations
 
     t_Start = tic;
