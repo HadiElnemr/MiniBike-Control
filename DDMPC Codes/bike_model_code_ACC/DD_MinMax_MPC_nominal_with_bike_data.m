@@ -214,3 +214,32 @@ xlabel('t');
 ylabel('u');
 drawnow
 
+% F_star = [-103.459312862395	-9.74002829326616	8.76219082450918];
+F_star
+
+C = [1 0 0;
+     0 0 1];
+D = 0;
+A_feedback = A_s-B_s*F_star;
+
+t = 0:Ts:4;
+t = 0:Ts:10;
+u = zeros(size(t));
+
+x0 = [0.0873; 0; 0]; % bike sims
+x0 = [-0.01;-0.04; 0];
+
+y = dlsim(A_feedback,B_s,C,D,u,x0);
+
+subplot(2,1,1)
+plot(t,y(:,1),'b.-','LineWidth',1.5);
+xlabel('Time(s)');
+ylabel('\phi(rad)');
+grid on
+subplot(2,1,2)
+plot(t,y(:,2),'b.-','LineWidth',1.5);
+xlabel('Time(s)');
+ylabel('\delta(rad)');
+grid on
+
+Tc = ctrb(A_s,B_s);
