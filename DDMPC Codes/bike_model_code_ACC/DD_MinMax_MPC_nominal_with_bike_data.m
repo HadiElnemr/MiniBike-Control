@@ -68,22 +68,33 @@ S_x = [1.7754 0 0; 0 5 0; 0 0 3];
 
 %% Generate data with additive noise
 
-% length of the initial available data
-T = 90;
+% % length of the initial available data
+% T = 20;
 
-% initial state for data generate
+% initial state for "data generate"
 % x_d0 = [rand(1); -rand(1)];
-x_d0 = [0.001*rand(1); -0.01*rand(1); 0.001*rand(1)]; % Change ()very small
+% x_d0 = [0.001*rand(1); -0.01*rand(1); 0.001*rand(1)]; % Change ()very small
 
 % generate the data
 % [u_g, x_g, K_lqr] = data_generate(A_s,B_s,epsilon,T,x_d0,u_max);
 
 % load('offline_data_1');
+
 load('matlab_data.mat');
+% load('matlab_data(Working Version!!!!!!).mat');
 % x_g = x_g(100:300);
 % u_g = u_g(100:300);
+
 epsilon = calculate_epsilon(sysd, x_g, u_g);
-% epsilon = 0.4426;
+% epsilon = 0.5;
+
+% x_g = x_g(100/3:200/3);
+% u_g = u_g(100/3:200/3);
+
+% length of the initial available data
+T = size(x_g,1)/3-1;
+% T = 15;
+
 %% Simulation
 
 % equilibrium point
@@ -92,16 +103,18 @@ u_e = 0;
 
 % weighting matrices
 Q = eye(n);
-% R = 10^-4;
-R = 1;
+R = 10^-4;
+% R = 1;
 
 % Cholesky factorization of the weighting matrix: Q= MQ'*MQ, R= MR'*MR
 MQ = chol(Q);
 MR = chol(R);
 
 % initial state 
-x_init = [-0.01;-0.04; 0];
-
+% x_init = [0.01; -0.01; -0.2];
+x_init = [0.001; 0.0000; -0.001];
+% x_init = [-0.0; -0.1; -0.00];
+% x_init = [0.00; 0.0; -0.0];
 
 % Number of MPC iterations
 % mpciterations = 300;
@@ -136,8 +149,8 @@ con_c = [[-H zeros(n,n+m);zeros(n+m,n) zeros(n+m,n+m)]+Pi_tau [zeros(n,n);H;L] z
           [zeros(n,n);H;L]' -H  [MR*L;MQ*H]';
           zeros(n+m,m+2*n) [MR*L;MQ*H] -gamma*eye(n+m,n+m)]<=-10^-12*eye(4*n+2*m);
 con_d = tau(:)>=10^-12;
-% con_e = [H L'; L inv(S_u)]>=10^-12*eye(n+m);
-% con_f = [H H; H inv(S_x)]>=10^-12*eye(2*n);
+con_e = [H L'; L inv(S_u)]>=10^-12*eye(n+m);
+con_f = [H H; H inv(S_x)]>=10^-12*eye(2*n);
 % ?? con_f = [S_x eye(); eye H]>=10^-12*eye(2*n); ??
 
 % initial state  
@@ -161,7 +174,8 @@ for ii=1:mpciterations
     con_b = [1 xmeasure'; xmeasure H]>=10^-7*eye(n+1);
     
     % solve the problem with LMI constraints
-    LMI = [con_b,con_c,con_d];
+    LMI = [con_b, con_c, con_d];
+    % LMI = [con_b, con_c, con_d, con_e, con_f];
 
     % solution
     P = optimizer(LMI,gamma,option,[],{gamma,H,L,tau});
@@ -205,6 +219,7 @@ end
 f1 = figure(1);
 plot(x(1,:),x(2,:),'b'), grid on, hold on,
 plot(x(1,:),x(2,:),'ob'), grid on, hold on,
+plot(x(1,1),x(2,1),'or'), grid on, hold on,
 % E = ellipsoid(x_hat, inv(S_x));
 % plot(E,'r');
 xlabel('x(1)');
@@ -218,32 +233,66 @@ xlabel('t');
 ylabel('u');
 drawnow
 
-% F_star = [-103.459312862395	-9.74002829326616	8.76219082450918];
-F_star
+%% Analyse Data Driven Controller acquired
+% F_star = [-103.459312862395	-9.74002829326616	8.76219082450918]; % Required F_star
+% F_star = [0.2131    0.4008   -3.6443];
+fprintf('Epsilon is %f \n', epsilon);
+fprintf('F_star is [');
+fprintf('%g ', F_star);
+fprintf(']\n');
 
-C = [1 0 0;
-     0 0 1];
-D = 0;
-A_feedback = A_s-B_s*F_star;
 
-t = 0:Ts:4;
-t = 0:Ts:10;
-u = zeros(size(t));
 
 x0 = [0.0873; 0; 0]; % bike sims
 % x0 = [-0.01;-0.04; 0];
 
-y = dlsim(A_feedback,B_s,C,D,u,x0);
-
-subplot(2,1,1)
-plot(t,y(:,1),'b.-','LineWidth',1.5);
-xlabel('Time(s)');
-ylabel('\phi(rad)');
-grid on
-subplot(2,1,2)
-plot(t,y(:,2),'b.-','LineWidth',1.5);
-xlabel('Time(s)');
-ylabel('\delta(rad)');
-grid on
+t = 0:Ts:10;
+u = zeros(size(t));
 
 Tc = ctrb(A_s,B_s);
+if (rank(Tc)==3)
+    f3 = figure(3);
+    fprintf('This system is controllable! \n');
+    
+    % Q matrix
+    Q = [300 0 0; 0 0 0; 0 0 300];
+    
+    % R matrix
+    R = 1;
+    
+    % Calculate state feedback
+    A_feedback = A_s-B_s*F_star;
+    if (any(isnan(F_star)))
+        fprintf('F_star has NaN values, returning \n');
+        return;
+    end
+    if (all(abs(eig(A_s-B_s*F_star)) <= 1))
+        fprintf('State Feedback System is stable!: Eigen values are less than or equal to one \n');
+        if(any(abs(eig(A_s-B_s*F_star)) == 1))
+            fprintf('Lyapunov stable \n')
+        end
+    else
+        fprintf('State Feedback System is Unstable!: Eigen values are larger than one \n');
+    end
+    Tc = ctrb(A_feedback ,B_s);
+    % if (rank(Tc)~=3)
+    %     fprintf('Feedback system is uncontrollable! \n');
+
+    % y = dlsim(G2,H,C,D,u,x0);
+    C = [1 0 0;
+         0 0 1];
+    D = 0;
+    y = dlsim(A_feedback,B_s,C,D,u,x0);
+    subplot(2,1,1)
+    plot(t,y(:,1),'b.-','LineWidth',1.5);
+    xlabel('Time(s)');
+    ylabel('\phi(rad)');
+    grid on
+    subplot(2,1,2)
+    plot(t,y(:,2),'b.-','LineWidth',1.5);
+    xlabel('Time(s)');
+    ylabel('\delta(rad)');
+    grid on
+end
+
+

@@ -61,7 +61,7 @@ S_x = [10 0 0; 0 5 0; 0 0 3];
 %% Generate data with additive noise
 
 % length of the initial available data
-T = 15;
+T = 40;
 
 % initial state for data generate
 % x_d0 = [rand(1); -rand(1)];
@@ -194,6 +194,7 @@ end
 f1 = figure(1);
 plot(x(1,:),x(2,:),'b'), grid on, hold on,
 plot(x(1,:),x(2,:),'ob'), grid on, hold on,
+plot(x(1,1),x(2,1),'or'), grid on, hold on,
 % E = ellipsoid(x_hat, inv(S_x));
 % plot(E,'r');
 xlabel('x(1)');
@@ -207,3 +208,61 @@ xlabel('t');
 ylabel('u');
 drawnow
 
+%%% New to test
+
+%% Analyse Data Driven Controller acquired
+% F_star = [-103.459312862395	-9.74002829326616	8.76219082450918]; % Required F_star
+% F_star = [0.2131    0.4008   -3.6443];
+fprintf('F_star is [');
+fprintf('%g ', F_star);
+fprintf(']\n');
+
+
+
+x0 = [0.0873; 0; 0]; % bike sims
+% x0 = [-0.01;-0.04; 0];
+Ts = 0.020;
+t = 0:Ts:10;
+u = zeros(size(t));
+
+Tc = ctrb(A_s,B_s);
+if (rank(Tc)==3)
+    f3 = figure(3);
+    fprintf('This system is controllable! \n');
+    
+    % Q matrix
+    Q = [300 0 0; 0 0 0; 0 0 300];
+    
+    % R matrix
+    R = 1;
+    
+    % Calculate state feedback
+    A_feedback = A_s-B_s*F_star;
+    if (all(abs(eig(A_s-B_s*F_star)) <= 1))
+        fprintf('State Feedback System is stable!: Eigen values are less or equal to one \n');
+        if(any(abs(eig(A_s-B_s*F_star)) == 1))
+            fprintf('Lyapunov stable \n')
+        end
+    else
+        fprintf('State Feedback System is Unstable!: Eigen values are larger than one \n');
+    end
+    Tc = ctrb(A_feedback ,B_s);
+    % if (rank(Tc)~=3)
+    %     fprintf('Feedback system is uncontrollable! \n');
+
+    % y = dlsim(G2,H,C,D,u,x0);
+    C = [1 0 0;
+         0 0 1];
+    D = 0;
+    y = dlsim(A_feedback,B_s,C,D,u,x0);
+    subplot(2,1,1)
+    plot(t,y(:,1),'b.-','LineWidth',1.5);
+    xlabel('Time(s)');
+    ylabel('\phi(rad)');
+    grid on
+    subplot(2,1,2)
+    plot(t,y(:,2),'b.-','LineWidth',1.5);
+    xlabel('Time(s)');
+    ylabel('\delta(rad)');
+    grid on
+end
