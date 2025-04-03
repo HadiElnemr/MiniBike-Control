@@ -1,9 +1,9 @@
 % This is the code for the paper "Data-driven Min-Max MPC for Linear
 % System"
-% Toolbox: 
-% 1. Generate a sequence of data for noisy system 
+% Toolbox:
+% 1. Generate a sequence of data for noisy system
 % x_{t+1} = A_s x_t + B_s u_t + w_t, w_t satisfies instantaneous constraint
-    
+
 
 % clear workspace, close open figures
 clear all
@@ -12,9 +12,9 @@ clc
 
 %% Parameters of the system
 
-% state dimension and input dimension 
-n = 3; 
-m = 1; 
+% state dimension and input dimension
+n = 3;
+m = 1;
 
 % Bike data
 g = 9.8;
@@ -22,7 +22,7 @@ h = 0.088; % m (hieght of the centre of mass)
 v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
-lambda =  75/180 * pi; % in rad = 70 degrees  (fork angle)
+lambda =  90/180 * pi; % in rad = 70 degrees  (fork angle)
 % lambda =  90/180 * pi;
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
@@ -37,7 +37,7 @@ B2 = - a*v*sin(lambda)/(h*l) ; % Try with negative: yes
 A_c = [0   1   0;
       g/h  0  A23;
        0   0   0];
-B_c = [0 ; 
+B_c = [0 ;
        B2;
        1];
 % states are phi, phi_dot, delta
@@ -81,12 +81,13 @@ S_x = [1.7754 0 0; 0 5 0; 0 0 3];
 % load('offline_data_1');
 
 load('matlab_data.mat');
-% load('matlab_data(Working Version!!!!!!).mat');
+% load('matlab_data(Working Version!!!!!!).mat'); % 2,3
+
 % x_g = x_g(100:300);
 % u_g = u_g(100:300);
 
-epsilon = calculate_epsilon(sysd, x_g, u_g);
-% epsilon = 0.5;
+epsilon = calculate_epsilon(sysd, x_g, u_g, prev_states);
+% epsilon = 0.001;
 
 % x_g = x_g(100/3:200/3);
 % u_g = u_g(100/3:200/3);
@@ -97,22 +98,25 @@ T = size(x_g,1)/3-1;
 
 %% Simulation
 
-% equilibrium point
+% equilibrium point: Unused here
 x_e = [0 ; 0 ; 0];
 u_e = 0;
 
 % weighting matrices
-Q = eye(n);
-R = 10^-4;
-% R = 1;
+Q = [300 0 0; 0 0.1 0; 0 0 300];
+% Q = eye(n);
+% R = 10^-4;
+% R = 1e-4;
+R = 1;
 
 % Cholesky factorization of the weighting matrix: Q= MQ'*MQ, R= MR'*MR
 MQ = chol(Q);
 MR = chol(R);
 
-% initial state 
+% initial state
 % x_init = [0.01; -0.01; -0.2];
-x_init = [0.001; 0.0000; -0.001];
+% x_init = [0.0001; 0.0001; -0.0001];
+x_init = [-0.001;-0.004; 0];
 % x_init = [-0.0; -0.1; -0.00];
 % x_init = [0.00; 0.0; -0.0];
 
@@ -132,7 +136,7 @@ gamma = sdpvar(1);%objective
 L = sdpvar(1,n);%L=FP^{-1}=FH
 % tau_1 = sdpvar(1);
 % for i=1:T
-%     tau(1,i) = tau_1;       
+%     tau(1,i) = tau_1;
 % end
 tau = sdpvar(1,T);
 
@@ -140,9 +144,15 @@ tau = sdpvar(1,T);
 Pi_tau = zeros(2*n+m,2*n+m);
 Pi_mu = zeros(2*n+m,2*n+m);
 for i=1:T
-    M_x = [eye(n) x_g(n*i+1:n*(i+1));
+    % M_x = [eye(n) x_g(n*i+1:n*(i+1));
+    %        zeros(n,n) -x_g(n*(i-1)+1:n*i);
+    %        zeros(m,n) -u_g(m*(i-1)+1:m*i)];
+
+    %%% Use next_states array for non-sequential data
+    M_x = [eye(n)     next_states(n*(i-1)+1:n*i);
            zeros(n,n) -x_g(n*(i-1)+1:n*i);
            zeros(m,n) -u_g(m*(i-1)+1:m*i)];
+
     Pi_tau = Pi_tau + tau(1,i)*M_x*blkdiag(epsilon*eye(n),-eye(1))*M_x';
 end
 con_c = [[-H zeros(n,n+m);zeros(n+m,n) zeros(n+m,n+m)]+Pi_tau [zeros(n,n);H;L] zeros(m+2*n,m+n);
@@ -153,7 +163,7 @@ con_e = [H L'; L inv(S_u)]>=10^-12*eye(n+m);
 con_f = [H H; H inv(S_x)]>=10^-12*eye(2*n);
 % ?? con_f = [S_x eye(); eye H]>=10^-12*eye(2*n); ??
 
-% initial state  
+% initial state
 xmeasure = x_init;
 
 % Set variables for output
@@ -172,7 +182,7 @@ for ii=1:mpciterations
 
     % the constraint [gamma x_t'; x_t H]>=0, change with time
     con_b = [1 xmeasure'; xmeasure H]>=10^-7*eye(n+1);
-    
+
     % solve the problem with LMI constraints
     LMI = [con_b, con_c, con_d];
     % LMI = [con_b, con_c, con_d, con_e, con_f];
@@ -202,20 +212,20 @@ for ii=1:mpciterations
     % store closed loop data
     x = [ x, xmeasure ];
     u = [ u, F_star*xmeasure];
-    
+
     % update closed-loop system (apply first control move to system)
     xmeasure = A_s*xmeasure+B_s*F_star*xmeasure;
 
     % print numbers
     fprintf(' %3d  | %+11.6f %+11.6f %+11.6f  %+6.3f\n', ii, u(end),...
             x(1,end), x(2,end),t_Elapsed);
-    
-    
+
+
 
 
 end
 
-% plot closed-loop state trajetories    
+% plot closed-loop state trajetories
 f1 = figure(1);
 plot(x(1,:),x(2,:),'b'), grid on, hold on,
 plot(x(1,:),x(2,:),'ob'), grid on, hold on,
@@ -224,18 +234,22 @@ plot(x(1,1),x(2,1),'or'), grid on, hold on,
 % plot(E,'r');
 xlabel('x(1)');
 ylabel('x(2)');
-drawnow
+% drawnow
 
-% plot input trajetories    
+% plot input trajetories
 f2 = figure(2);
 plot(u,'g'), grid on, hold on,
 xlabel('t');
 ylabel('u');
-drawnow
+% drawnow
 
 %% Analyse Data Driven Controller acquired
+% F_star = [-92.2973	-8.6746	10.5355]; % Required F_star
 % F_star = [-103.459312862395	-9.74002829326616	8.76219082450918]; % Required F_star
-% F_star = [0.2131    0.4008   -3.6443];
+% F_star = [-1.33968 -8.06395 -4.56877];
+
+F_star = - F_star;
+
 fprintf('Epsilon is %f \n', epsilon);
 fprintf('F_star is [');
 fprintf('%g ', F_star);
@@ -244,6 +258,7 @@ fprintf(']\n');
 
 
 x0 = [0.0873; 0; 0]; % bike sims
+
 % x0 = [-0.01;-0.04; 0];
 
 t = 0:Ts:10;
@@ -253,17 +268,20 @@ Tc = ctrb(A_s,B_s);
 if (rank(Tc)==3)
     f3 = figure(3);
     fprintf('This system is controllable! \n');
-    
+
     % Q matrix
-    Q = [300 0 0; 0 0 0; 0 0 300];
-    
+    % Q = [10 0 0; 0 1 0; 0 0 1];
+    % Q = eye(n);
+
     % R matrix
-    R = 1;
-    
+    % R = 1e-4;
+    % R = 1;
+
     % Calculate state feedback
     A_feedback = A_s-B_s*F_star;
     if (any(isnan(F_star)))
         fprintf('F_star has NaN values, returning \n');
+        close all;
         return;
     end
     if (all(abs(eig(A_s-B_s*F_star)) <= 1))
@@ -273,6 +291,7 @@ if (rank(Tc)==3)
         end
     else
         fprintf('State Feedback System is Unstable!: Eigen values are larger than one \n');
+        close all;
     end
     Tc = ctrb(A_feedback ,B_s);
     % if (rank(Tc)~=3)
@@ -293,6 +312,7 @@ if (rank(Tc)==3)
     xlabel('Time(s)');
     ylabel('\delta(rad)');
     grid on
+    % drawnow
 end
 
 

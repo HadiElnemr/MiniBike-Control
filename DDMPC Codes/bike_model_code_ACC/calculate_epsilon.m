@@ -1,4 +1,4 @@
-function [epsilon] = calculate_epsilon(sysd, x_g, u_g)
+function [epsilon] = calculate_epsilon(sysd, x_g, u_g, prev_states)
 %calculate_epsilon Given the discretised system, x_g, and u_g collected
 %data,ouput epsilon.
 %  calculate epsilon as max error using norm 2
@@ -6,12 +6,17 @@ function [epsilon] = calculate_epsilon(sysd, x_g, u_g)
 
 N = size(x_g,1)/3;
 epsilon = 0;
-for i = 2:N
+for i = 1:N % Start from 2 if normal sequential data
+    %% For normal sequential data
+    % current_state = x_g(3*(i-1)+1:3*(i-1)+3);
+    % previous_state = x_g(3*(i-2)+1:3*(i-2)+3);
+    % predict = sysd.A * previous_state + sysd.B * u_g(i-1);
+    
+    %% For data with next_states specified
     current_state = x_g(3*(i-1)+1:3*(i-1)+3);
-    previous_state = x_g(3*(i-2)+1:3*(i-2)+3);
-
-    % predict = sysd.A*x_g(3*(i-2)+1:3*(i-2)+3) + sysd.B*u_g(i-1);
-    predict = sysd.A * previous_state + sysd.B * u_g(i-1);
+    previous_state = prev_states(3*(i-1)+1:3*(i-1)+3);
+    predict = sysd.A * previous_state + sysd.B * u_g(i);    
+    
     % error = x_g(i+1) - sysd.A*x_g(3*(i-2)+1:3*(i-2)+3) - sysd.B*u_g(i-1);
     error = predict - current_state;
     epsilon = max(norm(error, 2), epsilon);
