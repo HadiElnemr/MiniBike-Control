@@ -25,16 +25,24 @@ Thesis/chapters/*.aux
 Thesis/chapters/*.aux
 Thesis/chapters/*.log
 
-MiniBike/Bike Documentation and some codes/MISC. codes/
+MiniBike/Bike_codes_and_docs/MISC. codes/
 
-MiniBike/Bike Documentation and some codes/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/3.╨í╨═╫╘╨╨│╡▒Ω╫╝░µHAL┐Γ░µ▒╛_GMR▒α┬δ╞≈_2022.10.18/.settings/language.settings.xml
-MiniBike/Bike Documentation and some codes/Mini bike/1.WHEELTEC bike manuel (Translation).pdf
-MiniBike/Bike Documentation and some codes/Mini bike/1.WHEELTEC 舵机自平衡自行车上手使用手册.pdf
-MiniBike/Bike Documentation and some codes/Mini bike/2.WHEELTEC Stabilizing Bike Circuit and Programming Handbook (Translation).pdf
-MiniBike/Bike Documentation and some codes/Mini bike/2.WHEELTEC 自平衡自行车电路与程序设计手册.pdf
-MiniBike/Bike Documentation and some codes/Mini bike/3.Stabilizing Bike Handlebar Steering Controller Design (Translation).pdf
-MiniBike/Bike Documentation and some codes/Mini bike/3.基于车把转向控制的自平衡无人自行车.pdf
+# Google Translations
+MiniBike/Bike_codes_and_docs/Documentation_Bike/old_translations/1.WHEELTEC bike manuel (Translation).pdf
+MiniBike/Bike_codes_and_docs/Documentation_Bike/old_translations/2.WHEELTEC Stabilizing Bike Circuit and Programming Handbook (Translation).pdf
+MiniBike/Bike_codes_and_docs/Documentation_Bike/old_translations/3.Stabilizing Bike Handlebar Steering Controller Design (Translation).pdf
+# MiniBike/Bike_codes_and_docs/Documentation_Bike/1.WHEELTEC 舵机自平衡自行车上手使用手册.pdf
+# MiniBike/Bike_codes_and_docs/Documentation_Bike/2.WHEELTEC 自平衡自行车电路与程序设计手册.pdf
+# MiniBike/Bike_codes_and_docs/Documentation_Bike/3.基于车把转向控制的自平衡无人自行车.pdf
+
+# MiniBike/Bike_codes_and_docs/3. Small bicycle standard version HAL library version_GMR encoder_2022.10.18/3.╨í╨═╫╘╨╨│╡▒Ω╫╝░µHAL┐Γ░µ▒╛_GMR▒α┬δ╞≈_2022.10.18/.settings/language.settings.xml
+
 Thesis/chapters/chapter1.aux
 Suggested PDFs/DDMPC/Data-Driven Min-Max MPC for Linear Systems_ Robustness and Adaptation.pdf
 Suggested PDFs/DDMPC/Data-Driven_Min-Max_MPC_for_Linear_Systems.pdf
 MiniBike/Flymcu and driver
+MiniBike/Bike_codes_and_docs/collected_data/.env/
+MiniBike/Bike_codes_and_docs/collected_data/*.json
+MiniBike/Bike_codes_and_docs/collected_data/*.csv
+
+*.swp
