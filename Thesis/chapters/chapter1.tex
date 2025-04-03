@@ -1,5 +1,27 @@
-\chapter{Chapter1}
-\section{Section1}
+\chapter{Introduction}
+
+Riding a bicycle is a common activity for humans, but designing a controller to autonomously stabilize a bicycle presents significant engineering challenges.
+Traditional model-based controllers, such as linear quadratic regulators (LQR) and model predictive control (MPC), require an accurate system model. 
+However, some parameters of a bicycle, i.e., the center of gravity, can be difficult to determine and may fluctuate due to varying loads or additional passengers. 
+In this project, we aim to design and implement a data-driven MPC controller to stabilize an autonomous mini bike. 
+The method does not identify the system model of the bike and directly uses the collected data to design the controller. The goal is to stabilize the bike at a constant speed and the bike does not fall down. 
+Besides, we aim to keep both the lean angle and steering angle within defined safe limits for safety.
+
+
+\section{Literature Review}
+
+\section{History of IST Bike}
+
+\section{Structure of thesis}
+This thesis is structured as follows:
+Chapter 1 provides an introduction, including the background, motivation, and objectives of the research.
+Chapter 2 discusses the theoretical foundations, focusing on Model Predictive Control (MPC) and related concepts.
+Chapter 3 describes the simulation setup and the implementation of the data-driven MPC approach.
+Chapter 4 presents the experimental results, including the setup and data collection from the mini-bike.
+Chapter 5 concludes the report and discusses future work.
+
+
+\section{Literature Review}
 \blindtext
 Hello \cite{grimmeisen2022case}
 \gls{uml}
@@ -100,3 +122,98 @@ Using Bryson's rule to set Q and R:
 	\end{bmatrix}	
 \end{equation}
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    2,3 Bike Institute Morlock: (Fill in relevant information)
+
+1.1 Liter: (Fill in relevant information)
+
+1.2 History Institute Bike: (Fill in relevant information)
+
+1.3 Structure of Thesis:
+This thesis is structured as follows:
+
+Chapter 1 provides an introduction, including the background, motivation, and objectives of the research.
+
+Chapter 2 discusses the theoretical foundations, focusing on Model Predictive Control (MPC) and related concepts.
+
+Chapter 3 describes the simulation setup and the implementation of the data-driven MPC approach.
+
+Chapter 4 presents the experimental results, including the setup and data collection from the mini-bike.
+
+Chapter 5 concludes the report and discusses future work.
+
+Motivation:
+Designing a controller for an autonomous bicycle presents significant engineering challenges, especially when the model parameters, such as the center of gravity, fluctuate due to varying loads. Traditional model-based controllers require an accurate system model, which may be difficult to determine. This research explores the use of a data-driven MPC controller to stabilize a mini-bike, bypassing the need for a precise system model and instead using collected data to inform control decisions. The goal is to stabilize the bike at a constant speed while keeping both the lean angle and steering angle within defined safe limits.
+Theory
+Main Results
+
+The Model Predictive Control (MPC) approach used in this research is a type of state-feedback controller. In the context of bicycle stabilization, the MPC controller uses real-time data to predict future states of the system and adjusts the inputs accordingly to minimize a cost function. This approach allows the bike to maintain stability and stay within safe operating limits without relying on a detailed system model.
+
+State-feedback Controller:
+A state-feedback controller is designed by using the measured states of the system (e.g., lean angle, steering angle) to compute the control input (e.g., steering angle) that stabilizes the bike.
+
+MPC Theory:
+The data-driven MPC uses historical data to estimate system parameters and define the constraints and objective function in the optimization problem. The key innovation is the use of real-time data to adapt the control strategy without relying on an explicit system model.
+
+Derivation of Main Results:
+
+The key concept behind the data-driven MPC is to optimize the control input at each time step based on the current state and past data, adjusting for uncertainties and external disturbances like changes in the load or rider position.
+
+Simulation
+State-feedback Controller
+
+The simulation setup includes the implementation of a state-feedback controller based on the equations derived in the previous section. The bike model used for simulation is a simplified version of a front-steered bicycle, where key states like the lean angle and steering angle are tracked.
+MPC Implementation
+
+Data-driven MPC: This section discusses the application of the data-driven approach to stabilize the bike. The controller’s performance is evaluated by comparing it to a traditional MPC setup, where the system model is known.
+
+Comparison (Discussion):
+The results of the simulations are compared based on the control performance, including stabilization time, error rates, and the ability to handle disturbances. The comparison highlights the advantages and limitations of the data-driven MPC approach compared to traditional methods.
+
+Experiment
+Implementation of the State-feedback Controller
+
+This section details the implementation of the state-feedback controller on the real mini-bike, including:
+
+The STM32 microcontroller code
+
+Data collection for both open-loop and closed-loop experiments
+
+Implementation of Data-driven MPC
+
+The data-driven MPC controller is implemented on the mini-bike using the STM32 microcontroller, integrating the appropriate solver for the Semi-Definite Program (SDP). The results from the real-world experiments are compared to the simulation results to validate the effectiveness of the data-driven approach.
+Results
+Simulations
+
+The results of the simulations are presented, including graphs and metrics for:
+
+Stabilization performance
+
+Lean angle and steering angle control
+
+Comparison of data-driven MPC vs. traditional MPC
+
+Implementation and Experimental Setup
+
+The experimental setup for testing the self-stabilizing bike is described in detail:
+
+Hardware components (e.g., STM32 microcontroller, sensors, actuators)
+
+Experimental setup for real bike testing
+
+Data collection methods (e.g., sensor readings, control inputs)
+
+Results from the Experiment
+
+State-feedback Controller Performance:
+A comparison of the performance of the state-feedback controller when implemented on the real bike is presented, including any challenges encountered during implementation.
+
+Data-driven MPC Performance:
+The performance of the data-driven MPC is evaluated based on its ability to stabilize the bike and maintain control over the lean and steering angles under different conditions.
+
+Conclusion
+
+In conclusion, this research presents a data-driven MPC approach for stabilizing a self-balancing mini-bike. The results from both simulations and real-world experiments demonstrate the effectiveness of the data-driven approach compared to traditional MPC methods. Future work may include experimenting with the rear-steered mode of the bike (optional) and further improving the robustness of the controller in dynamic environments.
