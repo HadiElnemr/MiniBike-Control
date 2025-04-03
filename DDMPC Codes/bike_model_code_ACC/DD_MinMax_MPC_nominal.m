@@ -22,7 +22,7 @@ h = 0.088; % m (hieght of the centre of mass)
 v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
-lambda =  75/180 * pi; % in rad = 70 degrees  (fork angle)
+lambda =  90/180 * pi; % in rad = 70 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
 l = w; % length
@@ -44,7 +44,7 @@ A_s = sysd.A;
 B_s = sysd.B;
 
 % constraint on noise
-epsilon = 10^-6;
+epsilon = 0.001;
 
 % input constraint and state constraint
 u_max = 0.01;
@@ -54,7 +54,8 @@ x_hat = [0;0;0];
 % S_x = [10000 0 0; 0 5000 0; 0 0 3000];
 
 S_u = 0.01;
-S_x = [10 0 0; 0 5 0; 0 0 3];
+% S_x = [10 0 0; 0 5 0; 0 0 3];
+S_x = [5.9e-5 0 0; 0 0.01 0; 0 0 3];
 % Lean/roll angle max is 40 degrees and motor disconnects after that
 
 
@@ -62,12 +63,15 @@ S_x = [10 0 0; 0 5 0; 0 0 3];
 
 % length of the initial available data
 T = 40;
+% T = 4;
 
 % initial state for data generate
 % x_d0 = [rand(1); -rand(1)];
-x_d0 = [0.001*rand(1); -0.01*rand(1); 0.001*rand(1)]; % Change ()very small
+% x_d0 = [0.001*rand(1); -0.01*rand(1); 0.001*rand(1)]; % Change ()very small
+% x_d0 = [0.5; -0.5; 0.5]; % Change ()very small
+x_d0 = [0.5; -0.1; 0.1]; % Change ()very small
 
-% generate the data
+% generateep the data
 [u_g, x_g, K_lqr] = data_generate(A_s,B_s,epsilon,T,x_d0,u_max);
 
 % load('offline_data_1');
@@ -79,7 +83,11 @@ x_e = [0 ; 0 ; 0];
 u_e = 0;
 
 % weighting matrices
-Q = eye(n);
+% Q = eye(n);
+Q = [300  0    0;
+     0   0.1   0;
+     0    0   300];
+
 % R = 10^-4;
 R = 1;
 
@@ -88,12 +96,13 @@ MQ = chol(Q);
 MR = chol(R);
 
 % initial state 
-x_init = [-0.01;-0.04; 0];
-
+% x_init = [-0.01;-0.04; 0];
+% x_init = [-0.001;-0.004; 0];
+x_init = [0.00873; 0; 0];
 
 % Number of MPC iterations
 % mpciterations = 300;
-mpciterations = 100;
+mpciterations = 2;
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8
@@ -213,6 +222,8 @@ drawnow
 %% Analyse Data Driven Controller acquired
 % F_star = [-103.459312862395	-9.74002829326616	8.76219082450918]; % Required F_star
 % F_star = [0.2131    0.4008   -3.6443];
+F_star = - F_star;
+
 fprintf('F_star is [');
 fprintf('%g ', F_star);
 fprintf(']\n');
@@ -227,7 +238,7 @@ u = zeros(size(t));
 
 Tc = ctrb(A_s,B_s);
 if (rank(Tc)==3)
-    f3 = figure(3);
+    
     fprintf('This system is controllable! \n');
     
     % Q matrix
@@ -238,14 +249,23 @@ if (rank(Tc)==3)
     
     % Calculate state feedback
     A_feedback = A_s-B_s*F_star;
+
+    if (any(isnan(F_star)))
+        fprintf('F_star has NaN values, returning \n');
+        close all;
+        return;
+    end
     if (all(abs(eig(A_s-B_s*F_star)) <= 1))
-        fprintf('State Feedback System is stable!: Eigen values are less or equal to one \n');
+        fprintf('State Feedback System is stable!: Eigen values are less than or equal to one \n');
         if(any(abs(eig(A_s-B_s*F_star)) == 1))
             fprintf('Lyapunov stable \n')
         end
     else
         fprintf('State Feedback System is Unstable!: Eigen values are larger than one \n');
+        close all;
+        return;
     end
+    f3 = figure(3);
     Tc = ctrb(A_feedback ,B_s);
     % if (rank(Tc)~=3)
     %     fprintf('Feedback system is uncontrollable! \n');
