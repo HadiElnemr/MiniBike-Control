@@ -1,9 +1,9 @@
 % This is the code for the paper "Data-driven Min-Max MPC for Linear
 % System"
-% Toolbox: 
-% 1. Generate a sequence of data for noisy system 
+% Toolbox:
+% 1. Generate a sequence of data for noisy system
 % x_{t+1} = A_s x_t + B_s u_t + w_t, w_t satisfies instantaneous constraint
-    
+
 
 % clear workspace, close open figures
 clear all
@@ -12,9 +12,9 @@ clc
 
 %% Parameters of the system
 
-% state dimension and input dimension 
-n = 3; 
-m = 1; 
+% state dimension and input dimension
+n = 3;
+m = 1;
 
 % Bike data
 g = 9.8;
@@ -34,7 +34,7 @@ A23 = -(v^2*h-a*r_tau*g) * sin(lambda) / (h^2*l);
 A_c = [0   1   0;
       g/h  0  A23;
        0   0   0];
-B_c = [0 ; 
+B_c = [0 ;
        - a*v*sin(lambda)/(h*l) ; % Try with negative: yes
        1];
 
@@ -95,14 +95,14 @@ R = 1;
 MQ = chol(Q);
 MR = chol(R);
 
-% initial state 
+% initial state
 % x_init = [-0.01;-0.04; 0];
 % x_init = [-0.001;-0.004; 0];
 x_init = [0.00873; 0; 0];
 
 % Number of MPC iterations
 % mpciterations = 300;
-mpciterations = 2;
+mpciterations = 1;
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8
@@ -117,7 +117,7 @@ gamma = sdpvar(1);%objective
 L = sdpvar(1,n);%L=FP^{-1}=FH
 % tau_1 = sdpvar(1);
 % for i=1:T
-%     tau(1,i) = tau_1;       
+%     tau(1,i) = tau_1;
 % end
 tau = sdpvar(1,T);
 
@@ -138,7 +138,7 @@ con_e = [H L'; L inv(S_u)]>=10^-12*eye(n+m);
 con_f = [H H; H inv(S_x)]>=10^-12*eye(2*n);
 % ?? con_f = [S_x eye(); eye H]>=10^-12*eye(2*n); ??
 
-% initial state  
+% initial state
 xmeasure = x_init;
 
 % Set variables for output
@@ -157,7 +157,7 @@ for ii=1:mpciterations
 
     % the constraint [gamma x_t'; x_t H]>=0, change with time
     con_b = [1 xmeasure'; xmeasure H]>=10^-7*eye(n+1);
-    
+
     % solve the problem with LMI constraints
     LMI = [con_b,con_c,con_d,con_e,con_f];
 
@@ -186,20 +186,20 @@ for ii=1:mpciterations
     % store closed loop data
     x = [ x, xmeasure ];
     u = [ u, F_star*xmeasure];
-    
+
     % update closed-loop system (apply first control move to system)
     xmeasure = A_s*xmeasure+B_s*F_star*xmeasure;
 
     % print numbers
     fprintf(' %3d  | %+11.6f %+11.6f %+11.6f  %+6.3f\n', ii, u(end),...
             x(1,end), x(2,end),t_Elapsed);
-    
-    
+
+
 
 
 end
 
-% plot closed-loop state trajetories    
+% plot closed-loop state trajetories
 f1 = figure(1);
 plot(x(1,:),x(2,:),'b'), grid on, hold on,
 plot(x(1,:),x(2,:),'ob'), grid on, hold on,
@@ -210,7 +210,7 @@ xlabel('x(1)');
 ylabel('x(2)');
 drawnow
 
-% plot input trajetories    
+% plot input trajetories
 f2 = figure(2);
 plot(u,'g'), grid on, hold on,
 xlabel('t');
@@ -238,15 +238,15 @@ u = zeros(size(t));
 
 Tc = ctrb(A_s,B_s);
 if (rank(Tc)==3)
-    
+
     fprintf('This system is controllable! \n');
-    
+
     % Q matrix
     Q = [300 0 0; 0 0 0; 0 0 300];
-    
+
     % R matrix
     R = 1;
-    
+
     % Calculate state feedback
     A_feedback = A_s-B_s*F_star;
 
