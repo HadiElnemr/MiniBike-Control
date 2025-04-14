@@ -155,7 +155,7 @@ int main(void)
 		}
 		delay_flag=1;
 		delay_50=0;
-		while(delay_flag);	     			//ʾ������Ҫ50ms	�߾�����ʱ��delay����������Ҫ�󣬹�ʹ��MPU6050�ж��ṩ50ms��ʱ
+		// while(delay_flag);	     			//ʾ������Ҫ50ms	�߾�����ʱ��delay����������Ҫ�󣬹�ʹ��MPU6050�ж��ṩ50ms��ʱ
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

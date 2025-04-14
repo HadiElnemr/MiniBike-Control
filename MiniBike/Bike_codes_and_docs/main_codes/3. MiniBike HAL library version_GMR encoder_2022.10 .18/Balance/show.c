@@ -15,9 +15,10 @@ extern float phi_dot;
 ��ڲ�������
 ����  ֵ����
 **************************************************************************/
+// int j = 5;
 void oled_show(void)
 {
-
+	// j = (j+1)%100;
 		//=============��һ����ʾС��ģʽ=======================//
 		OLED_ShowString(0,0,"Motor:");
 		if(Flag_Stop) OLED_ShowString(70,0,"OFF");
@@ -41,6 +42,7 @@ void oled_show(void)
 		                      OLED_ShowString(80,30,"V");
 		                      OLED_ShowNumber(45,30,Voltage/100,2,12);
 		                      OLED_ShowNumber(68,30,Voltage%100,2,12);
+		                    //   OLED_ShowNumber(68,30,j,5,12);
 		 if(Voltage%100<10) 	OLED_ShowNumber(62,30,0,2,12);
 		//=============��������ʾ�Ƕ�=======================//
 		                      OLED_ShowString(0,40,"Angle");
@@ -88,11 +90,15 @@ void APP_Show(void)
 		printf("{C%d:%d:%d:%d:%d:%d:%d:%d$",(int)(kp),(int)(ki),(int)(kd),(int)(balance_point*100),(int)(LeftControl*10),(int)(RightControl*10),0,0);//��ӡ��APP����
 		PID_Send=0;
 	}
-   else	if(flag==0)// ��ʾ���������������Ƕ�����ҳ
-   printf("{A%d:%d:%d:%d}$",(u8)app_2,(u8)app_3, app_4,(int)phi); //��ӡ��APP����
-
-	 else //������ʾ�Ƕȡ����ٶȡ����PWM
-		 printf("{B%d:%d:%lu}$",(int)phi,(int)phi_dot,(unsigned long)SERVO);//��ӡ��APP���� ��ʾ����
+//    else	if(flag==0)
+//    printf("{A%d:%d:%d:%d}$",(u8)app_2,(u8)app_3, app_4,(int)phi);
+	// ;
+	//  else
+	// if(flag!=0)
+	printf("{B%.3f:%.3f:%lu}$",(float)phi,(float)phi_dot,(unsigned long)SERVO);
+		// printf("{B%2.1f:%2.1f:%lu}$",phi,phi_dot,(unsigned long)SERVO);
+		//  printf("{B%d:%d:%lu}$",(int)phi,(int)phi_dot,(unsigned long)SERVO);
+	// 	sprintf(buffer, "{B%2.1f:%2.1f:%lu}$", phi, phi_dot, (unsigned long)SERVO);
 }
 /**************************************************************************
 �������ܣ�����ʾ��������λ���������� �ر���ʾ��
