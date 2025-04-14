@@ -32,8 +32,8 @@ float delta = 0, delta_dot = 0, last_delta_dot = 0, last_delta_dot_2 = 0;
 //                                     -93.3355 -10.1406 9.54074
 //                                     -93.7508 -10.1583 9.66352
 
-// After adding appropriate Sx and Su: -111.804 -14.0193 4.06108 With 70 degrees fork
-//                                     -111.941 -15.8187 1.96986
+// After adding appropriate Sx and Su: -111.804 -14.0193 4.06108 With 70 degrees fork (bad but slightly better)
+//                                     -111.941 -15.8187 1.96986 (Did not work, bike falls in few seconds)
 //                                     -112.041 -13.8409 4.32565
 //                                     -111.901 -15.3078 2.62117
 
@@ -43,7 +43,9 @@ float delta = 0, delta_dot = 0, last_delta_dot = 0, last_delta_dot_2 = 0;
 //                                     -107.88  -13.7282 4.66033
 
 // float k1 = -93.7508, k2 = -10.1583, k3 = 9.66352; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (No Fork Angle) Experiment #4
-float k1 = -111.941, k2 = -15.8187, k3 = 1.96986; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (with Fork Angle 70) Experiment #3
+// float k1 = -111.804, k2 = -14.0193, k3 = 4.06108; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (with Fork Angle 70) Experiment #3
+float k1 = -107.88, k2 = -13.7282, k3 = 4.66033; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (with Fork Angle 75) Experiment #3
+
 
 int ki = 4, kp = 16, kd = 4;                   // PID coefficients
 int u;                                         // PWM output variable
