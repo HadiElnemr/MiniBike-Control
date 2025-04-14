@@ -44,6 +44,9 @@ B_c = [0 ;
 % Discretise
 
 Ts = 0.020; % Sampling time as in bike simulations
+% Ts = 0.05334;
+% Ts = 0.22;
+
 sysc = ss(A_c,B_c, [1 0 0], 0);
 sysd = c2d(sysc, Ts);
 
@@ -86,7 +89,7 @@ load('matlab_data.mat');
 % x_g = x_g(100:300);
 % u_g = u_g(100:300);
 
-epsilon = calculate_epsilon(sysd, x_g, u_g, prev_states);
+epsilon = calculate_epsilon(sysd, x_g, u_g, previous_states);
 % epsilon = 0.001;
 
 % x_g = x_g(100/3:200/3);

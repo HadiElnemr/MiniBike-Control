@@ -6,13 +6,13 @@ function [epsilon] = calculate_epsilon(sysd, x_g, u_g, prev_states)
 
 N = size(x_g,1)/3;
 epsilon = 0;
-for i = 1:N % Start from 2 if normal sequential data
+for i = 1:N % Start from 2 if normal sequential data % Start from 1 if prev_states specified
     %% For normal sequential data
     % current_state = x_g(3*(i-1)+1:3*(i-1)+3);
     % previous_state = x_g(3*(i-2)+1:3*(i-2)+3);
     % predict = sysd.A * previous_state + sysd.B * u_g(i-1);
     
-    %% For data with next_states specified
+    %% For data with prev_states specified
     current_state = x_g(3*(i-1)+1:3*(i-1)+3);
     previous_state = prev_states(3*(i-1)+1:3*(i-1)+3);
     predict = sysd.A * previous_state + sysd.B * u_g(i);    
