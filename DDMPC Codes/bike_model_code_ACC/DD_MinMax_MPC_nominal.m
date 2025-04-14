@@ -22,7 +22,7 @@ h = 0.088; % m (hieght of the centre of mass)
 v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
-lambda =  90/180 * pi; % in rad = 70 degrees  (fork angle)
+lambda =  75/180 * pi; % in rad = 70 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
 l = w; % length
@@ -53,9 +53,11 @@ x_hat = [0;0;0];
 % S_u = 0.01;
 % S_x = [10000 0 0; 0 5000 0; 0 0 3000];
 
-S_u = 0.01;
+% S_u = 0.01;
 % S_x = [10 0 0; 0 5 0; 0 0 3];
-S_x = [5.9e-5 0 0; 0 0.01 0; 0 0 3];
+% S_x = [5.9e-5??? 0 0; 0 0.01 0; 0 0 3]; % in radians
+S_u = 0.08207;
+S_x = [2.05 0 0; 0 0.32828 0; 0 0 1.62]; % in degrees
 % Lean/roll angle max is 40 degrees and motor disconnects after that
 
 
