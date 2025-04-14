@@ -13,9 +13,37 @@ float BalancePoint_Offset = 0;                 // Offset for balance point
 float LeftControl = 3.0f;                      // Left turn control factor
 float RightControl = 3.0f;                     // Right turn control factor
 float delta = 0, delta_dot = 0, last_delta_dot = 0, last_delta_dot_2 = 0;
-//float k1 = -92.2973, k2 = -8.6746, k3 = 10.5355; // LQR coefficients
-// float k1 = -2.0119, k2 = 0.2079, k3 = -0.4762; // LQR coefficients for fork angle model
-float k1 = -103.4593, k2 = -9.7400, k3 = 8.7622; // LQR coefficients for fork angle model (with negative sign for velocity)
+// float k1 = -92.2973, k2 = -8.6746, k3 = 10.5355; // LQR coefficients Experiment #2
+// float k1 = -103.4593, k2 = -9.7400, k3 = 8.7622; // LQR coefficients for fork angle model (75 degrees) (with negative sign for velocity) Experiment #1
+//float k1 = -1.1471, k2 = -5.50458, k3 = -0.851251;  // For some data
+//float k1 = -1.33968, k2 = -8.06395, k3 = -4.56877;  // For 1st stable data
+//float k1 = -236.863, k2 = -3.14333, k3 = 35.2826;  // For some stable sys
+
+// float k1 = -83.5311, k2 = -21.2345, k3 = -6.34192; // Data generation state-feedback T=5, eps=0.01, (not working)
+// float k1 = -103.662, k2 = -22.3076, k3 = -7.67324; // Data generation state-feedback T=40, eps=0.001, (not working)
+//float k1 = -106.993, k2 = -11.6399, k3 = 7.1795; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (working)
+
+// float k1 = -96.5329, k2 = -10.0665, k3 = 10.2872; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (No Fork Angle)
+
+// float k1 = -109.822, k2 = -18.8359, k3 = -2.2228; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (with Fork Angle)
+
+// After adding appropriate Sx and Su: -93.5741 -10.4275 9.23108 No fork
+//                                     -93.8783 -9.99457 9.93788
+//                                     -93.3355 -10.1406 9.54074
+//                                     -93.7508 -10.1583 9.66352
+
+// After adding appropriate Sx and Su: -111.804 -14.0193 4.06108 With 70 degrees fork
+//                                     -111.941 -15.8187 1.96986
+//                                     -112.041 -13.8409 4.32565
+//                                     -111.901 -15.3078 2.62117
+
+// After adding appropriate Sx and Su: -108.783 -16.4302 1.33409 With 75 degrees fork
+//                                     -108.529 -17.2309 0.18906
+//                                     -107.542 -19.1009 -2.61613
+//                                     -107.88  -13.7282 4.66033
+
+// float k1 = -93.7508, k2 = -10.1583, k3 = 9.66352; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (No Fork Angle) Experiment #4
+float k1 = -111.941, k2 = -15.8187, k3 = 1.96986; // Data generation state-feedback T=40, eps=0.001, x_d0 [0.5,-0.1,0.1] (with Fork Angle 70) Experiment #3
 
 int ki = 4, kp = 16, kd = 4;                   // PID coefficients
 int u;                                         // PWM output variable
@@ -84,6 +112,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             delta_dot = (int)delta_dot;
 
             u = ki * delta_dot + kp * (delta_dot - last_delta_dot) + kd * (delta_dot - 2 * last_delta_dot + last_delta_dot_2);
+            // add noise to u
+//            u += (rand() % 100000) - 50000;
             Servo += u / 10000;
 
             if (Servo < (MID - 130))
