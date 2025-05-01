@@ -89,7 +89,7 @@ load('matlab_data.mat');
 % x_g = x_g(100:300);
 % u_g = u_g(100:300);
 
-epsilon = calculate_epsilon(sysd, x_g, u_g, previous_states);
+epsilon = calculate_epsilon(sysd, x_g, u_g_previous, previous_states);
 % epsilon = 0.001;
 
 % x_g = x_g(100/3:200/3);
@@ -116,7 +116,7 @@ R = 1;
 MQ = chol(Q);
 MR = chol(R);
 
-% initial state
+%% initial state
 % x_init = [0.01; -0.01; -0.2];
 % x_init = [0.0001; 0.0001; -0.0001];
 x_init = [-0.001;-0.004; 0];
@@ -222,9 +222,6 @@ for ii=1:mpciterations
     % print numbers
     fprintf(' %3d  | %+11.6f %+11.6f %+11.6f  %+6.3f\n', ii, u(end),...
             x(1,end), x(2,end),t_Elapsed);
-
-
-
 
 end
 
