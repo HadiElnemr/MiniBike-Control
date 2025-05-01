@@ -25,6 +25,43 @@
 \usepackage[simplified]{pgf-umlcd}
 \usepackage{tabularx}
 \usepackage{svg}
+%%%%%%%%%%%%%%%%%%%%%%%
+% My packages
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+%%%%%%%
+\usepackage[colorinlistoftodos,
+			prependcaption,
+%			textsize=tiny,
+			textwidth=\marginparwidth,
+%			textwidth=2.5cm,    % Set width of the todo note box
+			textsize=scriptsize % Make text a bit smaller to fit
+			]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+%%%%%%%
+\usepackage{framed}
+%%%%%%%%%%%%%%%%%%%%%%%
+% Useful IST packages
+\usepackage{booktabs} % nice tables: \toprule, \midrule and \bottomrule
+\usepackage{varioref} % references with pagenumbers, use \vref{«key»} for that; otherwise \ref and \eqref
+\usepackage{marginnote}         % e.g. for url on the side
+%\usepackage{cite}               % improved citation management for numerical citations,
+% some color definitions
+%\colorlet{lcolor}{blue!40!black}
+%\colorlet{ucolor}{magenta!40!black}
+%\colorlet{ccolor}{green!40!black}
+%
+%\usepackage[colorlinks=true,%
+%linkcolor=lcolor,%
+%urlcolor=ucolor,%
+%citecolor=ccolor]{hyperref} % makes references clickable
+%% links will be in specified colors. You may set them to
+%% black for final printing.  (But already defined up)
+%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \usepackage{tikz}
@@ -177,13 +214,15 @@ afterskip=8pt]{subsection}
 \pagenumbering{arabic}
 %\renewcommand{\thepage}{\arabic{page}}  %for continueing after roman page count
 
-\include{chapters/chapter1} % Introduction
-\include{chapters/chapter2} % Theory
-\include{chapters/chapter3} % Simulation
-\include{chapters/chapter4} % Experiment
-\include{chapters/chapter5} % Results
-
-\include{chapters/Literature Review}
+\include{chapters/1-Introduction.tex} % Introduction
+\include{chapters/2-Literature Review.tex} % Introduction
+\include{chapters/3-Theory.tex} % Theory
+\include{chapters/4-Simulations.tex} % Simulation
+\include{chapters/5-Experimental Work.tex} % Experiment
+\include{chapters/6-Results and Discussion.tex} % Results
+\include{chapters/7-Conclusion.tex} 
+\listoftodos[Notes]
+\include{chapters/8-Acknowledgment.tex}
 
 \cleardoublepage
 

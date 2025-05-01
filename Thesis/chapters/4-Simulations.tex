@@ -1,0 +1,152 @@
+\chapter{Simulations}
+\label{chap:simulations}
+
+The simulations were conducted to understand the mathematical behavior of the mini-bicycle under different controllers before proceeding to experimental implementation.
+The goal was to assess stabilization performance, investigate the effects of modeling assumptions, and validate the control strategies under idealized but realistic conditions.
+
+\section{Simulation Models}
+
+Two models of the mini-bicycle were considered:
+\begin{itemize}
+	\item \textbf{With Fork Model:} A kinetic model including the fork angle, accounting for the steering head geometry.
+	\item \textbf{Without Fork Model:} A simplified kinetic model assuming the fork angle is negligible.
+\end{itemize}
+
+\unsure{Not sure about Simulation?}{Simulation results showed that the \emph{without fork model} generally produced better stabilization performance due to the reduced complexity and linearization assumptions.}
+Nevertheless, both models were used to test the robustness and adaptability of the control designs.
+
+\section{Simulation Setup}
+
+The simulations were performed using MATLAB based on the kinetic model described in Section~\ref{sec:bike_modelling}.
+The following assumptions were made:
+\begin{itemize}
+	\item The bicycle moves on a horizontal plane.
+	\item The rear wheel maintains a constant forward velocity.
+	\item Small-angle approximations are applied for the lean angle ($\phi$) and steering angle ($\delta$).
+\end{itemize}
+
+The key physical parameters used are summarized in Table~\ref{tab:simulation_parameters}.
+
+\begin{table}[H]
+	\centering
+	\caption{Simulation Parameters}
+	\label{tab:simulation_parameters}
+	\begin{tabular}{|c|c|c|p{6cm}|}
+		\hline
+		\textbf{Parameter} & \textbf{Value} & \textbf{Unit} & \textbf{Description} \\ \hline
+		$h$ & 0.088 & m & Height of center of mass \\ \hline
+		$b$ & 0.055 & m & Wheelbase \\ \hline
+		$c$ & 0.087 & m & Trail \\ \hline
+		$r_\tau$ & 0.1 & m & Distance between rear wheel and intersection of fork with ground \\ \hline
+		$g$ & 9.81 & m/s\textsuperscript{2} & Gravitational acceleration \\ \hline
+		$v$ & 0.634 & m/s & Forward speed \\ \hline
+		$w$ & 0.167 & m & Distance between front and rear wheels at ground contact points \\ \hline
+		$wheel\_radius$ & 0.0375 & m & Radius of the wheel \\ \hline
+		$\lambda$ & 0.1 & rad & Fork angle (small for simplified model) \\ \hline
+	\end{tabular}
+\end{table}
+\unsure[inline]{check definition of w}
+\unsure[inline]{check definition of fork angle}
+\improvement[inline]{Show $r_\tau$ in terms of wheel angle and change the latter's symbol}
+
+Random disturbances and measurement noise were added to the simulations to emulate real-world imperfections.
+
+\section{Controller Designs and Simulation Phases}
+
+The simulations were organized into three sequential phases, each corresponding to a different control strategy.
+
+\subsection{Phase 1: Linear Quadratic Regulator (LQR)}
+\label{subsec:lqr}
+
+An LQR controller was designed separately for both the with-fork and without-fork models by solving the discrete-time Algebraic Riccati Equation.
+Different weighting matrices $Q$ and $R$ were selected to tune the performance such as $Q = \text{diag}(300, 0, 300), R = 1$ where it gives higher cost to the lean and steering angles and neglects the rate of change of the lean angle. This does not give a high cost to the input which is the rate of change of the steering angle.
+
+The LQR served as a baseline controller and was also tested to generate input-state data necessary for the subsequent data-driven methods.
+
+\subsection{Phase 2: Data-Driven State-Feedback Controller}
+
+Using input-state data, a data-driven state-feedback controller was constructed by solving a one-shot Model Predictive Control (MPC) problem (one iteration).
+This controller was obtained without knowledge of the exact system model, relying solely on the data and solving an optimisation problem.
+
+First, a range of data was synthesised in simulation given an initial starting point for the system, an error bound for adding noise, and being controlled with a \unsure{check this}{discrete} LQR that stabilises the bicycle. The data-driven state-feedback controller based on this data stabilised the bicycle efficiently and had similar or near coefficients to those of the discretised LQR.
+
+Second, the output $K$ vector from the LQR in~\ref{subsec:lqr} was applied on the real bicycle to collect some real data. The real input-state data was then fed to the data-driven state-feedback. It turned out not to work since the process noise $\epsilon$ was too large for various segments of the data collected. From this, it was obvious that an online DDMPC would not work if the offline DDDFC does not succeed to solve the problem. This challenge is based on the real system errors compared to the ideal model that was derived to compute the errors.
+
+%The main measured states during this phase were the lean angle ($\phi$) and the steering angle ($\delta$) over time.
+\improvement{check the place for this}{These measurements formed the basis for evaluating stabilization performance.}
+
+\subsection{Phase 3: Data-Driven Min-Max MPC Controller}
+
+Finally, a full Data-Driven Min-Max MPC controller was implemented using some synthesised input-state data set.
+Here, a robust optimisation was solved to account for all system matrices consistent with the data within noise bounds.
+
+The key performance metric in this phase was the closed-loop cost over a prediction horizon:
+\[
+J = \sum_{k=0}^{N-1} (x_k^\top Q x_k + u_k^\top R u_k)
+\]
+This cost was evaluated and compared across different numbers of data points and models.
+
+\section{Simulation Scenarios}
+
+Two types of initial conditions were tested:
+\begin{enumerate}
+	\item \textbf{Nominal Case:} Bicycle starts from a small initial lean angle ($5^\circ$) and zero steering angle.
+	\item \textbf{Disturbed Case:} Bicycle starts with a larger lean angle ($8^\circ$) and an external disturbance applied to the steering dynamics.
+\end{enumerate}
+
+Both cases were simulated for each controller and for both models (with and without fork).
+
+\section{Results}
+
+Figure~\ref{fig:lqr_vs_ddmpc_lean} illustrates a representative comparison of lean angle trajectories under the different controllers.
+\improvement{Fix coming plots}{}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth, trim=100 200 100 200]{figures/plots/LQR Compute Q(300,0,300)R(1) with 75 fork angle.pdf}
+	\caption{Lean angle over time for LQR Q(300,0,300)R(1).}
+%	\label{fig:lqr_vs_ddmpc_lean}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth, trim=100 200 100 200]{figures/plots/LQR Compute Q(300,0,300)R(1) with no fork angle.pdf}
+	\caption{Lean angle over time for LQR Q(300,0,300)R(1).}
+%	\label{fig:lqr_vs_ddmpc_lean}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth, trim=100 200 100 200]{figures/plots/LQR Compute Q(300,0,300)R(100) with no fork angle.pdf}
+	\caption{Lean angle over time for LQR Q(300,0,300)R(100).}
+	\label{fig:lqr_vs_ddmpc_lean}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth, trim=100 200 100 200]{figures/plots/LQR Compute Q(300,300,300)R(1) with no fork angle.pdf}
+	\caption{Lean angle over time for LQR Q(300,300,300)R(1).}
+	\label{fig:lqr_vs_ddmpc_lean}
+\end{figure}
+
+
+Key observations:
+\begin{itemize}
+	\item The LQR controller achieved stabilization but exhibited oscillations, especially for the with-fork model.
+%	\item The one-shot data-driven state-feedback controller showed faster convergence but was less robust under strong disturbances.
+%	\item The full Data-Driven Min-Max MPC controller achieved the best trade-off between robustness and performance, stabilizing the bicycle even under larger disturbances.
+	\item The without-fork model generally resulted in better stabilization times and lower control effort compared to the with-fork model.
+	\item \improvement{Talk about the effect of Q and R}{Higher Q resulted in better results for the lean angle. The rate of change was less steeper when the rate of change of the lean angle $\dot{\phi}$ was considered}
+\end{itemize}
+
+\section{Discussion}
+
+The simulation results demonstrate that the state feedback data-driven min-max MPC approach offers improved robustness against disturbances and model uncertainties compared to traditional LQR control.
+The one-shot state-feedback controller provides a lightweight alternative but is more sensitive to noise and initial conditions.
+
+The choice between the with-fork and without-fork models significantly affects performance.
+\improvement{Change this}{The simplified model, despite neglecting the fork geometry, proved more effective for fast controller design and practical implementation on resource-constrained platforms.}
+This unexpected behaviour is probably resulting from the unknown parameters of the bicycle and interaction with the environment.
+
+\unsure[inline]{unsure about that below}{
+These findings validate the feasibility and advantages of applying data-driven control methods to autonomous bicycle stabilization.
+}

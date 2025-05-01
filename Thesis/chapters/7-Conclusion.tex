@@ -1,0 +1,24 @@
+\chapter{Conclusion}
+\label{chap:conclusion}
+
+In this work, a Data-Driven Min-Max Model Predictive Control (DD-MPC) strategy was designed, implemented, and experimentally validated for the stabilization of a self-balancing mini-bicycle.
+Unlike traditional model-based methods, the data-driven approach leveraged collected input-state measurements directly, eliminating the need for an explicit mathematical model.
+
+Through simulations and real-world experiments, the proposed Data-Driven MPC controller demonstrated improved performance compared to a baseline Linear Quadratic Regulator (LQR) controller.
+Specifically, the data-driven controller achieved faster stabilization, lower overshoot, and better robustness against model uncertainties and external disturbances.
+
+Despite hardware limitations, such as computational restrictions on the STM32 microcontroller and sensor noise, the controller effectively stabilized the mini-bicycle within defined safe operating limits.
+The offline optimization approach combined with precomputed state-feedback gains enabled real-time embedded operation, confirming the feasibility of deploying advanced data-driven control strategies on resource-constrained platforms.
+
+\section*{Future Work}
+
+Future research directions include:
+\begin{itemize}
+	\item Development of an online adaptive Data-Driven MPC to update the controller in real-time based on newly collected data.
+	\item Exploration of rear-wheel steering strategies for stationary balancing without forward motion.
+	\item Integration of higher-performance embedded hardware to allow fully online SDP optimization onboard.
+	\item Testing the controller under varying payload conditions and dynamic environments to further evaluate robustness.
+\end{itemize}
+
+Overall, the results of this research highlight the significant potential of data-driven control methods for autonomous vehicle stabilization, particularly in cases where traditional system identification is challenging or impractical.
+
