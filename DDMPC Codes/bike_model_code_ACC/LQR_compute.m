@@ -20,7 +20,7 @@ v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 % b = a; %Test
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
-lambda =  75/180 * pi; % in rad = 70 degrees  (fork angle)
+lambda =  90/180 * pi; % in rad = 70 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
 l = w; % length
@@ -62,7 +62,7 @@ D = 0;
 % C = [1 0 0];
 
 Ts = 0.020;
-t = 0:Ts:4;
+t = 0:Ts:2;
 u = zeros(size(t));
 [G,H]= c2d(A_c, B_c, Ts); % [A_d, B_d] 
 x0 = [0.0873; 0; 0];
@@ -76,21 +76,23 @@ if (rank(Tc)==3)
     Q = [300 0 0; 0 0 0; 0 0 300];
     
     % R matrix
-    R = 1;
+    R = 100;
     
     % Calculate state feedback coefficients (see calculated values for yourself)
     K = dlqr(G,H,Q,R);
     G2 = G-H*K;
 
     y = dlsim(G2,H,C,D,u,x0);
+    y_theta = y * 180 / pi;
     subplot(2,1,1)
-    plot(t,y(:,1),'b.-','LineWidth',1.5);
-    xlabel('Time(s)');
-    ylabel('\phi(rad)');
+    plot(t,y_theta(:,1),'b.-','LineWidth',1.5);
+    xlabel('Time (s)');
+    ylabel('\phi (degrees)');
     grid on
     subplot(2,1,2)
-    plot(t,y(:,2),'b.-','LineWidth',1.5);
-    xlabel('Time(s)');
-    ylabel('\delta(rad)');
+    plot(t,y_theta(:,2),'b.-','LineWidth',1.5);
+    xlabel('Time (s)');
+    ylabel('\delta (degrees)');
     grid on
+    % legend('')
 end
