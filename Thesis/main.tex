@@ -1,4 +1,5 @@
 \documentclass[12pt, a4paper, twoside,  headheight=45pt, listof=totoc, bibliography=totoc]{scrreprt}
+% scrreprt, twoside: ias, scrbook: ist
 %Settings
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -33,15 +34,24 @@
 \usepackage[colorinlistoftodos,
 			prependcaption,
 %			textsize=tiny,
-			textwidth=\marginparwidth,
-%			textwidth=2.5cm,    % Set width of the todo note box
+%			textwidth=\marginparwidth,
+			textwidth=2.5cm,    % Set width of the todo note box
 			textsize=scriptsize % Make text a bit smaller to fit
 			]{todonotes}
-\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
-\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
-\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
-\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\setlength{\marginparwidth}{2.25cm}
+\setlength{\marginparsep}{0.3cm}
+
+%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+%\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+%\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+%\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+%\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcommandx{\unsure}[1]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red]{#1}}
+\newcommandx{\change}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
+\newcommandx{\info}[1]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen]{#1}}
+\newcommandx{\improvement}[1]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum]{#1}}
+\newcommandx{\thiswillnotshow}[1]{\todo[disable]{#1}}
+
 %%%%%%%
 \usepackage{framed}
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -83,6 +93,9 @@
 
 %Font
 \usepackage{lmodern}
+\usepackage[sc,osf]{mathpazo}
+%\usepackage{mathptmx}
+
 \setkomafont{chapter}{\Large}
 \setkomafont{section}{\fontsize{16pt}{16pt}}
 \setkomafont{subsection}{\fontsize{14pt}{14pt}}
@@ -139,32 +152,33 @@ afterskip=8pt]{subsection}
 \definecolor{lightred}{rgb}{1,0.7,0.71}
 
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2
 }
 
-\setlength{\parindent}{0pt}
+%\setlength{\parindent}{0pt}
 
 \lstset{style=mystyle}
 
 
 
 \begin{document}
-\setlength{\parindent}{0pt}
+%\setlength{\parindent}{15pt}
+\setlength{\parskip}{6pt}
 
 \pagenumbering{Roman}
 %\renewcommand{\thepage}{\roman{page}}  %for continueing after roman page count
@@ -215,14 +229,14 @@ afterskip=8pt]{subsection}
 %\renewcommand{\thepage}{\arabic{page}}  %for continueing after roman page count
 
 \include{chapters/1-Introduction.tex} % Introduction
-\include{chapters/2-Literature Review.tex} % Introduction
-\include{chapters/3-Theory.tex} % Theory
-\include{chapters/4-Simulations.tex} % Simulation
-\include{chapters/5-Experimental Work.tex} % Experiment
-\include{chapters/6-Results and Discussion.tex} % Results
-\include{chapters/7-Conclusion.tex} 
+%\include{chapters/2-Literature Review.tex} % Introduction
+\include{chapters/2-Theory.tex} % Theory
+\include{chapters/3-Simulations.tex} % Simulation
+\include{chapters/4-Experimental Work.tex} % Experiment
+\include{chapters/5-Results and Discussion.tex} % Results
+\include{chapters/6-Conclusion.tex}
 \listoftodos[Notes]
-\include{chapters/8-Acknowledgment.tex}
+\include{chapters/7-Acknowledgment.tex}
 
 \cleardoublepage
 
