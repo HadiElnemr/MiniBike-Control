@@ -12,7 +12,7 @@ Two models of the mini-bicycle were considered:
 	\item \textbf{Without Fork Model:} A simplified kinetic model assuming the fork angle is negligible.
 \end{itemize}
 
-\unsure{Not sure about Simulation?}{Simulation results showed that the \emph{without fork model} generally produced better stabilization performance due to the reduced complexity and linearization assumptions.}
+\unsure{Not sure about Simulation} Simulation results showed that the \emph{without fork model} generally produced better stabilization performance due to the reduced complexity and linearization assumptions.
 Nevertheless, both models were used to test the robustness and adaptability of the control designs.
 
 \section{Simulation Setup}
@@ -59,7 +59,7 @@ The simulations were organized into three sequential phases, each corresponding 
 \label{subsec:lqr}
 
 An LQR controller was designed separately for both the with-fork and without-fork models by solving the discrete-time Algebraic Riccati Equation.
-Different weighting matrices $Q$ and $R$ were selected to tune the performance such as $Q = \text{diag}(300, 0, 300), R = 1$ where it gives higher cost to the lean and steering angles and neglects the rate of change of the lean angle. This does not give a high cost to the input which is the rate of change of the steering angle.
+Different weighting matrices $Q$ and $R$ were selected to tune the performance such as $Q = \text{diag}(300, 0, 300)$, $R = 1$ where it gives higher cost to the lean and steering angles and neglects the rate of change of the lean angle. This does not give a high cost to the input which is the rate of change of the steering angle.
 
 The LQR served as a baseline controller and was also tested to generate input-state data necessary for the subsequent data-driven methods.
 
@@ -68,7 +68,7 @@ The LQR served as a baseline controller and was also tested to generate input-st
 Using input-state data, a data-driven state-feedback controller was constructed by solving a one-shot Model Predictive Control (MPC) problem (one iteration).
 This controller was obtained without knowledge of the exact system model, relying solely on the data and solving an optimisation problem.
 
-First, a range of data was synthesised in simulation given an initial starting point for the system, an error bound for adding noise, and being controlled with a \unsure{check this}{discrete} LQR that stabilises the bicycle. The data-driven state-feedback controller based on this data stabilised the bicycle efficiently and had similar or near coefficients to those of the discretised LQR.
+First, a range of data was synthesised in simulation given an initial starting point for the system, an error bound for adding noise, and being controlled with a \unsure{check this} discrete LQR that stabilises the bicycle. The data-driven state-feedback controller based on this data stabilised the bicycle efficiently and had similar or near coefficients to those of the discretised LQR.
 
 Second, the output $K$ vector from the LQR in~\ref{subsec:lqr} was applied on the real bicycle to collect some real data. The real input-state data was then fed to the data-driven state-feedback. It turned out not to work since the process noise $\epsilon$ was too large for various segments of the data collected. From this, it was obvious that an online DDMPC would not work if the offline DDDFC does not succeed to solve the problem. This challenge is based on the real system errors compared to the ideal model that was derived to compute the errors.
 
@@ -147,6 +147,6 @@ The choice between the with-fork and without-fork models significantly affects p
 \improvement{Change this}{The simplified model, despite neglecting the fork geometry, proved more effective for fast controller design and practical implementation on resource-constrained platforms.}
 This unexpected behaviour is probably resulting from the unknown parameters of the bicycle and interaction with the environment.
 
-\unsure[inline]{unsure about that below}{
+\unsure[inline]{unsure about that below}
 These findings validate the feasibility and advantages of applying data-driven control methods to autonomous bicycle stabilization.
-}
+

@@ -1,6 +1,47 @@
 \chapter{Experimental Work}
 \label{chap:experimental_work}
 
+\improvement[inline]{Put here things from intro and modify}{Start}
+In this research project, a self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform. The primary goal of the project is to implement a data-driven State-Feedback Controller for stabilizing the bike. The mini-bike is equipped with various sensors and actuators to enable control and data acquisition.
+\todo[inline]{Add Tapken's work on the same bike with simulink modelling for it.}
+%% Mini-Bike Overview Section for Thesis
+
+\subsection{Mini-Bike Structure and Components}
+The mini-bike is based on the \textbf{WHEELTEC Z100 Servo Self-Balancing Bicycle} in Figure \ref{fig:minibike}. It features an STM32F103C8T6 microcontroller as the primary control unit, which integrates differenct sensors and motor control circuits to achieve stabilization. The bike has the following key components:
+\begin{itemize}
+	\item \textbf{Gyroscope (MPU6050)}: Provides angular velocity and acceleration data necessary for balancing the bike.
+	\item \textbf{Motor and Encoder}: The rear wheel motor is driven by an H-bridge circuit (AT8236), while the encoder measures rotational speed and position, enabling closed-loop control.
+	\item \textbf{Servo Motor}: Controls the steering mechanism, essential for maintaining balance during motion.
+	\item \textbf{Power Supply}: Powered by a 2S lithium-ion battery, maintaining an optimal voltage range of 7 to 12 volts.
+	\item \textbf{Bluetooth Module}: Allows remote control and data transmission via the MiniBalance mobile app.
+\end{itemize}
+
+\unsure[inline]{Remove structure?}
+\subsection{Balancing and Control Mechanism}
+The bike achieves self-balancing through controlling the steering angle. This is done through a controller computed using \textbf{Linear Quadratic Regulator (LQR)} combined with a \textbf{PID controller}. The LQR calculates optimal control inputs based on the state feedback to minimize the cost function, while the PID controller fine-tunes the steering speed by adjusting the PWM signals to the servo motor.
+
+The system's balance is continuously monitored through the gyroscope, which provides real-time data on tilt angles and angular velocities. These values are processed by the microcontroller to compute the necessary adjustments to the rear wheel and steering servo to maintain balance.
+
+\subsection{Data Collection and Experimental Setup}
+Data from the bike can be collected using the \textbf{USART1} for transmission to a host computer and \textbf{USART3} for Bluetooth communication. The mobile application displays data such as tilt angles, angular velocity, and PWM values, allowing for parameter adjustments during testing.
+
+\subsection{Operation and Control Interface}
+The mini-bike can be operated using a mobile application that connects via Bluetooth. The app allows the user to control the bike's direction and view live data for diagnostic purposes. Additionally, a waveform display can be accessed via a PC for more detailed analysis.
+
+\subsection{Challenges and Adjustments}
+One of the challenges encountered was the adjustment of the balance midpoint, which can be fine-tuned using potentiometers located on the main board. These potentiometers adjust the balance point without needing to modify the control algorithm directly, which is particularly useful for maintaining stability under varying conditions.
+
+In summary, the WHEELTEC mini-bike served as an experimental platform for the implementation and testing of the data-driven feedback controller, providing a practical application for a stabilisation system.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{figures/minibike/minibike}
+	\caption{A picture for the MiniBike used in the experiments.}
+	\label{fig:minibike}
+\end{figure}
+
+\improvement[inline]{Put here things from intro and modify}{End}
+
 \section{Hardware Setup}
 
 The experimental validation of the designed controllers was carried out using the WHEELTEC Z100 Mini-Bike platform described in Section~\ref{sec:minibike}.
