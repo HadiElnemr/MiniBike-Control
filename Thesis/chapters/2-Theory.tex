@@ -9,23 +9,24 @@ For controlling the bicycle, the data-driven MPC is compared with an LQR contoll
 \section{Bicycle Modelling}
 \label{sec:bike_modelling}
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.9\linewidth]{figures/minibike/model.pdf}
-	\caption{A Kinetic no-fork model of the bicycle}
-	\label{fig:bike_model}
-\end{figure}
-\todo[inline]{Add the Fork Model simple drawing}
-
 	To model the riderless bicycle, it can be treated as an inverted pendulum. There are some (assumptions) parameters that are neglected such as: elasticity of bicycle parts, the tire-road friction, etc. A simple second-order model of the bicycle can be derived given that the rear-speed is constant, the bicycle rolling on the horizontal plane, and initially, the steer axis $\lambda$ is in a vertical position as in Figure \ref{fig:bike_model}. Using the Conservation of Angular Momentum, the following Equation \ref{eq:bike_second_order} is acquired to balance the bicycle.
 	\begin{equation}
 		\label{eq:bike_second_order}
-		\ddot{\varphi} - \frac{g}{h} \varphi = \frac{av \sin \lambda}{hl} \dot{\delta} + \frac{\left(v^2 h - ar_\tau g\right) \sin \lambda}{h^2 l} \delta,
+		\ddot{\varphi} - \frac{g}{h} \varphi = - \frac{av}{hl} \dot{\delta} - \frac{v^2}{h l} \delta,
 	\end{equation}
-	where $\varphi$ is the lean angle, $\delta$ is the steer angle, $g$ is the gravity acceleration, $h$ is the height of the center of mass, $l$ is the wheelbase, $a$ is the distance from the center of mass to the front wheel, $v$ is the speed of the bicycle, and $r_\tau$ is the radius of the tire. The bicycle model is a second-order system with two states: lean angle $\varphi$ and steer angle $\delta$.
+
+	where $\varphi$ is the lean angle, $\delta$ is the steer angle, $g$ is the gravity acceleration, $h$ is the height of the center of mass, $l$ is the wheelbase, $a$ is the distance from the center of mass to the front wheel and $v$ is the speed of the bicycle. The bicycle model is a second-order system with two states: lean angle $\varphi$ and steer angle $\delta$.
+
 	This is based on linearisation where the desired stability steady-state for both angles $\delta$ and $\phi$ is 0.
-%	\varphi
-	The state-space representation of the system given by Equation \ref{eq:bike_second_order} is given by
+
+	Now, to consider the fork angle $\lambda$, Equation \eqref{eq:bike_second_order} is represented as follows.
+		\begin{equation}
+		\label{eq:bike_second_order_fork}
+		\ddot{\varphi} - \frac{g}{h} \varphi = - \frac{av \sin \lambda}{hl} \dot{\delta} - \frac{\left(v^2 h - ar_\tau g \right) \sin \lambda}{h^2 l} \delta,
+	\end{equation}
+		where $\lambda$ is the fork angle, and $r_\tau$ is the trail distance such that $r_\tau = \tan(\frac{\pi}{2} - \lambda) $.
+	It is clear that the difference between both \eqref{eq:bike_second_order} and \eqref{eq:bike_second_order_fork} is putting the fork angle $\lambda = 90\degree$ and $r_{tau} = 0$.
+	The state-space representation of the system model considering the fork angle given by Equation \ref{eq:bike_second_order_fork} is given by
 	\begin{equation}
 		\label{eq:bike_state_equation}
 		\begin{bmatrix}
@@ -36,7 +37,7 @@ For controlling the bicycle, the data-driven MPC is compared with an LQR contoll
 		=
 		\begin{bmatrix}
 			0 & 1 & 0 \\
-			\frac{g}{h} & 0 & \frac{\left(v^2 h - a r_\tau g\right) \sin \lambda}{h^2 l} \\
+			\frac{g}{h} & 0 & \frac{\left(a r_\tau g - v^2 h \right) \sin \lambda}{h^2 l} \\
 			0 & 0 & 0
 		\end{bmatrix}
 		\begin{bmatrix}
@@ -47,11 +48,20 @@ For controlling the bicycle, the data-driven MPC is compared with an LQR contoll
 		+
 		\begin{bmatrix}
 			0 \\
-			\frac{a v \sin \lambda}{h l} \\
+			\frac{- a v \sin \lambda}{h l} \\
 			1
 		\end{bmatrix}
 		\dot{\delta}.
 	\end{equation}
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.9\linewidth]{figures/minibike/model.pdf}
+	\caption{A Kinetic no-fork model of the bicycle}
+	\label{fig:bike_model}
+\end{figure}
+\todo[inline]{Add the Fork Model simple drawing}
 
 
 \section{Data-Driven Min-Max MPC}
@@ -77,13 +87,13 @@ To move to the data-driven framework, let the system equation \ref{eq:system} be
 	\end{equation}
 where $i \in \mathbb{N}$ is the index of the data.
 
-Let \((A, B)\) be the set of system matrices that satisfy the data \(x_i,\ u_i,\ x_{i+1};\ i \in \mathbb{N}\), corresponding to an index in the sequence of data which consists of inputs, noise, and state measurements. This set of system matrices can be written as follows
+Let \(\left(A, B\right)\) be the set of system matrices that satisfy the data \(x_i,\ u_i,\ x_{i+1};\ i \in \mathbb{N}\), corresponding to an index in the sequence of data which consists of inputs, noise, and state measurements. This set of system matrices can be written as follows
 	\begin{equation}
-		\Sigma_i := \left\{ ( A, B ) : (\ref{eq:system}) \text{ holds for } \omega_i \text{ satisfying } \|\omega_i\|_2^2 \leq \epsilon \right\},
+		\Sigma_i := \left\{ \left( A, B \right) : \eqref{eq:system} \text{ holds for } \omega_i \text{ satisfying } \|\omega_i\|_2^2 \leq \epsilon \right\},
 	\end{equation}
 which can be written as
 	\begin{equation}
-		\Sigma_i = \left\{ ( A, B ) :
+		\Sigma_i = \left\{ \left( A, B \right) :
 		\begin{bmatrix} I & A & B \end{bmatrix}
 		\begin{bmatrix}
 			I & x_{i+1} \\
@@ -110,11 +120,11 @@ Then, the set of system matrices consistent with all data points can be describe
 \noindent
 The set $\mathcal{C}$ can be further represented as
 	\begin{equation}
-		\mathcal{C} = \left\{ ( A, B ) :
+		\mathcal{C} = \left\{ \left( A, B \right) :
 		\begin{bmatrix} I & A & B \end{bmatrix}
 		\Pi(\tau)
 		\begin{bmatrix} I & A & B \end{bmatrix}^\top \succeq 0,\,
-		\forall \tau = (\tau_0, \ldots, \tau_{T-1}),\, \tau_i \geq 0,\, i \in \mathbb{I}_{[0,T-1]}
+		\forall \tau = \left(\tau_0, \ldots, \tau_{T-1}\right),\, \tau_i \geq 0,\, i \in \mathbb{I}_{[0,T-1]}
 		\right\},
 	\end{equation}
 such that $\Pi$ is
@@ -159,11 +169,11 @@ Now, we can state a data-driven min-max MPC problem at time $t$ by
 
 \begin{subequations} \label{eq:main_problem}
 	\begin{align}
-		J_\infty^*(x_t) &:= \min_{\bar{u}(t)} \max_{(A, B) \in \mathcal{C}} \sum_{k=0}^{\infty} l(\bar{u}_k(t), \bar{x}_k(t)) \\
+		J_\infty^*(x_t) &:= \min_{\bar{u}(t)} \max_{(A, B) \in \mathcal{C}} \sum_{k=0}^{\infty} l\left(\bar{u}_k(t), \bar{x}_k(t)\right) \\
 		\text{s.t.} \quad & \bar{x}_{k+1}(t) = A \bar{x}_k(t) + B \bar{u}_k(t), \label{subeq:b}\\
 		& \bar{x}_0(t) = x_t, \label{subeq:c}\\
 		& \|\bar{u}_k(t)\|_{S_u} \leq 1, \ \forall t \in \mathbb{N}, \label{subeq:d}\\
-		& \|\bar{x}_k(t)\|_{S_x} \leq 1, \ \forall (A, B) \in \mathcal{C}, \ t \in \mathbb{N} \label{subeq:e}.
+		& \|\bar{x}_k(t)\|_{S_x} \leq 1, \ \forall \left(A, B\right) \in \mathcal{C}, \ t \in \mathbb{N} \label{subeq:e}.
 	\end{align}
 \end{subequations}
 
@@ -228,7 +238,7 @@ To incorporate the remaining constraints, they can be expressed as the following
 	\end{gather}
 \end{subequations}
 
-Now, having \eqref{SDP_LMIs} and \eqref{eq:constraints_LMIs}, the data-driven min-max MPC \eqref{eq:main_problem} in its SDP formulation can be solved after representing as the following.
+Now, having \eqref{SDP_LMIs} and \eqref{eq:constraints_LMIs}, the data-driven min-max MPC \eqref{eq:main_problem} can be solved after representing it in its SDP formulation as the following.
 \begin{subequations} \label{eq:final_gamma}
 	\begin{gather}
 		\minimise_{\gamma, H, L, \tau} \gamma \\
@@ -236,30 +246,30 @@ Now, having \eqref{SDP_LMIs} and \eqref{eq:constraints_LMIs}, the data-driven mi
 	\end{gather}
 \end{subequations}
 
-The optimal solution for problem \eqref{eq:final_gamma} is then represented as $\gamma^\star, \, H^\star, \, L^\star, \, \tau^\star$. Consequently, the optimal state-feedback gain is $F = L^\star (H^\star)^{-1}$
+The optimal solution for problem \eqref{eq:final_gamma} is then expressed as $\gamma^\star, \, H^\star, \, L^\star, \, \tau^\star$. Consequently, the optimal state-feedback gain is $F = L^\star (H^\star)^{-1}$
 
 Since MPC is a receding horizon control, \eqref{eq:final_gamma} is solved in receding horizon manner as per the Algorithm \ref{alg:algorithm_MPC}.
 
 \begin{algorithm}
-	\label{alg:algorithm_MPC}
 	\caption{Data-driven min-max MPC}
+%	\label{alg:algorithm_MPC}
 	\begin{algorithmic}[1]
 		\STATE At time $t = 0$, measure state $x_0$;
-		\STATE Solve the problem \eqref{20};
+		\STATE Solve the problem \eqref{eq:final_gamma};
 		\STATE Apply the input $u_t = F_t x_t$;
 		\STATE Set $t = t + 1$ and go back to 2;
 	\end{algorithmic}
+	\label{alg:algorithm_MPC}
 \end{algorithm}
-\todo[inline]{I am here now}
 
-The optimal feedback gain \(K\) is obtained by solving a convex semidefinite program (SDP) derived from the min-max formulation.
-Specifically, there exists a positive definite matrix \(P\) such that for all \((A, B) \in \mathcal{C}\), the following holds:
-\[
-(A + B K)^\top P (A + B K) - P + Q + K^\top R K \preceq 0.
-\]
-This inequality ensures that the closed-loop system is exponentially stable and satisfies the cost decrease condition.
-
-The SDP formulation allows the computation of \(K\) directly from the noisy input-state data without requiring explicit model identification.
+%The optimal feedback gain \(K\) is obtained by solving a convex semidefinite program (SDP) derived from the min-max formulation.
+%Specifically, there exists a positive definite matrix \(P\) such that for all \((A, B) \in \mathcal{C}\), the following holds:
+%\[
+%(A + B K)^\top P (A + B K) - P + Q + K^\top R K \preceq 0.
+%\]
+%This inequality ensures that the closed-loop system is exponentially stable and satisfies the cost decrease condition.
+%
+%The SDP formulation allows the computation of \(K\) directly from the noisy input-state data without requiring explicit model identification.
 
 
 
@@ -268,22 +278,76 @@ The SDP formulation allows the computation of \(K\) directly from the noisy inpu
 	\textbf{Main Optimization Problem: Data-Driven Min-Max MPC}
 
 	\vspace{0.3em}
-	Given collected input-state data and the corresponding consistent set of system matrices \(\mathcal{C}\),
-	the data-driven min-max control problem seeks a state-feedback gain \(K\) minimizing the worst-case infinite-horizon cost:
+	Given collected input-state data, the data-driven min-max control problem seeks a state-feedback gain \(F_t\) minimizing the worst-case infinite-horizon cost:
 	\[
-	\min_{u(t)} \max_{(A, B) \in \mathcal{C}} \sum_{k=0}^{\infty} x_k^\top Q x_k + u_k^\top R u_k
+	\min_{\bar{u}(t)} \max_{(A, B) \in \mathcal{C}} \sum_{k=0}^{\infty} x_k^\top Q x_k + \bar{u}_k^\top R u_k
 	\]
-	subject to the closed-loop dynamics:
-	\[
-	x_{k+1} = (A + B K) x_k
-	\]
-	and input-state constraints (if any).
+	given an initial state $x_t$ subject to some unput and state constraints and the corresponding consistent set of system matrices \(\mathcal{C}\).
 
-	This is reformulated as a semidefinite program (SDP) that searches for a positive definite matrix \(P \succ 0\) and feedback gain \(K\) satisfying:
-	\[
-	(A + B K)^\top P (A + B K) - P + Q + K^\top R K \preceq 0, \quad \forall (A, B) \in \mathcal{C}.
-	\]
+	The SDP reformulation of the optimisation problem is as follows:
+	\begin{subequations}\nonumber %\label{eq:final_gamma}
+		\begin{gather}
+			\minimise_{\gamma, H, L, \tau} \gamma \\
+			\text{s.t. the following LMIs}
+		\end{gather}
+	\end{subequations}
+	\begin{subequations}\nonumber %\label{SDP_LMIs}
+		\begin{gather}
+			\begin{bmatrix}
+				1 & x_t^\top \\
+				x_t & H
+			\end{bmatrix} \succeq 0,
+			\\
+			\begin{bmatrix}
+				\begin{bmatrix}
+					-H & 0 \\
+					0 & 0
+				\end{bmatrix}
+				+
+				\Pi(\tau)
+				&
+				\begin{bmatrix}
+					0 \\
+					H \\
+					L
+				\end{bmatrix}
+				&
+				0 \\
+				\begin{bmatrix}
+					0 & H & L^\top
+				\end{bmatrix}
+				& -H & \Phi^\top \\
+				0 & \Phi & -\gamma I
+			\end{bmatrix} \prec 0,
+			\\
+			\tau = (\tau_0, \ldots, \tau_{T-1}), \ \tau_i \geq 0, \ \forall i \in \mathbb{I}_{[0, T-1]},
+		\end{gather}
+	\end{subequations}
+	\begin{subequations} \nonumber
+		\begin{gather}
+			\begin{bmatrix}
+				H & L^\top \\
+				L & S_u^{-1}
+			\end{bmatrix} \succeq 0,
+			\\
+			%		\quad
+			\begin{bmatrix}
+				S_x & I \\
+				I & H
+			\end{bmatrix} \succeq 0.
+		\end{gather}
+	\end{subequations}
+%	subject to the closed-loop dynamics:
+%	\[
+%	x_{k+1} = (A + B K) x_k
+%	\]
+%	and input-state constraints (if any).
+
+%	This is reformulated as a semidefinite program (SDP) that searches for a positive definite matrix \(P \succ 0\) and feedback gain \(K\) satisfying:
+%	\[
+%	(A + B K)^\top P (A + B K) - P + Q + K^\top R K \preceq 0, \quad \forall (A, B) \in \mathcal{C}.
+%	\]
 
 	\vspace{0.5em}
-	The resulting controller guarantees robust exponential stability and constraint satisfaction for all systems compatible with the observed data.
+%	The resulting controller guarantees robust exponential stability and constraint satisfaction for all systems compatible with the observed data.
 \end{framed}

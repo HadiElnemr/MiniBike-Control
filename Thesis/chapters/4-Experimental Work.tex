@@ -1,52 +1,25 @@
 \chapter{Experimental Work}
 \label{chap:experimental_work}
 
-\improvement[inline]{Put here things from intro and modify}{Start}
-In this research project, a self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform. The primary goal of the project is to implement a data-driven State-Feedback Controller for stabilizing the bike. The mini-bike is equipped with various sensors and actuators to enable control and data acquisition.
-\todo[inline]{Add Tapken's work on the same bike with simulink modelling for it.}
+\todo[inline]{Put here things from intro and modify, Start}
+To test the data-driven controller in a real life experiment, a model-scale bicycle was chosen. The self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform. The primary goal of the project is to implement the data-driven controllers for stabilizing the bike. The mini-bike is equipped with various sensors and actuators to enable control and data acquisition.
+\todo[inline]{Add Tapken's work on the same bike with simulink modelling for it. No: in intro better}
 %% Mini-Bike Overview Section for Thesis
 
-\subsection{Mini-Bike Structure and Components}
-The mini-bike is based on the \textbf{WHEELTEC Z100 Servo Self-Balancing Bicycle} in Figure \ref{fig:minibike}. It features an STM32F103C8T6 microcontroller as the primary control unit, which integrates differenct sensors and motor control circuits to achieve stabilization. The bike has the following key components:
-\begin{itemize}
-	\item \textbf{Gyroscope (MPU6050)}: Provides angular velocity and acceleration data necessary for balancing the bike.
-	\item \textbf{Motor and Encoder}: The rear wheel motor is driven by an H-bridge circuit (AT8236), while the encoder measures rotational speed and position, enabling closed-loop control.
-	\item \textbf{Servo Motor}: Controls the steering mechanism, essential for maintaining balance during motion.
-	\item \textbf{Power Supply}: Powered by a 2S lithium-ion battery, maintaining an optimal voltage range of 7 to 12 volts.
-	\item \textbf{Bluetooth Module}: Allows remote control and data transmission via the MiniBalance mobile app.
-\end{itemize}
+\section{Mini-Bike}
+The mini-bike is based on the \textbf{WHEELTEC Z100 Servo Self-Balancing Bicycle} in Figure \ref{fig:minibike}. It features an STM32F103C8T6 microcontroller as the primary control unit, which integrates different sensors and motor control circuits to achieve stabilization.
 
-\unsure[inline]{Remove structure?}
-\subsection{Balancing and Control Mechanism}
-The bike achieves self-balancing through controlling the steering angle. This is done through a controller computed using \textbf{Linear Quadratic Regulator (LQR)} combined with a \textbf{PID controller}. The LQR calculates optimal control inputs based on the state feedback to minimize the cost function, while the PID controller fine-tunes the steering speed by adjusting the PWM signals to the servo motor.
-
-The system's balance is continuously monitored through the gyroscope, which provides real-time data on tilt angles and angular velocities. These values are processed by the microcontroller to compute the necessary adjustments to the rear wheel and steering servo to maintain balance.
-
-\subsection{Data Collection and Experimental Setup}
-Data from the bike can be collected using the \textbf{USART1} for transmission to a host computer and \textbf{USART3} for Bluetooth communication. The mobile application displays data such as tilt angles, angular velocity, and PWM values, allowing for parameter adjustments during testing.
-
-\subsection{Operation and Control Interface}
-The mini-bike can be operated using a mobile application that connects via Bluetooth. The app allows the user to control the bike's direction and view live data for diagnostic purposes. Additionally, a waveform display can be accessed via a PC for more detailed analysis.
-
-\subsection{Challenges and Adjustments}
-One of the challenges encountered was the adjustment of the balance midpoint, which can be fine-tuned using potentiometers located on the main board. These potentiometers adjust the balance point without needing to modify the control algorithm directly, which is particularly useful for maintaining stability under varying conditions.
-
-In summary, the WHEELTEC mini-bike served as an experimental platform for the implementation and testing of the data-driven feedback controller, providing a practical application for a stabilisation system.
-
-\begin{figure}
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/minibike/minibike}
 	\caption{A picture for the MiniBike used in the experiments.}
 	\label{fig:minibike}
 \end{figure}
 
-\improvement[inline]{Put here things from intro and modify}{End}
+%\subsection{Mini-Bike Structure and Components}
 
-\section{Hardware Setup}
 
-The experimental validation of the designed controllers was carried out using the WHEELTEC Z100 Mini-Bike platform described in Section~\ref{sec:minibike}.
-The primary hardware components of the system are summarized as follows:
-
+The bike has the following key components:
 \begin{itemize}
 	\item \textbf{Microcontroller:} STM32F103C8T6 (ARM Cortex-M3)
 	\item \textbf{IMU Sensor:} MPU6050 (3-axis gyroscope and accelerometer)
@@ -57,44 +30,30 @@ The primary hardware components of the system are summarized as follows:
 	\item \textbf{Wireless Communication:} Bluetooth module (USART3)
 \end{itemize}
 
-Data acquisition and control commands were handled by the STM32 microcontroller operating at a sampling frequency of $100$~Hz.
-Communication with the host computer for debugging and data logging was achieved through a UART serial interface.
+%\subsection{Balancing and Control Mechanism}
 
-\section{Software Implementation}
+The bike uses steering angle control to self-balance. This is done through an LQR followed by a PID controller. The LQR computes the state-feedback gain that minimises the cost function. While the PID controller adjusts the PWM signals to the servo motor to fine-tune the steering speed.
+
+The bike is balanced continuously through getting data from the gyroscope, which provides real-time data on tilt angles and angular velocities. The microcontroller operated at a frequency of 100 Hz. The measurements are processed by the microcontroller to compute the control law, where the input is the steering angle derivative.
+
+The Data was collected from the bike through a Bluetooth connection using USART3, where the frequency of data was about 10 Hz. A mobile device was connected to the bike where the data received was saved for processing.
+
+The mini-bike allows adjustment of the balance midpoint through a potentiometer; if it is offset from zero, the bike will move in a circle in the direction of the lean. Moving in a circle allowed for a longer range of data collected while driving under a controller.
+
+\improvement[inline]{Put here things from intro and modify}{End}
+
+\todo[inline]{I am here now}
 
 The control algorithms were implemented on the STM32 using C++ programming with HAL Drivers.
-Key implementation steps included:
-\begin{itemize}
-	\item Reading IMU data (lean angle and angular velocity) via I2C communication.
-	\item Processing encoder pulses to estimate forward velocity.
-	\item Applying a complementary filter to estimate the lean angle more robustly.
-	\item Implementing the state-feedback controller (LQR) and switching later to the Data-Driven MPC control law.
-	\item Controlling the steering servo via PWM signal modulation.
-	\item Logging real-time data through USART1 to a PC terminal for offline analysis.
-	\item \todo{Bluetooth}
-\end{itemize}
+The platform on which the development of codes were done is the \textit{stm32cube programmer}, which is a free unlimited software for writing and building the codes. It compiled the codes into a Hexadecimal file which can then be flashed on the STM32 microcontroller using FlyMCU software.
 
-The real-time computation of the Data-Driven MPC control law involved solving a semi-definite programming (SDP) problem.
-Due to computational limitations of the STM32, the SDP optimization was first performed offline, and the resulting state-feedback gain matrix was embedded into the embedded controller as a static gain.
+The codes read the IMU data (lean angle and angular velocity) via I2C communication. Then, the forward velocity is estimated by processing the encoder pulses. The lean angle is estimated by a complementary filter. The implemented control law is then applied using the states and a control input is determined. Consequently, the PWM signal of the steering servo is computed and applied.
 
-\section{Data Collection}
+The data-driven MPC controller was not implemented since the real-life errors prevented successful solving of the SDP on real data as stated before. Due to this limitation, the SDP optimisation was first performed offline, and the resulting state-feedback gain matrix was embedded into the embedded controller as a static gain.
 
-Two types of data were collected during the experiments:
-\begin{itemize}
-	\item \textbf{Open-loop Data:} System response without feedback control to characterize the dynamics and validate the bicycle model.
-	\item \textbf{Closed-loop Data:} System response under the LQR and Data-Driven MPC controllers.
-\end{itemize}
+The system states that were recorded are the lean angle ($\phi$), lean rate ($\dot{\phi}$), and Steering angle ($\delta$).
 
-The following signals were recorded:
-\begin{itemize}
-	\item Lean angle ($\phi$)
-	\item Lean rate ($\dot{\phi}$)
-	\item Steering angle ($\delta$)
-	\item Control input (steering rate command)
-	\item Motor encoder readings (optional)
-\end{itemize}
-
-Data was logged at a sampling rate of $100$~Hz, synchronized with control execution.
+\section{Results}
 
 \section{Experimental Procedure}
 
