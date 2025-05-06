@@ -22,7 +22,8 @@ h = 0.088; % m (hieght of the centre of mass)
 v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
-lambda =  75/180 * pi; % in rad = 70 degrees  (fork angle)
+% lambda =  75/180 * pi; % in rad = 70,75 degrees  (fork angle)
+lambda =  75/180 * pi; % in rad = 70,75 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
 l = w; % length
@@ -44,7 +45,8 @@ A_s = sysd.A;
 B_s = sysd.B;
 
 % constraint on noise
-epsilon = 0.001;
+% epsilon = 0.001;
+epsilon = 1e-5;
 
 % input constraint and state constraint
 u_max = 0.01;
@@ -56,8 +58,17 @@ x_hat = [0;0;0];
 % S_u = 0.01;
 % S_x = [10 0 0; 0 5 0; 0 0 3];
 % S_x = [5.9e-5??? 0 0; 0 0.01 0; 0 0 3]; % in radians
-S_u = 0.08207;
-S_x = [2.05 0 0; 0 0.32828 0; 0 0 1.62]; % in degrees
+% S_u = 0.08207;
+% S_x = [2.05 0 0; 0 0.32828 0; 0 0 1.62]; % in radians
+
+% IN RADIANS:
+S_u = 0.005836;
+S_x = [2.6798 0 0; 0 0.32828 0; 0 0 2.05]; % in radians, recalculated
+
+% IN DEGREES:
+% S_u = 1.7777777777777777e-06; % in degrees
+% S_x = [0.00444 0 0; 0 0.0001 0; 0 0 0.000625]; % in degrees
+
 % Lean/roll angle max is 40 degrees and motor disconnects after that
 
 
@@ -100,11 +111,11 @@ MR = chol(R);
 % initial state
 % x_init = [-0.01;-0.04; 0];
 % x_init = [-0.001;-0.004; 0];
-x_init = [0.00873; 0; 0];
+x_init = [0.0873; 0; 0];
 
 % Number of MPC iterations
-% mpciterations = 300;
-mpciterations = 1;
+mpciterations = 150;
+% mpciterations = 1;
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8
@@ -153,6 +164,7 @@ tau_op = [];
 F_op = [];
 t = [];
 
+%% Start MPC iterations
 for ii=1:mpciterations
 
     t_Start = tic;
@@ -162,7 +174,7 @@ for ii=1:mpciterations
 
     % solve the problem with LMI constraints
     LMI = [con_b,con_c,con_d,con_e,con_f];
-
+    % LMI = [con_b,con_c,con_d];
     % solution
     P = optimizer(LMI,gamma,option,[],{gamma,H,L,tau});
     sol = P();
@@ -201,18 +213,42 @@ for ii=1:mpciterations
 
 end
 
-% plot closed-loop state trajetories
+%% plot closed-loop state trajetories
 f1 = figure(1);
 plot(x(1,:),x(2,:),'b'), grid on, hold on,
 plot(x(1,:),x(2,:),'ob'), grid on, hold on,
 plot(x(1,1),x(2,1),'or'), grid on, hold on,
 % E = ellipsoid(x_hat, inv(S_x));
-% plot(E,'r');
-xlabel('x(1)');
-ylabel('x(2)');
-drawnow
+% [x, y, z] = ellipsoid(x_hat(1), x_hat(2), x_hat(3), a, b, c);
+% plot(x,y,z,'r');
+% xlabel('x(1)');
+% ylabel('x(2)');
+% drawnow
 
-% plot input trajetories
+%% Ellipsoid drawing 
+%%%%%%%%%%%%%%% Ellipsoid drawing %%%%%%%%%%%%%%%
+% center = x_hat;
+% Sx_inv = inv(S_x);
+% [V, D] = eig(Sx_inv);
+% radii = sqrt(diag(D));
+% [xe, ye, ze] = ellipsoid(0, 0, 0, radii(1), radii(2), radii(3));
+% % Transform to align with eigenvectors and shift to center
+% ellipsoid_pts = V * [xe(:)'; ye(:)'; ze(:)'];
+% xe_new = reshape(ellipsoid_pts(1,:), size(xe)) + center(1);
+% ye_new = reshape(ellipsoid_pts(2,:), size(ye)) + center(2);
+% ze_new = reshape(ellipsoid_pts(3,:), size(ze)) + center(3);
+% % Plot
+% figure(5)
+% surf(xe_new, ye_new, ze_new, 'FaceAlpha', 0.3, 'EdgeColor', 'none', 'FaceColor', 'r');
+% xlabel('x(1)');
+% ylabel('x(2)');
+% zlabel('x(3)');
+% axis equal
+% grid on
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% plot input trajetories
 f2 = figure(2);
 plot(u,'g'), grid on, hold on,
 xlabel('t');
@@ -235,7 +271,7 @@ fprintf(']\n');
 x0 = [0.0873; 0; 0]; % bike sims
 % x0 = [-0.01;-0.04; 0];
 Ts = 0.020;
-t = 0:Ts:10;
+t = 0:Ts:2;
 u = zeros(size(t));
 
 Tc = ctrb(A_s,B_s);
@@ -277,14 +313,26 @@ if (rank(Tc)==3)
          0 0 1];
     D = 0;
     y = dlsim(A_feedback,B_s,C,D,u,x0);
+    y_theta = y * 180 / pi;
+    % subplot(2,1,1)
+    % plot(t,y_theta(:,1),'b.-','LineWidth',1.5);
+    % xlabel('Time(s)');
+    % ylabel('\phi (degrees)');
+    % grid on
+    % subplot(2,1,2)
+    % plot(t,y_theta(:,2),'b.-','LineWidth',1.5);
+    % xlabel('Time (s)');
+    % ylabel('\delta (degrees)');
+    % grid on
+    y_theta = x * 180 / pi;
     subplot(2,1,1)
-    plot(t,y(:,1),'b.-','LineWidth',1.5);
-    xlabel('Time(s)');
-    ylabel('\phi(rad)');
+    plot(y_theta(1,:),'b.-','LineWidth',1.5);
+    xlabel('Time step k');
+    ylabel('\phi (degrees)');
     grid on
     subplot(2,1,2)
-    plot(t,y(:,2),'b.-','LineWidth',1.5);
-    xlabel('Time(s)');
-    ylabel('\delta(rad)');
+    plot(y_theta(3,:),'b.-','LineWidth',1.5);
+    xlabel('Time step k');
+    ylabel('\delta (degrees)');
     grid on
 end

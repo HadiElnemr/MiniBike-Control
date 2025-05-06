@@ -53,6 +53,9 @@ B_c = [0 ;
 
 C = [1 0 0;
      0 0 1];
+% C = [1 0 0;
+%      0 1 0;
+%      0 0 1];
 D = 0;
 
 % sysc = ss(A_c,B_c, [1 0 0], 0);
@@ -76,7 +79,7 @@ if (rank(Tc)==3)
     Q = [300 0 0; 0 0 0; 0 0 300];
     
     % R matrix
-    R = 100;
+    R = 1;
     
     % Calculate state feedback coefficients (see calculated values for yourself)
     K = dlqr(G,H,Q,R);
