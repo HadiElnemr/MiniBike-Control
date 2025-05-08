@@ -57,6 +57,8 @@ The input and state constraints for the system were defined as follows.
 	\end{bmatrix}
 \end{gather}
 
+The lean angle is constrained between -40 and 40
+
 The three different simulations corresponding to different control strategies are discussed below.
 
 %\textbf{Linear Quadratic Regulator (LQR)}
@@ -69,6 +71,9 @@ Different weighting matrices $Q$ and $R$ were selected to modify the weights giv
 The LQR served as a baseline controller and was also tested to generate input-state data necessary for the subsequent data-driven methods.
 In \autoref{fig:lqr_sim_figs}, four simulations are conducted to show the difference in performance for different $Q$ and $R$ settings. Matrix $Q$ corresponds to the cost associated with the states, whereas $R$ corresponds to the cost associated with the inputs.
 \autoref{fig:lqr4} shows that giving more weight to the second state, namely the lean angle rate of change, smooths the lean angle response and reduces its steepness. Since the input is the steering angle rate of change $\dot{\delta}$, when giving it more weight in \autoref{fig:lqr3} all states are smoothened.
+
+\todo[inline]{I am here now}
+
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}

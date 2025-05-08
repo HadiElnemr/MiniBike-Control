@@ -1,7 +1,6 @@
 \chapter{Experimental Work}
 \label{chap:experimental_work}
 
-\todo[inline]{Put here things from intro and modify, Start}
 To test the data-driven controller in a real life experiment, a model-scale bicycle was chosen. The self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform. The primary goal of the project is to implement the data-driven controllers for stabilizing the bike. The mini-bike is equipped with various sensors and actuators to enable control and data acquisition.
 \todo[inline]{Add Tapken's work on the same bike with simulink modelling for it. No: in intro better}
 %% Mini-Bike Overview Section for Thesis
@@ -11,7 +10,7 @@ The mini-bike is based on the \textbf{WHEELTEC Z100 Servo Self-Balancing Bicycle
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.7\linewidth]{figures/minibike/minibike}
+	\includegraphics[width=0.7\linewidth]{figures/minibike/minibike_annotated.pdf}
 	\caption{A picture for the MiniBike used in the experiments.}
 	\label{fig:minibike}
 \end{figure}
@@ -40,10 +39,6 @@ The Data was collected from the bike through a Bluetooth connection using USART3
 
 The mini-bike allows adjustment of the balance midpoint through a potentiometer; if it is offset from zero, the bike will move in a circle in the direction of the lean. Moving in a circle allowed for a longer range of data collected while driving under a controller.
 
-\improvement[inline]{Put here things from intro and modify}{End}
-
-\todo[inline]{I am here now}
-
 The control algorithms were implemented on the STM32 using C++ programming with HAL Drivers.
 The platform on which the development of codes were done is the \textit{stm32cube programmer}, which is a free unlimited software for writing and building the codes. It compiled the codes into a Hexadecimal file which can then be flashed on the STM32 microcontroller using FlyMCU software.
 
@@ -53,30 +48,57 @@ The data-driven MPC controller was not implemented since the real-life errors pr
 
 The system states that were recorded are the lean angle ($\phi$), lean rate ($\dot{\phi}$), and Steering angle ($\delta$).
 
-\section{Results}
+\section{Experiments}
+Four different controllers were applied on the mini-bike based on both the LQR and data-driven state-feedback discussed in \autoref{chap:simulations}. The experiments are described in \autoref{tab:controllers_summary}.
 
-\section{Experimental Procedure}
+\begin{table}[H]
+	\centering
+	\caption{Overview of controllers applied on the mini-bike}
+	\label{tab:controllers_summary}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Experiment} & \textbf{Controller} & \textbf{Target Angle}  & \textbf{Target Angle} \\ \hline
+		1 & LQR & $75^\circ$  & $4^\circ$ \\ \hline
+		2 & LQR & $90^\circ$  &  $5^\circ$ \\ \hline
+		3 & Data-driven state-feedback & $75^\circ$  &  $3.5^\circ$ \\ \hline
+		4 & Data-driven state-feedback & $90^\circ$  &  $4^\circ$ \\ \hline
+	\end{tabular}
+\end{table}
 
-The experimental procedure involved the following steps:
-\begin{enumerate}
-	\item Calibrate the IMU sensor to eliminate initial offsets.
-	\item Start the bicycle with an initial forward velocity manually achieved by a push.
-	\item Apply the selected controller (LQR or Data-Driven MPC).
-	\item Record the system's lean angle and steering angle evolution during the stabilization process.
-	\item Introduce manual disturbances by slightly perturbing the bicycle during motion.
-	\item Stop the experiment after achieving stabilization or falling.
-\end{enumerate}
+The results acquired on implementing the controllers and collecting the data are plotted in \autoref{fig:experiments}. It can be noticed that the data length varies across the 4 experiments. This is due to the capability of collecting the data before the bicycle falls, particularly in experiment 3 in \autoref{fig:exp3}, where the controller did not maintain bicycle balance for an extended period.
 
-Each experimental run was repeated multiple times to ensure reproducibility and to evaluate the robustness of the controller under different initial conditions and disturbances.
-
-\section{Challenges Encountered}
-
-Several practical challenges were encountered during the experimental phase:
-\begin{itemize}
-	\item \textbf{Sensor Noise:} The MPU6050 exhibited significant noise at low velocities, requiring careful filtering and calibration.
-	\item \textbf{Timing and Delays:} Limited computational resources led to minor delays in control signal update, impacting the system's responsiveness.
-	\item \textbf{Motor Saturation:} The servo motor exhibited saturation effects at high steering rates, limiting the maximum achievable control torque.
-	\item \textbf{Balance Midpoint Drift:} Fine adjustments of the potentiometer on the main board were necessary to maintain correct balance points without modifying the control code.
-\end{itemize}
-
-Despite these challenges, stable experimental results were obtained, validating the effectiveness of the proposed data-driven control strategy.
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/experiments_plots/line_plot_Exp_1_fast_data_target_4.0_degrees_Fixed_screw_avg_4.36.pdf}
+		\caption{\boldmath LQR for $75^\circ$ fork angle and $4^\circ$ target angle.}
+				\label{fig:exp1}
+	\end{subfigure}
+	\vspace{0.5cm}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/experiments_plots/line_plot_Exp_2_fast_data_target_5_degrees_avg_5.99.pdf}
+		\caption{\boldmath LQR for $90^\circ$ fork angle and $5^\circ$ target angle.}
+				\label{fig:exp2}
+	\end{subfigure}
+\end{figure}
+%	\vspace{0.5cm}
+\begin{figure}[htbp]\ContinuedFloat
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/experiments_plots/line_plot_Exp_3_fast_data_target_3.5_degrees_Fixed_screw_avg_5.21.pdf}
+		\caption{\boldmath Data-driven state-feedback for $75^\circ$ fork angle and $3.5^\circ$ target angle.}
+				\label{fig:exp3}
+	\end{subfigure}
+	\vspace{0.5cm}
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/experiments_plots/line_plot_Exp_4_fast_data_target_4.0_degrees_Fixed_screw_avg_4.24.pdf}
+		\caption{\boldmath Data-driven state-feedback for $75^\circ$ fork angle and $4^\circ$ target angle.}
+				\label{fig:exp4}
+	\end{subfigure}
+	\caption{\boldmath Lean angle over time under different data-driven state-feedback settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, noise bound $\epsilon = 0.001$ and data length of $T = 40$.}
+	\label{fig:experiments}
+\end{figure}

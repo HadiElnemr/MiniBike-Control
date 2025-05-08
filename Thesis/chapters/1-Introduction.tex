@@ -9,7 +9,7 @@ Besides, we aim to keep both the lean angle and steering angle within defined sa
 
 To balance a bicycle, a torque should be generated to prevent falling on its side due to gravity. To achieve this, different techniques for torque generation can be introduced such as adding a device to control the leaning, or by controlling the steering angle of the bicycle while moving. While the bicycle is stationary, a flywheel can generate the required torque to achieve the balancing \cite{kawaguchi2011}. Another approach is by using a control moment gyroscope (CMG) which was tested out by He and Zhao \cite{he2015}. Since controlling the steering angle to produce the balancing torque does not need additional devices, it was considered by numerous researchers and tested against emerging control algorithms. Balancing using the steering is based on steering into the direction of falling. A drawback of using only the steering angle is that the bicycle needs an initial speed before being able to balance.
 
-This research project is an attempt to apply the theoretical DDMPC developed by Xie in [13].
+This research project is an attempt to apply the theoretical DDMPC developed by Xie in \cite{xie2024}.
 The considered application is a model-scale bicycle at the \gls{IST}, University of Stuttgart.
 The bicycle was chosen as the IST has a rear-steered bicycle which is a more complex system that could be tested against the results achieved from this project.
 In the following sections, the bicycle modelling and Data-driven MPC are discussed.
@@ -65,7 +65,6 @@ In summary, bicycle control strategies have evolved from simple PID-based method
 
 %% Data-Driven Control Methods Literature Review
 \section{Data-Driven Control Methods}
-\improvement{Not a whole section}
 
 The increasing complexity and dynamic nature of autonomous systems, such as self-balancing bicycles, have led to the development of data-driven control methods. These methods bypass the need for precise system modeling by directly utilising measurement data to infer control actions. Data-driven approaches are particularly valuable when model inaccuracies or environmental disturbances are significant.
 
@@ -84,7 +83,7 @@ Yu et al. (2018) demonstrated that \unsure{Check if data-driven} data-driven ste
 %\subsection{Experimental Validation and Results}
 Experimental studies have shown that data-driven MPC can effectively stabilise a system, even when the underlying dynamic model is not accurately known. Adaptive schemes have demonstrated improved performance over static data-driven methods by continuously refining the control law based on new data \cite{xie2024}.
 
-In conclusion, data-driven control methods offer a promising approach to managing the inherent uncertainties in autonomous bicycles. By leveraging real-time data, these methods can adapt to changing conditions and maintain robust performance, making them superior to purely model-based techniques in many scenarios.
+Data-driven control methods offer a promising approach to managing the inherent uncertainties in autonomous bicycles. By leveraging real-time data, these methods can adapt to changing conditions and maintain robust performance, making them superior to purely model-based techniques in many scenarios.
 
 \section{WHEELTEC MiniBike}
 In this research project, a self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform.

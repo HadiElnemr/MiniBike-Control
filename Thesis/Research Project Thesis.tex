@@ -1,0 +1,251 @@
+\documentclass[12pt, a4paper, twoside,  headheight=45pt, listof=totoc, bibliography=totoc]{scrreprt}
+% scrreprt, twoside: ias, scrbook: ist
+%Settings
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[breaklinks, hidelinks]{hyperref}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{romannum}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\DeclareMathOperator*{\minimise}{minimise}
+\usepackage{gensymb}
+
+\usepackage{xfrac}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{lscape}
+\usepackage{color, soul}
+\usepackage{blindtext}
+\usepackage{bytefield}
+\usepackage{pgfplots}
+\usepackage[simplified]{pgf-umlcd}
+\usepackage{tabularx}
+\usepackage{svg}
+%%%%%%%%%%%%%%%%%%%%%%%
+% My packages
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+%%%%%%%
+\usepackage[colorinlistoftodos,
+			prependcaption,
+%			textsize=tiny,
+%			textwidth=\marginparwidth,
+			textwidth=2.5cm,    % Set width of the todo note box
+			textsize=scriptsize % Make text a bit smaller to fit
+			]{todonotes}
+\setlength{\marginparwidth}{2.25cm}
+\setlength{\marginparsep}{0.3cm}
+
+%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+%\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+%\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+%\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+%\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcommandx{\unsure}[1]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red]{#1}}
+\newcommandx{\change}[1]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue]{#1}}
+\newcommandx{\info}[1]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen]{#1}}
+\newcommandx{\improvement}[1]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum]{#1}}
+\newcommandx{\thiswillnotshow}[1]{\todo[disable]{#1}}
+
+%%%%%%%
+\usepackage{framed}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%%%%%%%%%%%%%%%%%%%%%%%
+% Useful IST packages
+\usepackage{booktabs} % nice tables: \toprule, \midrule and \bottomrule
+\usepackage{varioref} % references with pagenumbers, use \vref{«key»} for that; otherwise \ref and \eqref
+\usepackage{marginnote}         % e.g. for url on the side
+%\usepackage{cite}               % improved citation management for numerical citations,
+% some color definitions
+%\colorlet{lcolor}{blue!40!black}
+%\colorlet{ucolor}{magenta!40!black}
+%\colorlet{ccolor}{green!40!black}
+%
+%\usepackage[colorlinks=true,%
+%linkcolor=lcolor,%
+%urlcolor=ucolor,%
+%citecolor=ccolor]{hyperref} % makes references clickable
+%% links will be in specified colors. You may set them to
+%% black for final printing.  (But already defined up)
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{tikz}
+
+\usepgfplotslibrary{dateplot, statistics}
+\pgfplotsset{compat = newest}
+
+\usepackage[acronym,nopostdot,nonumberlist,nogroupskip]{glossaries}
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength\glsdescwidth{0.8\hsize}
+\glstoctrue
+\makeglossaries
+\input{glossary.tex}
+
+\renewcommand {\umlfillcolor}{white}
+\renewcommand {\umldrawcolor}{black}
+
+%Font
+\usepackage{lmodern}
+\usepackage[sc,osf]{mathpazo}
+%\usepackage{mathptmx}
+
+\setkomafont{chapter}{\Large}
+\setkomafont{section}{\fontsize{16pt}{16pt}}
+\setkomafont{subsection}{\fontsize{14pt}{14pt}}
+\usepackage{courier}
+\setkomafont{caption}{\fontsize{12pt}{12pt}\bfseries}
+\setkomafont{captionlabel}{\fontsize{12pt}{12pt}\bfseries}
+
+\raggedbottom
+
+\usepackage{enumitem}
+
+%Settings for head and foot lines
+\usepackage{scrlayer-scrpage}
+
+%Settings for the design of a page
+\usepackage[a4paper, right = 25mm , left = 25mm, top=25mm, bottom=25mm]{geometry}
+
+\RedeclareSectionCommand[beforeskip=24pt,
+afterskip=20pt]{chapter}
+\RedeclareSectionCommand[beforeskip=12pt,
+afterskip=8pt]{section}
+\RedeclareSectionCommand[beforeskip=12pt,
+afterskip=8pt]{subsection}
+
+%Set the space between the lines
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{literature.bib}
+
+%Footnotes numbering
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+%Advanced Settings for head and foot lines
+\pagestyle{scrheadings}
+%\clearscrheadfoot
+\clearpairofpagestyles
+\cfoot[\pagemark]{\pagemark}
+
+%Settings for codes
+\usepackage{listings}
+%\renewcommand\lstlistingname{Quellcode}
+%\renewcommand\lstlistlistingname{Quellcodeverzeichnis}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\definecolor{yellow}{rgb}{1,1,0}
+\definecolor{lightgreen}{rgb}{0.64,1,0.71}
+\definecolor{lightred}{rgb}{1,0.7,0.71}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+%\setlength{\parindent}{0pt}
+
+\lstset{style=mystyle}
+
+
+
+\begin{document}
+%\setlength{\parindent}{15pt}
+\setlength{\parskip}{6pt}
+
+\pagenumbering{Roman}
+%\renewcommand{\thepage}{\roman{page}}  %for continueing after roman page count
+
+%Titlepage
+\include{title_page}
+\cleardoublepage
+
+%Eidesstattliche Erklärung
+\include{erklaerung}
+\cleardoublepage
+
+\tableofcontents
+\cleardoublepage
+
+%List of figures
+\listoffigures
+\cleardoublepage
+
+%List of tables
+\listoftables
+\cleardoublepage
+
+%List of listings
+\lstlistoflistings
+\clearpage
+
+\glsaddall
+\setglossarystyle{long}
+\renewcommand*{\arraystretch}{1.2}
+\printglossary[type=\acronymtype]%, title=Abkürzungsverzeichnis]
+\renewcommand*{\arraystretch}{1}    %set back to default
+
+
+%\maketitle
+
+%\include{abstract}
+%\cleardoublepage
+
+%\include{kurzfassung}
+%\cleardoublepage
+
+\cleardoublepage
+\include{abstract}
+\cleardoublepage
+
+\pagenumbering{arabic}
+%\renewcommand{\thepage}{\arabic{page}}  %for continueing after roman page count
+
+\include{chapters/1-Introduction.tex} % Introduction
+%\include{chapters/2-Literature Review.tex} % Introduction
+\include{chapters/2-Theory.tex} % Theory
+\include{chapters/3-Simulations.tex} % Simulation
+\include{chapters/4-Experimental Work.tex} % Experiment
+\include{chapters/5-Results and Discussion.tex} % Results
+\include{chapters/6-Conclusion.tex}
+\listoftodos[Notes]
+\include{chapters/7-Acknowledgment.tex}
+
+\cleardoublepage
+
+
+\printbibliography
+\end{document}

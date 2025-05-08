@@ -1,122 +1,23 @@
-\chapter{Results and Discussion}
+\chapter{Conclusion and Future work}
 \label{chap:results}
 
-\section{Simulation Results}
+\section{Conclusion}
+In this research project, the goal was to implement a data-driven MPC and test it for balancing a bicycle. Two models for the bicycle were studied which were simple second-order systems with and without considering the fork angle. The theoretical basis for the data-driven was studied and discussed where the data-driven min-max MPC was derived, narrowed down to state-feedback, then reformulated to be solved as an SDP in a sliding horizon manner. Following that, the data-driven controller was implemented in Matlab, modified for the models of the bicycle along with the input state constraints, and then simulated for two versions of the data-driven controller. The first version solved the SDP once, and then the controller was passed to the bicycle model in simulation. The second version solved the SDP as an MPC problem with shifting horizon. The real-life experiments were then carried on the WHEELTEC Mini-Bike by implementing 4 controllers. An LQR controller with two versions for both the fork and no-fork angle model of the bicycle. Additionally, a data-driven state-feedback based on a one-shot solution of the SDP was applied on the bicycle with its two models versions.
 
-The simulation results for the two controllers, Linear Quadratic Regulator (LQR) and Data-Driven Min-Max Model Predictive Control (DD-MPC), are presented and compared.
+\section{Future Work}
+For
+- Decrease errors (epsilon) (collect better data)
 
-Figures~\ref{fig:lqr_sim_lean} and~\ref{fig:ddmpc_sim_lean} show the evolution of the lean angle ($\phi$) over time for the LQR and the Data-Driven MPC controllers, respectively.
+- Consider LPV system, with variable velocity!
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{lqr_sim_lean.png}
-%	\caption{Lean angle over time -- LQR Controller (Simulation)}
-%	\label{fig:lqr_sim_lean}
-%\end{figure}
-%
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{ddmpc_sim_lean.png}
-%	\caption{Lean angle over time -- Data-Driven MPC Controller (Simulation)}
-%	\label{fig:ddmpc_sim_lean}
-%\end{figure}
-
-\subsection{Comparison of Controllers}
-
-Key performance metrics from the simulations are summarized in Table~\ref{tab:sim_performance}.
-
-\begin{table}[H]
-	\centering
-	\caption{Simulation Performance Comparison}
-	\label{tab:sim_performance}
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\textbf{Metric} & \textbf{LQR} & \textbf{Data-Driven MPC} \\ \hline
-		Maximum lean angle deviation ($^\circ$) & 6.2 & 4.3 \\ \hline
-		Stabilization time (s) & 2.8 & 2.2 \\ \hline
-		Overshoot ($^\circ$) & 1.5 & 0.8 \\ \hline
-	\end{tabular}
-\end{table}
-
-The Data-Driven MPC controller achieved:
-\begin{itemize}
-	\item Approximately $30\%$ reduction in maximum lean angle deviation.
-	\item Around $20\%$ faster stabilization time.
-	\item Lower overshoot compared to the LQR controller.
-\end{itemize}
-
-These results validate the theoretical expectation that Data-Driven MPC provides enhanced robustness against model uncertainties and disturbances.
-
-\section{Experimental Results}
-
-Experimental trials were conducted for both controllers on the real mini-bike platform.
-
-Figures~\ref{fig:lqr_exp_lean} and~\ref{fig:ddmpc_exp_lean} present the experimental lean angle responses.
-
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{lqr_exp_lean.png}
-%	\caption{Lean angle over time -- LQR Controller (Experiment)}
-%	\label{fig:lqr_exp_lean}
-%\end{figure}
-%
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{ddmpc_exp_lean.png}
-%	\caption{Lean angle over time -- Data-Driven MPC Controller (Experiment)}
-%	\label{fig:ddmpc_exp_lean}
-%\end{figure}
-
-\subsection{Experimental Observations}
-
-\begin{itemize}
-	\item The Data-Driven MPC maintained stability even under larger initial lean disturbances.
-	\item The steering control inputs exhibited smoother behavior compared to the LQR.
-	\item Some minor deviations from the simulation results were observed, primarily due to sensor noise, actuation delays, and friction.
-\end{itemize}
-
-Table~\ref{tab:exp_performance} summarizes key experimental performance metrics.
-
-\begin{table}[H]
-	\centering
-	\caption{Experimental Performance Comparison}
-	\label{tab:exp_performance}
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\textbf{Metric} & \textbf{LQR} & \textbf{Data-Driven MPC} \\ \hline
-		Maximum lean angle deviation ($^\circ$) & 7.1 & 5.0 \\ \hline
-		Stabilization time (s) & 3.0 & 2.4 \\ \hline
-		Overshoot ($^\circ$) & 2.1 & 1.2 \\ \hline
-	\end{tabular}
-\end{table}
-
-\section{Discussion}
-
-The results demonstrate that the Data-Driven Min-Max MPC approach provides superior stabilization performance compared to traditional model-based LQR control, both in simulations and real-world experiments.
-
-Major findings:
-\begin{itemize}
-	\item \textbf{Improved Robustness:} Data-driven methods successfully handled system uncertainties without requiring explicit modeling.
-	\item \textbf{Reduced Stabilization Time:} Faster recovery from initial disturbances was observed.
-	\item \textbf{Lower Overshoot:} Smoother convergence toward upright position minimized oscillations.
-\end{itemize}
-
-\subsection{Challenges and Limitations}
-
-Despite the promising results, some limitations were encountered:
-\begin{itemize}
-	\item \textbf{Sensor Noise:} MPU6050 noise impacted lean angle estimation at low speeds.
-	\item \textbf{Control Saturation:} Steering servo saturation limited rapid response capability.
-	\item \textbf{Offline Computation:} Due to STM32 limitations, online real-time optimization of the SDP was not feasible; a precomputed gain was used instead.
-\end{itemize}
-
-\subsection{Future Work}
-
+- Implement online DDMPC
+- Add SDP robustness
 Potential improvements and future research directions include:
 \begin{itemize}
 	\item Online adaptive Data-Driven MPC to incorporate real-time data updates.
 	\item Implementation of rear-wheel steering stabilization for stationary balancing.
 	\item Integration of higher precision IMUs to reduce noise.
 	\item Hardware upgrades to allow full real-time online optimization on embedded platforms.
+	\item Decrease
 \end{itemize}
 
