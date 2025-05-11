@@ -1,7 +1,8 @@
 \chapter*{Abstract}
-Riding a bicycle is a common activity for humans, but designing a controller to autonomously stabilize a bicycle presents significant engineering challenges.
-Traditional model-based controllers, such as linear quadratic regulators (LQR) and model predictive control (MPC), require an accurate system model. 
-However, some parameters of a bicycle, i.e., the center of gravity, can be difficult to determine and may fluctuate due to varying loads or additional passengers. 
-In this project, we aim to design and implement a data-driven MPC controller to stabilize an autonomous mini bike. 
-The method does not identify the system model of the bike and directly uses the collected data to design the controller. The goal is to stabilize the bike at a constant speed and the bike does not fall down. 
-Besides, we aim to keep both the lean angle and steering angle within defined safe limits for safety.
+Riding a bicycle is a common activity for humans, but designing a controller to autonomously stabilise a bicycle presents significant engineering challenges.
+Traditional model-based controllers, such as linear quadratic regulators (LQR) and model predictive control (MPC), require an accurate system model.
+However, some parameters of a bicycle, i.e., the centre of gravity, can be difficult to determine and may fluctuate due to varying loads or additional passengers.
+In this research project, a data-driven state-feedback controller is implemented to stabilise an autonomous mini-bike by solving a semidefinite program (SDP).
+The method does not identify the system model of the bicycle and directly uses noisy collected data to design the controller.
+Two models of the bicycle are used to test and assess the controller.
+Along with the simulations, experiments on a model-scale bicycle demonstrate successful stabilisation using noisy data generated based on the system dynamics.
