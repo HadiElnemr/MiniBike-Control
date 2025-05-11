@@ -91,7 +91,7 @@ Let \(\left(A, B\right)\) be the set of system matrices that satisfy the data \(
 	\begin{equation}
 		\Sigma_i := \left\{ \left( A, B \right) : \eqref{eq:system} \text{ holds for } \omega_i \text{ satisfying } \|\omega_i\|_2^2 \leq \epsilon \right\},
 	\end{equation}
-which can be written as
+which can be rewritten as the following quadratic matrix inequality
 	\begin{equation}
 		\Sigma_i = \left\{ \left( A, B \right) :
 		\begin{bmatrix} I & A & B \end{bmatrix}
@@ -109,16 +109,16 @@ which can be written as
 		\end{bmatrix}^\top \succeq 0
 		\right\},
 \end{equation}
-such that $\begin{bmatrix}	\star \end{bmatrix}^\top$ is used as in the following.
+such that $\begin{bmatrix}	\star \end{bmatrix}^\top$ denotes the right-multiplied transpose as in the identity
 \[
-ABA^\top = AB\begin{bmatrix}	\star \end{bmatrix}^\top
+ABA^\top = AB\begin{bmatrix}	\star \end{bmatrix}^\top.
 \]
 Then, the set of system matrices consistent with all data points can be described as follows
 	\begin{equation}
 		\mathcal{C} = \bigcap_{i=0}^{T-1} \Sigma_i.
 	\end{equation}
 \noindent
-The set $\mathcal{C}$ can be further represented as
+Moreover, the set $\mathcal{C}$ can be further represented as the quadratic matrix inequality
 	\begin{equation}
 		\mathcal{C} = \left\{ \left( A, B \right) :
 		\begin{bmatrix} I & A & B \end{bmatrix}
@@ -127,7 +127,7 @@ The set $\mathcal{C}$ can be further represented as
 		\forall \tau = \left(\tau_0, \ldots, \tau_{T-1}\right),\, \tau_i \geq 0,\, i \in \mathbb{I}_{[0,T-1]}
 		\right\},
 	\end{equation}
-such that $\Pi$ is
+where $\Pi(\tau)$ is
 \begin{equation}
 	\label{eq:PI}
 	\Pi(\tau) = \sum_{i=0}^{T-1} \tau_i
@@ -217,32 +217,32 @@ Suppose that there exist $\gamma > 0$, $H \in \mathbb{R}^{n \times n}$, $L \in \
 			\end{bmatrix} \prec 0,
 			\\
 			\tau = (\tau_0, \ldots, \tau_{T-1}), \ \tau_i \geq 0, \ \forall i \in \mathbb{I}_{[0, T-1]},
+%		\end{gather}
+%	\end{subequations}
+%	\begin{subequations} \label{eq:constraints_LMIs}
+%		\begin{gather}
+			\\
+			\begin{bmatrix}
+				H & L^\top \\
+				L & S_u^{-1}
+			\end{bmatrix} \succeq 0, \label{subeq:LMI_d_constraints}
+			\\
+			%		\quad
+			\begin{bmatrix} \label{subeq:LMI_e_constraints}
+				S_x & I \\
+				I & H
+			\end{bmatrix} \succeq 0.
 		\end{gather}
 	\end{subequations}
 where $\Phi = \begin{bmatrix} M_R L \\ M_Q H \end{bmatrix}$ and $M_R^\top M_R = R$, $M_Q^\top M_Q = Q$.
-The $\gamma$ here upper bounds the optimal cost in \eqref{eq:main_problem} without considering the input and state constraints.
+The $\gamma$ upper bounds the optimal cost in \autoref{eq:main_problem}.
+The LMIs \eqref{subeq:LMI_e_constraints} and \eqref{subeq:LMI_e_constraints} are for defining the state and input constraints.
 
-To incorporate the remaining constraints, they can be expressed as the following LMIs \eqref{eq:constraints_LMIs} \cite{xie2024}.
-\begin{subequations} \label{eq:constraints_LMIs}
-	\begin{gather}
-		\begin{bmatrix}
-			H & L^\top \\
-			L & S_u^{-1}
-		\end{bmatrix} \succeq 0,
-		\\
-%		\quad
-		\begin{bmatrix}
-			S_x & I \\
-			I & H
-		\end{bmatrix} \succeq 0.
-	\end{gather}
-\end{subequations}
-
-Now, having \eqref{SDP_LMIs} and \eqref{eq:constraints_LMIs}, the data-driven min-max MPC \eqref{eq:main_problem} can be solved after representing it in its SDP formulation as the following.
+Now, having the LMIs in \eqref{SDP_LMIs}, the data-driven min-max MPC \eqref{eq:main_problem} can be solved after representing it in its SDP formulation as the following.
 \begin{subequations} \label{eq:final_gamma}
 	\begin{gather}
 		\minimise_{\gamma, H, L, \tau} \gamma \\
-		\text{s.t.} \quad \eqref{SDP_LMIs} \text{ and } \eqref{eq:constraints_LMIs} \text{ hold.}
+		\text{s.t.} \quad \eqref{SDP_LMIs} \text{ hold.}
 	\end{gather}
 \end{subequations}
 
