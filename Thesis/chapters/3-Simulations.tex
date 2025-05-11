@@ -70,46 +70,32 @@ Different weighting matrices $Q$ and $R$ were selected to modify the weights giv
 
 The LQR served as a baseline controller and was also tested to generate input-state data necessary for the subsequent data-driven methods.
 In \autoref{fig:lqr_sim_figs}, four simulations are conducted to show the difference in performance for different $Q$ and $R$ settings. Matrix $Q$ corresponds to the cost associated with the states, whereas $R$ corresponds to the cost associated with the inputs.
-\autoref{fig:lqr4} shows that giving more weight to the second state, namely the lean angle rate of change, smooths the lean angle response and reduces its steepness. Since the input is the steering angle rate of change $\dot{\delta}$, when giving it more weight in \autoref{fig:lqr3} all states are smoothened.
+\autoref{fig:lqr_compare_QR} shows that giving more weight to the second state, namely the lean angle rate of change, smooths the lean angle response and reduces its steepness. Since the input is the steering angle rate of change $\dot{\delta}$, when giving it more weight in all states are smoothened. For the other simulations and experiments with different controllers, the $Q$ and $R$ corresponding to the fastest response here are used.
 
 \todo[inline]{I am here now}
 
-\begin{figure}[H]
+\begin{figure}[htbp]
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
+	\begin{subfigure}[htbp]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/LQR Compute Q(300,0,300)R(1) with 75 fork angle.pdf}
-		\caption{\boldmath LQR with $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$, $75^\circ$ fork angle.}
-		\label{fig:lqr1}
+		\includegraphics[width=\textwidth]{figures/plots/LQR_compare_models.pdf}
+		\caption{\boldmath LQR with $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ for different fork angle models.}
+		\label{fig:lqr_compare_models}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[b]{0.45\textwidth}
+	\begin{subfigure}[htbp]{0.45\textwidth}
 		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/LQR Compute Q(300,0,300)R(1) with no fork angle.pdf}
-		\caption{\boldmath LQR with $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$, $90^\circ$ fork angle.}
-		\label{fig:lqr2}
+		\includegraphics[width=\textwidth]{figures/plots/LQR_compare_QR.pdf}
+		\caption{\boldmath LQR with different $Q, R$ settings for a $90^\circ$ fork angle model.}
+		\label{fig:lqr_compare_QR}
 	\end{subfigure}
 
-	\vspace{0.5cm}
-
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/LQR Compute Q(300,0,300)R(100) with no fork angle.pdf}
-		\caption{\boldmath LQR with $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 100$, $90^\circ$ fork angle.}
-		\label{fig:lqr3}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/LQR Compute Q(300,300,300)R(1) with no fork angle.pdf}
-		\caption{\boldmath LQR with $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 1$, $90^\circ$ fork angle.}
-		\label{fig:lqr4}
-	\end{subfigure}
-
-	\caption{\boldmath Lean and steering angles over time under different LQR settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$.}
+	\caption{\boldmath Lean and steering angles over time under LQR controller with different $Q$ and $R$ settings and different system models, for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, and process noise bounded by $\epsilon = 10^{-6}$, and sampling period $T_s = 0.02 s$.}
 	\label{fig:lqr_sim_figs}
 \end{figure}
 
+%The output LQR for  K = -103.4593 -9.7400  8.7622 (lambda = 75)
+%The output LQR for  K = -92.2973  -8.6746  10.5355(lambda = 90)
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data-Driven State-Feedback Controller}
 
@@ -133,25 +119,15 @@ In \autoref{fig:DDFBC_sim_figs}, the simulation results for different fork angle
 
 \begin{figure}[htbp]
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/DDSFB: Q(300,0.1,300)R(1) 75deg (-107.7 -12.75 6).pdf}
-		\caption{\boldmath Data-driven state-feedback for $75^\circ$ fork angle.}
-%		\label{fig:lqr1}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/DDSFB: Q(300,0.1,300)R(1) 90deg (-94.7 -9.7, 10.4).pdf}
-		\caption{\boldmath Data-driven state-feedback for $90^\circ$ fork angle.}
-%		\label{fig:lqr2}
-	\end{subfigure}
+	\includegraphics[width=0.8\textwidth]{figures/plots/DDFSB_compare_models.pdf}
 
-	\caption{\boldmath Lean and steering angles over time under different data-driven state-feedback settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, noise bound $\epsilon = 0.001$ and data length of $T = 40$.}
+	\caption{\boldmath Lean and steering angles over time under different data-driven state-feedback settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, process noise bound $\epsilon = 10^{-6}$ and sampling period $T_s = 0.02 s$ for different fork angle models.}
+
 	\label{fig:DDFBC_sim_figs}
 \end{figure}
 
-
+%The output DDSFB for  K = -103.459 -9.74003 8.76219   (lambda = 75)
+%The output DDSFB for  K = -92.2973 -8.67459 10.5355   (lambda = 90)
 %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Data-Driven Min-Max MPC Controller}
 
@@ -163,26 +139,56 @@ The error bound $\epsilon$ is decreased to $10^{-5}$ to ensure obtaining a solut
 
 \begin{figure}[htbp]
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/DDMPC: Q(300,0.1,300)R(1) 75deg (-117, -11, 9).pdf}
-		\caption{\boldmath Data-driven MPC for $75^\circ$ fork angle.}
-		%		\label{fig:lqr1}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth, trim=120 240 120 240]{figures/plots/DDMPC: Q(300,0.1,300)R(1) 90deg (-105, -9.87, 11).pdf}
-		\caption{\boldmath Data-driven MPC for $90^\circ$ fork angle.}
-		%		\label{fig:lqr2}
-	\end{subfigure}
+	\includegraphics[width=0.8\textwidth]{figures/plots/DDMPC_compare_models.pdf}
 
-	\caption{\boldmath Lean and steering angles over time under different data-driven MPC settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, noise bound $\epsilon = 10^{-5}$, data length of $T = 40$, and $mpc\_iterations = 150$.}
+	\caption{\boldmath Lean and steering angles over time under different data-driven MPC settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, noise bound $\epsilon = 10^{-6}$, sampling period $T_s = 0.02 s$, and $150$ MPC iterations for different fork angle models.}
 	\label{fig:DDMPC_sim_figs}
 \end{figure}
 
-\section{Comparisons?}
-\todo[inline]{Add a Table for comparing costs here}
+%end for mpc K = -103.459 -9.74 8.76222    (lambda = 75)
+%end for mpc K = -92.296 -8.67451 10.5355  (lambda = 90)
+
+
+\section{Comparison}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Controller} & \textbf{Fork angle} & \textbf{Cost / Performance Metric} \\ \hline
+		LQR & $75^\circ$ & [Cost value here] \\ \hline
+		LQR & $90^\circ$ & [Cost value here] \\ \hline
+		Data-Driven State-Feedback & $75^\circ$ & [Cost value here] \\ \hline
+		Data-Driven State-Feedback & $90^\circ$ & [Cost value here] \\ \hline
+		Data-Driven Min-Max MPC & $75^\circ$ & [Cost value here] \\ \hline
+		Data-Driven Min-Max MPC & $90^\circ$ & [Cost value here] \\ \hline
+	\end{tabular}
+	\caption{Comparison of controllers across different fork models}
+	\label{tab:controller_comparison}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Comparison of controller performance across different settings and fork models}
+	\label{tab:controller_comparison}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Controller} & \textbf{Fork Model} & \textbf{$Q$, $R$ Settings} & \textbf{Cumulative Cost} \\ \hline
+		LQR & With fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		LQR & Without fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		LQR & With fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 100$ & [Cost value] \\ \hline
+		LQR & Without fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 100$ & [Cost value] \\ \hline
+		LQR & With fork & $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		LQR & Without fork & $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		LQR & With fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		LQR & Without fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		Data-Driven State-Feedback & With fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		Data-Driven State-Feedback & Without fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		Data-Driven Min-Max MPC & With fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
+		Data-Driven Min-Max MPC & Without fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
+	\end{tabular}
+\end{table}
+
 
 \improvement{Change this}{The simplified model, despite neglecting the fork geometry, proved more effective for fast controller design and practical implementation on resource-constrained platforms.}
 This unexpected behaviour is probably resulting from the unknown parameters of the bicycle and interaction with the environment.
