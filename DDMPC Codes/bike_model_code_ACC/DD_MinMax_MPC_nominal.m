@@ -23,7 +23,7 @@ v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
 % lambda =  75/180 * pi; % in rad = 70,75 degrees  (fork angle)
-lambda =  75/180 * pi; % in rad = 70,75 degrees  (fork angle)
+lambda =  90/180 * pi; % in rad = 70,75 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
 l = w; % length
@@ -40,13 +40,14 @@ B_c = [0 ;
        1];
 
 sysc = ss(A_c,B_c, [1 0 0], 0);
-sysd = c2d(sysc, 0.01);
+Ts = 0.020; % 50 Hz
+sysd = c2d(sysc, Ts);
 A_s = sysd.A;
 B_s = sysd.B;
 
 % constraint on noise
 % epsilon = 0.001;
-epsilon = 1e-5;
+epsilon = 1e-6;
 
 % input constraint and state constraint
 u_max = 0.01;
@@ -88,7 +89,7 @@ x_d0 = [0.5; -0.1; 0.1]; % Change ()very small
 [u_g, x_g, K_lqr] = data_generate(A_s,B_s,epsilon,T,x_d0,u_max);
 
 % load('offline_data_1');
-
+load('process_noise')
 %% Simulation
 
 % equilibrium point
@@ -114,8 +115,8 @@ MR = chol(R);
 x_init = [0.0873; 0; 0];
 
 % Number of MPC iterations
-mpciterations = 150;
-% mpciterations = 1;
+mpciterations = 150; % Choose for DDMPC
+% mpciterations = 1; % Choose for DD State-Feedback controller
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8
@@ -164,6 +165,8 @@ tau_op = [];
 F_op = [];
 t = [];
 
+total_cost = 0;
+
 %% Start MPC iterations
 for ii=1:mpciterations
 
@@ -200,17 +203,20 @@ for ii=1:mpciterations
     % store closed loop data
     x = [ x, xmeasure ];
     u = [ u, F_star*xmeasure];
+    
+    u_k = F_star*xmeasure;
+    total_cost = total_cost + (xmeasure' * Q * xmeasure) + (u_k' * R * u_k);
 
     % update closed-loop system (apply first control move to system)
-    xmeasure = A_s*xmeasure+B_s*F_star*xmeasure;
+    omega_k = process_noise(:,ii);
+    xmeasure = A_s*xmeasure+B_s*F_star*xmeasure + omega_k;
 
     % print numbers
     fprintf(' %3d  | %+11.6f %+11.6f %+11.6f  %+6.3f\n', ii, u(end),...
             x(1,end), x(2,end),t_Elapsed);
-
-
-
-
+end
+if mpciterations > 1
+    fprintf('Total cost: %.4f\n', total_cost);
 end
 
 %% plot closed-loop state trajetories
@@ -270,8 +276,8 @@ fprintf(']\n');
 
 x0 = [0.0873; 0; 0]; % bike sims
 % x0 = [-0.01;-0.04; 0];
-Ts = 0.020;
-t = 0:Ts:2;
+Ts = 0.020; % Treat it as sampling time
+t = 0:Ts:3;
 u = zeros(size(t));
 
 Tc = ctrb(A_s,B_s);
@@ -280,7 +286,7 @@ if (rank(Tc)==3)
     fprintf('This system is controllable! \n');
 
     % Q matrix
-    Q = [300 0 0; 0 0 0; 0 0 300];
+    Q = [300 0 0; 0 0.1 0; 0 0 300];
 
     % R matrix
     R = 1;
@@ -312,27 +318,58 @@ if (rank(Tc)==3)
     C = [1 0 0;
          0 0 1];
     D = 0;
-    y = dlsim(A_feedback,B_s,C,D,u,x0);
-    y_theta = y * 180 / pi;
-    % subplot(2,1,1)
-    % plot(t,y_theta(:,1),'b.-','LineWidth',1.5);
-    % xlabel('Time(s)');
-    % ylabel('\phi (degrees)');
-    % grid on
-    % subplot(2,1,2)
-    % plot(t,y_theta(:,2),'b.-','LineWidth',1.5);
-    % xlabel('Time (s)');
-    % ylabel('\delta (degrees)');
-    % grid on
-    y_theta = x * 180 / pi;
-    subplot(2,1,1)
-    plot(y_theta(1,:),'b.-','LineWidth',1.5);
-    xlabel('Time step k');
-    ylabel('\phi (degrees)');
-    grid on
-    subplot(2,1,2)
-    plot(y_theta(3,:),'b.-','LineWidth',1.5);
-    xlabel('Time step k');
-    ylabel('\delta (degrees)');
-    grid on
+    
+    if (mpciterations == 1) % If data-driven state-feedback controller
+        nSteps = 150;
+        nOutputs = size(C, 1);
+        y = zeros(nSteps, nOutputs);
+    
+        % x = x0;
+        
+        total_cost = 0;
+        for k = 1:nSteps
+            % Add process noise to state evolution
+            omega_k = process_noise(:,k);  % ensure it's a column vector
+    
+            % Compute output (no output noise here)
+            y(k,:) = C * x;
+            
+            u_k = - F_star * x;
+    
+            % Add to the total cost
+            total_cost = total_cost + (x' * Q * x) + (u_k' * R * u_k);
+    
+            % Update state with process noise
+            x = A_feedback * x + omega_k;
+        end
+        fprintf('Total cost: %.4f\n', total_cost);
+
+
+        % y = dlsim(A_feedback,B_s,C,D,u,x0);
+        y_theta = y * 180 / pi;
+        subplot(2,1,1)
+        plot(t(1:end-1), y_theta(:,1),'b.-','LineWidth',1.5);
+        xlabel('Time(s)');
+        ylabel('\phi (degrees)');
+        grid on
+        subplot(2,1,2)
+        plot(t(1:end-1), y_theta(:,2),'b.-','LineWidth',1.5);
+        xlabel('Time (s)');
+        ylabel('\delta (degrees)');
+        grid on
+        % save('DDSFB_output_90_cost=273.1727.mat', 'y_theta');
+    else                    % If data-driven MPC
+        y_theta = x * 180 / pi;
+        subplot(2,1,1)
+        plot(t(1:end-1), y_theta(1,:),'b.-','LineWidth',1.5);
+        xlabel('Time (s)');
+        ylabel('\phi (degrees)');
+        grid on
+        subplot(2,1,2)
+        plot(t(1:end-1), y_theta(3,:),'b.-','LineWidth',1.5);
+        xlabel('Time (s)');
+        ylabel('\delta (degrees)');
+        grid on
+        % save('DDMPC_output_75_cost=341.8561.mat', 'y_theta');
+    end
 end
