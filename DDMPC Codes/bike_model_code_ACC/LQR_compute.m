@@ -6,7 +6,7 @@
 clear all
 close all
 clc
-
+load('process_noise')
 %% Parameters of the system
 
 % state dimension and input dimension 
@@ -65,37 +65,91 @@ D = 0;
 % C = [1 0 0];
 
 Ts = 0.020;
-t = 0:Ts:2;
+t = 0:Ts:3;
 u = zeros(size(t));
+
 [G,H]= c2d(A_c, B_c, Ts); % [A_d, B_d] 
 x0 = [0.0873; 0; 0];
 
 Tc = ctrb(G,H);
 
+% if (rank(Tc)==3)
+%     fprintf('This system is controllable! \n');
+% 
+%     % Q matrix
+%     Q = [300 0 0; 0 0 0; 0 0 300];
+% 
+%     % R matrix
+%     R = 1;
+% 
+%     % Calculate state feedback coefficients (see calculated values for yourself)
+%     K = dlqr(G,H,Q,R);
+%     G2 = G-H*K;
+% 
+%     y = dlsim(G2,H,C,D,u,x0);
+%     y_theta = y * 180 / pi;
+%     subplot(2,1,1)
+%     plot(t,y_theta(:,1),'b.-','LineWidth',1.5);
+%     xlabel('Time (s)');
+%     ylabel('\phi (degrees)');
+%     grid on
+%     subplot(2,1,2)
+%     plot(t,y_theta(:,2),'b.-','LineWidth',1.5);
+%     xlabel('Time (s)');
+%     ylabel('\delta (degrees)');
+%     grid on
+%     % legend('')
+% end
+
 if (rank(Tc)==3)
     fprintf('This system is controllable! \n');
-    
+
     % Q matrix
     Q = [300 0 0; 0 0 0; 0 0 300];
-    
+
     % R matrix
     R = 1;
-    
+
     % Calculate state feedback coefficients (see calculated values for yourself)
     K = dlqr(G,H,Q,R);
-    G2 = G-H*K;
+    G2 = G-H*K; % A_feedback
 
-    y = dlsim(G2,H,C,D,u,x0);
+    nSteps = 150;
+    nOutputs = size(C, 1);
+    y = zeros(nSteps, nOutputs);
+
+    x= x0;
+    
+    total_cost = 0;
+    for k = 1:nSteps
+        % Add process noise to state evolution
+        omega_k = process_noise(:,k);  % ensure it's a column vector
+
+        % Compute output (no output noise here)
+        y(k,:) = C * x;
+        
+        u_k = -K * x;
+
+        % Add to the total cost
+        total_cost = total_cost + (x' * Q * x) + (u_k' * R * u_k);
+
+        % Update state with process noise
+        x = G2 * x + 0 * H * u(k) + omega_k;
+    end
+    fprintf('Total cost: %.4f\n', total_cost);
+    
+    % y = dlsim(G2,H,C,D,u,x0);
     y_theta = y * 180 / pi;
     subplot(2,1,1)
-    plot(t,y_theta(:,1),'b.-','LineWidth',1.5);
+    plot(t(1:end-1),y_theta(:,1),'b.-','LineWidth',1.5);
     xlabel('Time (s)');
     ylabel('\phi (degrees)');
     grid on
     subplot(2,1,2)
-    plot(t,y_theta(:,2),'b.-','LineWidth',1.5);
+    plot(t(1:end-1),y_theta(:,2),'b.-','LineWidth',1.5);
     xlabel('Time (s)');
     ylabel('\delta (degrees)');
     grid on
     % legend('')
+    % save('lqr_output_90_cost=_Q300x3_andnormalR.mat', 'y_theta');
 end
