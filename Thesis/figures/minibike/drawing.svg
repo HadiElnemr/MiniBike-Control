@@ -23,13 +23,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="263.57405"
-     inkscape:cy="304.76302"
-     inkscape:window-width="2494"
-     inkscape:window-height="1403"
+     inkscape:zoom="1.9999999"
+     inkscape:cx="204.50001"
+     inkscape:cy="208.00001"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
      inkscape:window-x="66"
-     inkscape:window-y="0"
+     inkscape:window-y="32"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -150,7 +150,7 @@
        id="marker40"
        refX="0"
        refY="0"
-       orient="auto-start-reverse"
+       orient="-173.00"
        inkscape:stockid="Stylized triangle arrow"
        markerWidth="1"
        markerHeight="1"
@@ -163,44 +163,6 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
          d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
          id="path40" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker37"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Stylized triangle arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
-         id="path37" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="ArrowTriangleStylized"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Stylized triangle arrow"
-       markerWidth="1"
-       markerHeight="1"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
-         id="path4" />
     </marker>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
@@ -543,7 +505,7 @@
        d="m 115.88973,87.496069 h 57.6467"
        id="path28" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.095;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#ArrowTriangleStylized)"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.095;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker40)"
        d="m 129.77812,71.768228 c -0.26725,0.05831 8.44542,0.555429 6.87917,14.2875"
        id="path35"
        sodipodi:nodetypes="cc" />
@@ -559,7 +521,7 @@
          x="137.66649"
          y="79.04763">δ</tspan></text>
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.095;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker37)"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.095;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker40)"
        d="m 33.635156,47.095833 c 0,0 5.953125,-0.231511 5.953125,5.622396"
        id="path36" />
   </g>

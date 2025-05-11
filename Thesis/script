@@ -1,0 +1,22 @@
+#!/bin/bash
+
+files=`find . | grep -e '\.tex$'`
+
+for file in $files ; do 
+
+    echo "Stripping: $file"
+
+    # Create a copy of the existing file
+    cp $file $file.strip_backup
+
+    sed -i 's/begin{equation\*}/begin{align*}/g'   $file
+    sed -i 's/end{equation\*}/end{align*}/g'   $file
+
+    sed -i 's/begin{equation}/begin{align*}/g'   $file
+    sed -i 's/end{equation}/end{align*}/g'   $file
+
+    sed -i 's/begin{align}/begin{align*}/g'   $file
+    sed -i 's/end{align}/end{align*}/g'   $file
+
+done
+
