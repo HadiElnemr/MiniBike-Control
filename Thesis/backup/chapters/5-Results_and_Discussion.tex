@@ -1,0 +1,23 @@
+\chapter{Conclusion and Future work}
+\label{chap:results}
+
+\section{Conclusion}
+In this research project, the goal was to implement a data-driven MPC and test it for balancing a bicycle. Two models for the bicycle were studied which were simple second-order systems with and without considering the fork angle. The theoretical basis for the data-driven was studied and discussed where the data-driven min-max MPC was derived, narrowed down to state-feedback, then reformulated to be solved as an SDP in a sliding horizon manner. Following that, the data-driven controller was implemented in Matlab, modified for the models of the bicycle along with the input state constraints, and then simulated for two versions of the data-driven controller. The first version solved the SDP once, and then the controller was passed to the bicycle model in simulation. The second version solved the SDP as an MPC problem with shifting horizon. The real-life experiments were then carried on the WHEELTEC Mini-Bike by implementing 4 controllers. An LQR controller with two versions for both the fork and no-fork angle model of the bicycle. Additionally, a data-driven state-feedback based on a one-shot solution of the SDP was applied on the bicycle with its two models versions.
+
+\section{Future Work}
+For
+- Decrease errors (epsilon) (collect better data)
+
+- Consider LPV system, with variable velocity!
+
+- Implement online DDMPC
+- Add SDP robustness
+Potential improvements and future research directions include:
+\begin{itemize}
+	\item Online adaptive Data-Driven MPC to incorporate real-time data updates.
+	\item Implementation of rear-wheel steering stabilization for stationary balancing.
+	\item Integration of higher precision IMUs to reduce noise.
+	\item Hardware upgrades to allow full real-time online optimization on embedded platforms.
+	\item Decrease
+\end{itemize}
+
