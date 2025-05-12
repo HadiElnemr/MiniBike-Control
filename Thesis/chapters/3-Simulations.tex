@@ -27,8 +27,6 @@ The key physical parameters used are summarized in Table~\ref{tab:simulation_par
 
 \begin{table}[H]
 	\centering
-	\caption{Simulation Parameters}
-	\label{tab:simulation_parameters}
 	\begin{tabular}{|c|c|c|p{6cm}|}
 		\hline
 		\textbf{Parameter} & \textbf{Value} & \textbf{Unit} & \textbf{Description} \\ \hline
@@ -41,8 +39,9 @@ The key physical parameters used are summarized in Table~\ref{tab:simulation_par
 		$g$ & 9.81 & m/s\textsuperscript{2} & Gravitational acceleration \\ \hline
 		$v$ & 0.634 & m/s & Forward speed \\ \hline
 		$w$ & 0.167 & m & Distance between front and rear wheels at ground contact points \\ \hline
-
 	\end{tabular}
+	\caption{Simulation Parameters}
+	\label{tab:simulation_parameters}
 \end{table}
 
 The input and state constraints for the system were defined as follows.
@@ -94,6 +93,22 @@ In \autoref{fig:lqr_sim_figs}, four simulations are conducted to show the differ
 	\label{fig:lqr_sim_figs}
 \end{figure}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Controller} & \textbf{Fork Angle} & \textbf{$Q$, $R$ Settings} & \textbf{Cumulative Cost} \\ \hline
+		LQR & $75^\circ$ & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & \textbf{341.7198} \\ \hline
+		LQR & $90^\circ$ & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & \textbf{273.1727} \\ \hline\hline
+		LQR & $90^\circ$ & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & 273.1727 \\ \hline
+		LQR & $90^\circ$ & $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 1$ & 546.1975 \\ \hline
+		LQR & $90^\circ$ & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 100$ & 5044.2769 \\ \hline
+		LQR & $90^\circ$ & $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 100$ & 5130.1350 \\ \hline
+	\end{tabular}
+	\caption{\boldmath Comparison of controller performance across different $Q$, $R$ settings and fork models}
+	\label{tab:LQR_controller_comparison}
+\end{table}
+
 %The output LQR for  K = -103.4593 -9.7400  8.7622 (lambda = 75)
 %The output LQR for  K = -92.2973  -8.6746  10.5355(lambda = 90)
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,7 +124,7 @@ which can be compactly written as
 \[
 \omega_i \sim \mathcal{U}\left[-\frac{\epsilon}{\sqrt{n}}, \frac{\epsilon}{\sqrt{n}}\right]^n
 \]
-to satisfy  $\|\omega_i\|_\infty \leq \frac{\epsilon}{\sqrt{n}}$.
+to satisfy  $\|\omega\|^2_2 \leq \epsilon$.
 
 The data-driven state-feedback controller based on this data stabilised the bicycle efficiently and had similar or near coefficients to those of the discretised LQR.
 
@@ -117,7 +132,7 @@ Later, the output feedback gain vector from the LQR was applied on the real bicy
 
 In \autoref{fig:DDFBC_sim_figs}, the simulation results for different fork angles under identical settings are presented. The feedback gains are comparable to those obtained from the LQR controllers, demonstrating that the controller is capable of balancing the bicycle.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{figures/plots/DDFSB_compare_models.pdf}
 
@@ -149,44 +164,22 @@ The error bound $\epsilon$ is decreased to $10^{-5}$ to ensure obtaining a solut
 %end for mpc K = -92.296 -8.67451 10.5355  (lambda = 90)
 
 
-\section{Comparison}
+\section{Quantitative comparison of different controllers}
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{Controller} & \textbf{Fork angle} & \textbf{Cost / Performance Metric} \\ \hline
-		LQR & $75^\circ$ & [Cost value here] \\ \hline
-		LQR & $90^\circ$ & [Cost value here] \\ \hline
-		Data-Driven State-Feedback & $75^\circ$ & [Cost value here] \\ \hline
-		Data-Driven State-Feedback & $90^\circ$ & [Cost value here] \\ \hline
-		Data-Driven Min-Max MPC & $75^\circ$ & [Cost value here] \\ \hline
-		Data-Driven Min-Max MPC & $90^\circ$ & [Cost value here] \\ \hline
+		LQR & $75^\circ$ & 341.7198 \\ \hline
+		Data-Driven State-Feedback & $75^\circ$ & 341.7198 \\ \hline
+		Data-Driven Min-Max MPC & $75^\circ$ & 341.8561 \\ \hline
+		LQR & $90^\circ$ & 273.1727 \\ \hline
+		Data-Driven State-Feedback & $90^\circ$ & 273.1727 \\ \hline
+		Data-Driven Min-Max MPC & $90^\circ$ & 273.2988 \\ \hline
 	\end{tabular}
-	\caption{Comparison of controllers across different fork models}
+	\caption{\boldmath Comparison of controllers across different fork models under $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$}
 	\label{tab:controller_comparison}
-\end{table}
-
-\begin{table}[htbp]
-	\centering
-	\caption{Comparison of controller performance across different settings and fork models}
-	\label{tab:controller_comparison}
-	\begin{tabular}{|c|c|c|c|}
-		\hline
-		\textbf{Controller} & \textbf{Fork Model} & \textbf{$Q$, $R$ Settings} & \textbf{Cumulative Cost} \\ \hline
-		LQR & With fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		LQR & Without fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		LQR & With fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 100$ & [Cost value] \\ \hline
-		LQR & Without fork & $Q = \operatorname{diag}(300,\,0,\,300)$, $R = 100$ & [Cost value] \\ \hline
-		LQR & With fork & $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		LQR & Without fork & $Q = \operatorname{diag}(300,\,300,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		LQR & With fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		LQR & Without fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		Data-Driven State-Feedback & With fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		Data-Driven State-Feedback & Without fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		Data-Driven Min-Max MPC & With fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
-		Data-Driven Min-Max MPC & Without fork & $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$ & [Cost value] \\ \hline
-	\end{tabular}
 \end{table}
 
 
