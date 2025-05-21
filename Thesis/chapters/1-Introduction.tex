@@ -1,89 +1,68 @@
 \chapter{Introduction}
 \label{chap:introduction}
-Riding a bicycle is a common activity for humans, but designing a controller to autonomously stabilize a bicycle presents significant engineering challenges.
-Traditional model-based controllers, such as \gls{lqr} and \gls{mpc}, require an accurate system model.
-However, some parameters of a bicycle, i.e., the center of gravity, can be difficult to determine and may fluctuate due to varying loads or additional passengers.
-In this project, we aim to design and implement a \gls{ddmpc} to stabilize an autonomous mini-bike.
-The method does not identify the system model of the bike and directly uses the collected data to design the controller. The goal is to stabilize the bike at a constant speed and the bike does not fall down.
-Besides, we aim to keep both the lean angle and steering angle within defined safe limits for safety.
+
+Bicycle riding is a frequent human activity and an acquired skill, but creating a controller that can steady a bicycle on its own is a difficult engineering task.
+Model predictive control (MPC) and linear quadratic regulators (LQR), two examples of traditional model-based controllers, depend on a precise system model.
+However, certain aspects of a bicycle, like as the centre of gravity, can be challenging to find and may change as a result of different loads or extra passengers.
+By solving a semidefinite program (SDP), a data-driven state-feedback controller is used in this research effort to stabilise a self-balancing minibike.
+Instead of identifying the bicycle's system model, the method designs the controller using noisy data that has been obtained.
+To test and evaluate the controller, two bicycle models are used.
+Using noisy data produced based on the system dynamics, simulations and experiments on a model-scale bicycle show good stabilisation of the system.
+
+%Balancing a bicycle for humans is an acquired skill, but designing a controller to autonomously stabilise a bicycle poses significant challenges that drew researchers interest.
+%Traditional model-based controllers, such as \gls{lqr} and \gls{mpc}, require an accurate system model.
+%However, some parameters of a bicycle, i.e., the center of gravity, can be difficult to determine and may fluctuate due to varying loads or additional passengers.
+%In this project, we aim to design and implement a \gls{ddmpc} to stabilize an autonomous mini-bike.
+%The method does not identify the system model of the bike and directly uses the collected data to design the controller. The goal is to stabilize the bike at a constant speed and the bike does not fall down.
+%Besides, we aim to keep both the lean angle and steering angle within defined safe limits for safety.
 
 To balance a bicycle, a torque should be generated to prevent falling on its side due to gravity. To achieve this, different techniques for torque generation can be introduced such as adding a device to control the leaning, or by controlling the steering angle of the bicycle while moving. While the bicycle is stationary, a flywheel can generate the required torque to achieve the balancing \cite{kawaguchi2011}. Another approach is by using a control moment gyroscope (CMG) which was tested out by He and Zhao \cite{he2015}. Since controlling the steering angle to produce the balancing torque does not need additional devices, it was considered by numerous researchers and tested against emerging control algorithms. Balancing using the steering is based on steering into the direction of falling. A drawback of using only the steering angle is that the bicycle needs an initial speed before being able to balance.
 
-This research project is an attempt to apply the theoretical DDMPC developed by Xie in \cite{xie2024}.
+This research project is an attempt to apply the theoretical data-driven min-max MPC developed by Xie in \cite{xie2024}.
 The considered application is a model-scale bicycle at the \gls{IST}, University of Stuttgart.
 The bicycle was chosen as the IST has a rear-steered bicycle which is a more complex system that could be tested against the results achieved from this project.
 In the following sections, the bicycle modelling and Data-driven MPC are discussed.
 
 \section{Bicycle Modelling}
 
-Before implementing a control strategy for balancing a bicycle, a rigorous system model must be established for most techniques, though some approaches are model-free. System models can be classified as either kinematic or dynamic. The kinematic model does not consider the applied forces on the system, while the dynamic model considers the torques and forces interacting with the system. Researchers set different parameters for the dynamic models depending on the bicycle under study. Some parameters could be neglected to simplify the system. Complex systems emerging from accurate modelling demand sophisticated control algorithms, which require more computation power. Examples of dynamic models for the bicycle include the Whipple model \cite{whipple1899stability} and the point mass model \cite{limebeer2006}. \improvement{Should be moved to Control?}{Andersson et al. \cite{andersson2019} proposed a robust proportional-integral-derivative (PID) to control a bicycle based on the point mass model.}
+Before implementing a control strategy for balancing a bicycle, a rigorous system model must be established for most techniques, though some approaches are model-free. System models can be classified as either kinematic or dynamic. The kinematic model does not consider the applied forces on the system, while the dynamic model considers the torques and forces interacting with the system. Researchers set different parameters for the dynamic models depending on the bicycle under study. Some parameters could be neglected to simplify the system. Complex systems emerging from accurate modelling demand sophisticated control algorithms, which require more computation power. Bicycles are non-linear and inherently statically unstable, similar to an inverted pendulum. Examples of dynamic models for the bicycle include the Whipple model \cite{whipple1899stability} and the point mass model \cite{limebeer2006}.
 
-\todo[inline]{This down here is mainly a control paragraph followed by modelling again}
-Since researchers neglect some parameters in the bicycle models to simplify computations, some uncertainties arise. Therefore, a robust controller can mitigate the errors generated by such models. Robust controllers include the \gls{smc}, which was proposed by Chen and Dao \cite{chen2010}, and the \gls{lqr}, which was proposed by Anjumol and Jisha \cite{anjumol2014}. The controllers proposed in the literature are largely tested in simulations rather than on a real bicycle. This leads to ignoring the emerging uncertainties from real-life models.
-
-\todo[inline]{This down here is mainly a repeated intro, modify it and remove what is redundant}
-The first step towards the design of the controllers that will balance and smooth the motion is to model the bicycle. Bicycles are nonlinear and unstable, and therefore developing mathematical models with high accuracy has been an important area of research in recent times. Bicycle dynamics have been modelled using many techniques, including state-space models, kinetic models, and \gls{lpv} models being important techniques.
 
 %\subsection{Linear-Parameter-Varying (LPV) Models}
 One of the primary methods used in bicycle modelling is the \gls{lpv} approach, which accounts for variations in parameters, such as velocity, that affect the stability of the bicycle. The \gls{lpv} framework is particularly useful when the bicycle's speed is subject to change, as it enables the controller to adapt to varying conditions.
 
-Cerone et al. (2010) proposed an \gls{lpv}-based stabilisation method for riderless bicycles, which uses a parameter-varying approach to handle the dynamic changes in speed. The study demonstrated that stability can be maintained between two specific speeds by discretising the continuous-time system, thereby addressing the nonlinearity inherent in the bicycle dynamics \cite{cerone2010StabilizationOA}.
-
 %\subsection{Kinetic and Dynamic Models}
-\todo[inline]{Following paragraphs not convincing}
-In contrast to \gls{lpv} models, kinetic models focus on the fundamental forces and motions of the bicycle, including the relation between lean angle, steering angle, and speed. Tapken et al. (2018) presented a comprehensive study on modeling the kinetic and dynamic aspects of bicycles, employing tools such as CAD modelling and Simscape Multibody to simulate the motion accurately \cite{tapken2018modelling}.
 
-\unsure{may need fixes} The kinetic model is essential when dealing with physical prototypes, as it directly links the control inputs to the physical response of the bicycle. The combination of kinetic modeling with state-space representations allows for a more comprehensive analysis, particularly when integrating control algorithms such as LQR or PID controllers.
+In contrast to kinematic models, kinetic models focus on the fundamental forces and torques on the system. Moreover, software tools for modelling with a multibody approach is used in research such as in \cite{tapken2018modelling}.
 
-%\subsection{Comparative Analysis of Models}
-Persson et al. (2021) conducted a comparative analysis of various control models applied to autonomous bicycles. The study highlighted the advantages of using \gls{lpv} models for systems with varying speeds, while kinetic models proved effective for low-speed stability. This comparison underlines the importance of model selection based on the specific application requirements \cite{persson2021comparative}.
-
-In conclusion, accurate modeling of autonomous bicycles requires a balance between capturing the system's dynamic complexity and maintaining computational efficiency. While \gls{lpv} models offer flexibility in handling speed variations, kinetic models are indispensable for physical implementations and control integration.
 
 %% Bicycle Control Literature Review
 \section{Bicycle Control}
-
-Controlling autonomous bicycles poses significant challenges due to their inherently unstable dynamics and the need to maintain balance while steering. Effective control strategies must account for disturbances, speed variations, and the nonlinear nature of bicycle motion. Over the years, various control methods have been proposed, ranging from classical techniques to more advanced model-based and data-driven approaches.
-
-%\subsection{Traditional Control Methods}
-Classical control techniques such as Proportional-Integral-Derivative (PID) control and \todo{acronyms} Linear Quadratic Regulator (LQR) control have been extensively applied to bicycle stabilization. The PID controller is widely used for velocity and lean angle control due to its simplicity and effectiveness. However, it may not guarantee robust stability, particularly in dynamically changing conditions.
-
-The LQR controller, on the other hand, optimises a quadratic cost function, balancing the trade-off between control effort and system stability. Persson et al. demonstrated that LQR provides smoother stabilization compared to PID, especially when the bicycle model is linearized \cite{persson2021comparative}. Despite its advantages, LQR assumes a known and accurate model, limiting its applicability in scenarios with model uncertainties.
-
-%\subsection{Advanced Control Techniques}
-To address the limitations of traditional methods, advanced control strategies have been developed. Andersson et al. (2019) proposed a loop-shaping method to stabilise riderless bicycles. This method focuses on shaping the open-loop transfer function to ensure robust stability across varying speeds \cite{andersson2019}.
-
-State-feedback control has also gained attention as it directly incorporates the measured states into the control law. Turnwald et al. (2019) demonstrated a successful implementation of state-feedback control in an autonomous bicycle, achieving reliable balance even under external disturbances \cite{turnwald2019}.
-
-%\subsection{Comparative Analysis of Control Strategies}
-A comparative study by Yu et al. (2018) investigated the effectiveness of steering control at low speeds, highlighting that traditional PID control is less effective when the bicycle operates near its tipping point. In contrast, the adaptive state-feedback method provided consistent performance across various speed conditions \cite{yu2018}.
-
+For controlling bicycles, several different approaches were studied by researchers.
+Andersson et al. \cite{andersson2019} proposed a robust proportional-integral-derivative (PID) using loop shaping to control a bicycle based on the point mass model.
+Cerone et al. \cite{cerone2010StabilizationOA} proposed an \gls{lpv}-based stabilisation method for riderless bicycles, which uses a parameter-varying approach to handle the dynamic changes in speed. The study demonstrated that stability can be maintained between two specific speeds by discretising the continuous-time system, thereby addressing the nonlinearity inherent in the bicycle dynamics.
+Tapken et al. \cite{tapken2018modelling} studied modelling the kinetic and dynamic aspects of bicycles, employing tools such as CAD modelling and Simscape Multibody to simulate and control the motion of a real mini-bike.
+Since researchers neglect some parameters in the bicycle models to simplify computations, some uncertainties arise. Therefore, a robust controller can mitigate the errors generated by such models. Robust controllers include the \gls{smc}, which was proposed by Chen and Dao \cite{chen2010}, and the \gls{lqr}, which was proposed by Anjumol and Jisha \cite{anjumol2014}. The controllers proposed in the literature are largely tested in simulations rather than on a real bicycle. This leads to ignoring the emerging uncertainties from real-life models.
+%
+In \cite{persson2021comparative}, Persson et al. conducted a comparative analysis of various control models applied to a driverless bicycle. They studied different PID controllers, an LQR controller, in addition to a Fuzzy controller.
+%
+Motion planning for a bicycle was investigated in \cite{turnwald2019} by solving an optimisation problem, where a constrained Lagrangian is used to model the bicycle as a nonlinear system.
+A comparative study by Yu et al. \cite{yu2018} investigated the effectiveness of steering control at low speeds, while studying the effect of different trail lengths that introduces the castor effect on the system.
 %\subsection{Experimental Validation and Results}
-Experimental implementations revealed that while traditional methods can stabilise the bicycle at fixed speeds, advanced methods such as loop shaping and state-feedback control provide more flexibility. These methods better handle model uncertainties and external disturbances, which are crucial for autonomous operation.
-
-In summary, bicycle control strategies have evolved from simple PID-based methods to more robust and adaptive approaches. Advanced techniques such as LQR, state-feedback, and loop shaping offer improved performance, particularly when dealing with speed variations and external disturbances.
+%Experimental implementations revealed that while traditional methods can stabilise the bicycle at fixed speeds, advanced methods such as loop shaping and state-feedback control provide more flexibility. These methods better handle model uncertainties and external disturbances, which are crucial for autonomous operation.
 
 %% Data-Driven Control Methods Literature Review
 \section{Data-Driven Control Methods}
 
-The increasing complexity and dynamic nature of autonomous systems, such as self-balancing bicycles, have led to the development of data-driven control methods. These methods bypass the need for precise system modeling by directly utilising measurement data to infer control actions. Data-driven approaches are particularly valuable when model inaccuracies or environmental disturbances are significant.
+Data-driven control techniques have emerged as a result of autonomous systems' dynamic and complicated character. These techniques use measurement data directly to infer control actions, without the need for accurate system modelling. When there are unknown process disturbance or model flaws, data-driven approaches are especially beneficial.
 
 %\subsection{Data-Driven Model Predictive Control (MPC)}
-\gls{mpc} is a widely used approach for controlling systems with constraints. Traditional \gls{mpc} relies on accurate mathematical models to predict system behavior. However, \gls{ddmpc} approaches directly utilize input-output data to predict future states, thus mitigating modeling errors.
+One popular method for managing systems with limitations is Model Predictive Control (MPC). Conventional MPC predicts system behaviour using a mathematical model. To reduce modelling errors, data-driven MPC can use input-output data directly to predict future states.
 
-One notable approach is the \textbf{Data-Driven Min-Max MPC}, which aims to robustly stabilise the system while minimizing the worst-case cost. Xie et al. (2024) proposed a robust min-max MPC framework that incorporates noisy input-state data, formulating the control problem as a semi-definite program (SDP). This method guarantees robust stability and constraint satisfaction while reducing conservatism compared to traditional data-driven MPC approaches \cite{xie2024}.
-
-Adaptive data-driven MPC has also been proposed to further improve performance by continuously integrating new data. This adaptive strategy reduces model uncertainty over time, leading to more precise control. The combination of min-max optimization and online adaptation provides enhanced robustness, especially in systems with time-varying parameters \cite{xie2024}.
-
+A developed formulation is the data-driven min-max MPC, which aims to robustly stabilise the system while minimizing the worst-case cost. In \cite{xie2024}, Xie et al. proposed a robust min-max MPC framework that, using noisy input-state data and formulating the control problem as an SDP, guarantees robust stability and constraint satisfaction while reducing conservatism compared to traditional data-driven MPC approaches. Moreover, in \cite{xie2024robust}, an adaptive scheme for implementing the online data-driven min-max MPC is developed. This is achieved by integrating new data which reduces the model uncertainty over time. The min-max optimisation along with the online adaptation is proved to enhance the robustness.
 %\subsection{\improvement{Remove header and comparison}{Comparative Analysis of Data-Driven MPC Methods}}
 A significant advantage of data-driven MPC is its ability to handle uncertainties without requiring an explicit system model. Compared to classical model-based MPC, data-driven methods are more adaptable when the system's dynamics change. Additionally, the use of online data in adaptive MPC helps reduce conservatism, achieving better closed-loop performance \cite{xie2024}.
-
-Yu et al. (2018) demonstrated that \unsure{Check if data-driven} data-driven steering control techniques could maintain stability at low speeds, where conventional control strategies often fail. This highlights the practicality of data-driven control in real-world applications \cite{yu2018}.
-
 %\subsection{Experimental Validation and Results}
-Experimental studies have shown that data-driven MPC can effectively stabilise a system, even when the underlying dynamic model is not accurately known. Adaptive schemes have demonstrated improved performance over static data-driven methods by continuously refining the control law based on new data \cite{xie2024}.
-
-Data-driven control methods offer a promising approach to managing the inherent uncertainties in autonomous bicycles. By leveraging real-time data, these methods can adapt to changing conditions and maintain robust performance, making them superior to purely model-based techniques in many scenarios.
 
 \section{WHEELTEC MiniBike}
 In this research project, a self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform.
@@ -107,9 +86,9 @@ These values are processed by the microcontroller to compute the necessary adjus
 
 \section{Structure of thesis}
 This thesis is structured as follows:
-Chapter \ref{chap:introduction} provides an introduction, including the background, motivation, literature review, and objectives of the research.
-Chapter \ref{chap:theory} discusses the theoretical foundations, focusing on modelling of a bicycle beside data-driven control techniques.
-Chapter \ref{chap:simulations} describes the simulation setup and the implementation of the state-feedback controllers and the simulation results.
-Chapter \ref{chap:experimental_work} presents the experimental work, including the setup and data collection from the mini-bike, along with the results.
-Chapter \ref{chap:conclusion} concludes the report and discusses future work.
+\autoref{chap:introduction} provides an introduction, including the background, motivation, literature review, and objectives of the research.
+In \autoref{chap:theory}, the theoretical foundations are discussed, focusing on bicycle modelling beside data-driven control techniques.
+\autoref{chap:simulations} describes the simulation setup and the implementation of the state-feedback controllers and the simulation results.
+\autoref{chap:experimental_work} \autoref{chap:results} presents the experimental work, including the setup and data collection from the mini-bike, along with the results.
+\autoref{chap:conclusion} concludes the report and discusses future work.
 

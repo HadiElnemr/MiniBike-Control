@@ -6,7 +6,7 @@
 %equations extraction
 %\usepackage{mathtools}
 %\usepackage[active,tightpage]{preview}
-%\PreviewEnvironment{align*}
+%\PreviewEnvironment{table}
 
 %\usepackage[active,tightpage]{preview}
 %\PreviewEnvironment{equation}
@@ -42,6 +42,11 @@
 \usepackage{svg}
 %%%%%%%%%%%%%%%%%%%%%%%
 % My packages
+\addto\extrasenglish{%
+	\renewcommand{\chapterautorefname}{Chapter}%
+	\renewcommand{\sectionautorefname}{Section}
+}
+
 \usepackage{xargs}                      % Use more than one optional parameter in a new commands
 \usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
 %%%%%%%
@@ -250,9 +255,7 @@ afterskip=8pt]{subsection}
 \include{chapters/3-Simulations.tex} % Simulation
 \include{chapters/4-Experimental Work.tex} % Experiment
 \include{chapters/5-Results and Discussion.tex} % Results
-\include{chapters/6-Conclusion.tex}
-\listoftodos[Notes]
-\include{chapters/7-Acknowledgment.tex}
+%\include{chapters/7-Acknowledgment.tex}
 
 \cleardoublepage
 

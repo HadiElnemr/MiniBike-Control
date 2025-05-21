@@ -1,12 +1,12 @@
 \chapter{Experimental Work}
 \label{chap:experimental_work}
 
-To test the data-driven controller in a real life experiment, a model-scale bicycle was chosen. The self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform. The primary goal of the project is to implement the data-driven controllers for stabilizing the bike. The mini-bike is equipped with various sensors and actuators to enable control and data acquisition.
-\todo[inline]{Add Tapken's work on the same bike with simulink modelling for it. No: in intro better}
+%To test the data-driven controller in a real life experiment, a model-scale bicycle was chosen. The self-balancing mini-bike developed by \textbf{WHEELTEC} was utilized as the experimental platform. The primary goal of the project is to implement the data-driven controllers for stabilizing the bike. The mini-bike is equipped with various sensors and actuators to enable control and data acquisition.
 %% Mini-Bike Overview Section for Thesis
 
 \section{Mini-Bike}
-The mini-bike is based on the \textbf{WHEELTEC Z100 Servo Self-Balancing Bicycle} in Figure \ref{fig:minibike}. It features an STM32F103C8T6 microcontroller as the primary control unit, which integrates different sensors and motor control circuits to achieve stabilization.
+The mini-bike used in the experiments based on the \textbf{WHEELTEC Z100 Servo Self-Balancing Bicycle} in Figure \ref{fig:minibike}. It features an STM32F103C8T6 microcontroller as the control unit, which utilises different sensors and motor control circuits to achieve stabilisation.
+A similar bicycle was studied in \cite{tapken2018modelling} using multibody software modelling.
 
 \begin{figure}[htbp]
 	\centering
@@ -31,20 +31,20 @@ The bike has the following key components:
 
 %\subsection{Balancing and Control Mechanism}
 
-The bike uses steering angle control to self-balance. This is done through an LQR followed by a PID controller. The LQR computes the state-feedback gain that minimises the cost function. While the PID controller adjusts the PWM signals to the servo motor to fine-tune the steering speed.
+The bike uses steering angle control to self-balance. This is done through an control gain, originally from LQR, followed by a PID controller. The LQR computes the state-feedback gain that minimises a cost function. While the PID controller adjusts the PWM signals to the servo motor to fine-tune the steering speed.
 
-The bike is balanced continuously through getting data from the gyroscope, which provides real-time data on tilt angles and angular velocities. The microcontroller operated at a frequency of 100 Hz. The measurements are processed by the microcontroller to compute the control law, where the input is the steering angle derivative.
+The bike is balanced continuously through getting data from the gyroscope, which provides real-time data on tilt angles and angular velocities. The measurements are processed by the microcontroller to compute the control law, where the input is the steering angle derivative. The microcontroller is configured to send control inputs to the servo at a frequency of 50 Hz.
 
 The Data was collected from the bike through a Bluetooth connection using USART3, where the frequency of data was about 10 Hz. A mobile device was connected to the bike where the data received was saved for processing.
 
 The mini-bike allows adjustment of the balance midpoint through a potentiometer; if it is offset from zero, the bike will move in a circle in the direction of the lean. Moving in a circle allowed for a longer range of data collected while driving under a controller.
 
 The control algorithms were implemented on the STM32 using C++ programming with HAL Drivers.
-The platform on which the development of codes were done is the \textit{stm32cube programmer}, which is a free unlimited software for writing and building the codes. It compiled the codes into a Hexadecimal file which can then be flashed on the STM32 microcontroller using FlyMCU software.
+The platform on which the development of codes were done is the \textit{STM32Cube IDE}, which is a free unlimited software for writing and compiling the codes. It compiles the codes into a Hexadecimal file which can then be flashed on the STM32 microcontroller using FlyMCU software.
 
 The codes read the IMU data (lean angle and angular velocity) via I2C communication. Then, the forward velocity is estimated by processing the encoder pulses. The lean angle is estimated by a complementary filter. The implemented control law is then applied using the states and a control input is determined. Consequently, the PWM signal of the steering servo is computed and applied.
 
-The data-driven MPC controller was not implemented since the real-life errors prevented successful solving of the SDP on real data as stated before. Due to this limitation, the SDP optimisation was first performed offline, and the resulting state-feedback gain matrix was embedded into the embedded controller as a static gain.
+The data-driven MPC controller was not implemented since the real-life errors prevented successful solving of the SDP on real data as stated before. Due to this limitation, the SDP optimisation problem was solved offline, and the resulting state-feedback gain was coded into the embedded controller as a static gain.
 
 The system states that were recorded are the lean angle ($\phi$), lean rate ($\dot{\phi}$), and Steering angle ($\delta$).
 
@@ -55,15 +55,17 @@ Four different controllers were applied on the mini-bike based on both the LQR a
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		\textbf{Experiment} & \textbf{Controller} & \textbf{Target Angle}  & \textbf{Target Angle} \\ \hline
+		\textbf{Experiment} & \textbf{Controller} & \textbf{Fork Angle}  & \textbf{Target Angle} \\ \hline
 		1 & LQR & $75^\circ$  & $4^\circ$ \\ \hline
 		2 & LQR & $90^\circ$  &  $5^\circ$ \\ \hline
 		3 & Data-driven state-feedback & $75^\circ$  &  $3.5^\circ$ \\ \hline
 		4 & Data-driven state-feedback & $90^\circ$  &  $4^\circ$ \\ \hline
 	\end{tabular}
+	\caption{Overview of controllers applied on the mini-bike}
+	\label{tab:controllers_summary}
 \end{table}
 
-The results acquired on implementing the controllers and collecting the data are plotted in \autoref{fig:experiments}. It can be noticed that the data length varies across the 4 experiments. This is due to the capability of collecting the data before the bicycle falls, particularly in experiment 3 in \autoref{fig:exp3}, where the controller did not maintain bicycle balance for an extended period.
+The results acquired on implementing the controllers and collecting the data are plotted in \autoref{fig:experiments}. It can be noticed that the data length varies across the experiments. This is due to the varying capability of collecting the data before the bicycle falls, particularly in experiment 3 in \autoref{fig:exp3}, where the controller did not maintain bicycle balance for an extended period. In \autoref{fig:exp4} of Experiment 4, it is noticed that the data-driven state-feedback on the fork angle bicycle model achieved balancing of the bicycle comparable to that of the LQR. Figures \ref{fig:experiments} show that the average lean angle achieved differs from the target angle. This can arise from different factors including the external noise and inaccuracies in measuring the potentiometer value responsible for setting the target angle.
 
 \begin{figure}[htbp]
 	\centering
@@ -97,6 +99,6 @@ The results acquired on implementing the controllers and collecting the data are
 		\caption{\boldmath Data-driven state-feedback for $75^\circ$ fork angle and $4^\circ$ target angle.}
 				\label{fig:exp4}
 	\end{subfigure}
-	\caption{\boldmath Lean angle over time under different data-driven state-feedback settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, noise bound $\epsilon = 0.001$ and data length of $T = 40$.}
+	\caption{\boldmath Lean angle over time under different data-driven state-feedback settings for an initial state vector (in radians) $x_0 = [0.0873, \, 0, \, 0]^\top$, $Q = \operatorname{diag}(300,\,0.1,\,300)$, $R = 1$, and noise bound $\epsilon = 0.001$ for data synthesis of length $T = 40$. The data is smoothed using a rolling window which takes the mean of each 20 data points. The average lean angle achieved is also shown for each experiment.}
 	\label{fig:experiments}
 \end{figure}
