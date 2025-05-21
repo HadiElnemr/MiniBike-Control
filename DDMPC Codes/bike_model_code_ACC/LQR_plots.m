@@ -37,7 +37,7 @@ drawnow;
 % print(fig1, '-dmeta', 'LQR_compare_models.emf');
 % exportgraphics(fig1, 'LQR_compare_models.svg')
 % set(fig1, 'Renderer', 'painters');
-print(fig1, 'LQR_compare_models.svg', '-dsvg')
+% print(fig1, 'LQR_compare_models.svg', '-dsvg')
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -75,4 +75,4 @@ legend(...
 
 % exportgraphics(fig2, 'LQR_compare_QR.pdf', 'ContentType', 'vector');
 % print(gcf, '-dmeta', 'LQR_compare_QR.emf');
-print(fig2, 'LQR_compare_QR.svg', '-dsvg')
+% print(fig2, 'LQR_compare_QR.svg', '-dsvg')

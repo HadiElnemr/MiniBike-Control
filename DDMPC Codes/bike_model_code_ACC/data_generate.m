@@ -23,7 +23,7 @@ for i = 1:N
     % u(:,i) = -u_bound+2*u_bound*rand(m, 1);
     % u(:,i) = - K_lqr * x(:,i);
     u(:,i) = - K_dlqr * x(:,i);
-    
+
     x(:,i+1) = A*x(:,i)+B*u(:,i)+omega;
 end
 u = u(:);

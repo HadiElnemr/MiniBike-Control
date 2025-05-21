@@ -22,8 +22,8 @@ h = 0.088; % m (hieght of the centre of mass)
 v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
-% lambda =  75/180 * pi; % in rad = 70,75 degrees  (fork angle)
-lambda =  90/180 * pi; % in rad = 70,75 degrees  (fork angle)
+lambda =  75/180 * pi; % in rad = 70,75 degrees  (fork angle)
+% lambda =  90/180 * pi; % in rad = 70,75 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
 r_tau = wheel_radius * tan(pi/2 - lambda); %(distance between front wheel and intersection of fork with ground)
 l = w; % length
@@ -76,8 +76,9 @@ S_x = [2.6798 0 0; 0 0.32828 0; 0 0 2.05]; % in radians, recalculated
 %% Generate data with additive noise
 
 % length of the initial available data
-T = 40;
-% T = 4;
+% T = 10;
+% T = 40;
+T = 120;
 
 % initial state for data generate
 % x_d0 = [rand(1); -rand(1)];
@@ -115,8 +116,8 @@ MR = chol(R);
 x_init = [0.0873; 0; 0];
 
 % Number of MPC iterations
-mpciterations = 150; % Choose for DDMPC
-% mpciterations = 1; % Choose for DD State-Feedback controller
+% mpciterations = 150; % Choose for DDMPC
+mpciterations = 1; % Choose for DD State-Feedback controller
 
 % set options for the solver
 option = sdpsettings('solver','mosek','verbose',2,'debug',1) % ,'mosek.MSK_DPAR_INTPNT_CO_TOL_REL_GAP', 1e-8

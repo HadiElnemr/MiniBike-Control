@@ -18,7 +18,7 @@ g = 9.8;
 h = 0.088; % m (hieght of the centre of mass)
 v = 0.634; % m/s or v = 0.634
 a = 0.055; % m (distance between rear wheel and centre of gravity projection)
-% b = a; %Test
+% b = a;
 w = 0.167; % m (Distance between front and rear wheels and ground contact points)
 lambda =  90/180 * pi; % in rad = 70 degrees  (fork angle)
 wheel_radius = 0.0375; % m (diameter is around 7.5cm)
@@ -105,10 +105,10 @@ if (rank(Tc)==3)
     fprintf('This system is controllable! \n');
 
     % Q matrix
-    Q = [300 0 0; 0 0 0; 0 0 300];
+    Q = [300 0 0; 0 0.1 0; 0 0 300];
 
     % R matrix
-    R = 1;
+    R = 100;
 
     % Calculate state feedback coefficients (see calculated values for yourself)
     K = dlqr(G,H,Q,R);
@@ -134,7 +134,7 @@ if (rank(Tc)==3)
         total_cost = total_cost + (x' * Q * x) + (u_k' * R * u_k);
 
         % Update state with process noise
-        x = G2 * x + 0 * H * u(k) + omega_k;
+        x = G2 * x + omega_k;
     end
     fprintf('Total cost: %.4f\n', total_cost);
     
