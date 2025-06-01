@@ -2,9 +2,9 @@
 \label{chap:introduction}
 
 Bicycle riding is a frequent human activity and an acquired skill, but creating a controller that can steady a bicycle on its own is a difficult engineering task.
-Model predictive control (MPC) and linear quadratic regulators (LQR), two examples of traditional model-based controllers, depend on a precise system model.
+\gls{mpc} and \gls{lqr}, two examples of traditional model-based controllers, depend on a precise system model.
 However, certain aspects of a bicycle, like as the centre of gravity, can be challenging to find and may change as a result of different loads or extra passengers.
-By solving a semidefinite program (SDP), a data-driven state-feedback controller is used in this research effort to stabilise a self-balancing minibike.
+By solving a \gls{sdp}, a data-driven state-feedback controller is used in this research effort to stabilise a self-balancing minibike.
 Instead of identifying the bicycle's system model, the method designs the controller using noisy data that has been obtained.
 To test and evaluate the controller, two bicycle models are used.
 Using noisy data produced based on the system dynamics, simulations and experiments on a model-scale bicycle show good stabilisation of the system.
@@ -16,12 +16,12 @@ Using noisy data produced based on the system dynamics, simulations and experime
 %The method does not identify the system model of the bike and directly uses the collected data to design the controller. The goal is to stabilize the bike at a constant speed and the bike does not fall down.
 %Besides, we aim to keep both the lean angle and steering angle within defined safe limits for safety.
 
-To balance a bicycle, a torque should be generated to prevent falling on its side due to gravity. To achieve this, different techniques for torque generation can be introduced such as adding a device to control the leaning, or by controlling the steering angle of the bicycle while moving. While the bicycle is stationary, a flywheel can generate the required torque to achieve the balancing \cite{kawaguchi2011}. Another approach is by using a control moment gyroscope (CMG) which was tested out by He and Zhao \cite{he2015}. Since controlling the steering angle to produce the balancing torque does not need additional devices, it was considered by numerous researchers and tested against emerging control algorithms. Balancing using the steering is based on steering into the direction of falling. A drawback of using only the steering angle is that the bicycle needs an initial speed before being able to balance.
+To balance a bicycle, a torque should be generated to prevent falling on its side due to gravity. To achieve this, different techniques for torque generation can be introduced such as adding a device to control the leaning, or by controlling the steering angle of the bicycle while moving. While the bicycle is stationary, a flywheel can generate the required torque to achieve the balancing \cite{kawaguchi2011}. Another approach is by using a \gls{cmg} which was tested out by He and Zhao \cite{he2015}. Since controlling the steering angle to produce the balancing torque does not need additional devices, it was considered by numerous researchers and tested against emerging control algorithms. Balancing using the steering is based on steering into the direction of falling. A drawback of using only the steering angle is that the bicycle needs an initial speed before being able to balance.
 
 This research project is an attempt to apply the theoretical data-driven min-max MPC developed by Xie in \cite{xie2024}.
 The considered application is a model-scale bicycle at the \gls{IST}, University of Stuttgart.
 The bicycle was chosen as the IST has a rear-steered bicycle which is a more complex system that could be tested against the results achieved from this project.
-In the following sections, the bicycle modelling and Data-driven MPC are discussed.
+In the following sections, the bicycle modelling and data-driven MPC are discussed.
 
 \section{Bicycle Modelling}
 
@@ -39,7 +39,7 @@ In contrast to kinematic models, kinetic models focus on the fundamental forces 
 %% Bicycle Control Literature Review
 \section{Bicycle Control}
 For controlling bicycles, several different approaches were studied by researchers.
-Andersson et al. \cite{andersson2019} proposed a robust proportional-integral-derivative (PID) using loop shaping to control a bicycle based on the point mass model.
+Andersson et al. \cite{andersson2019} proposed a robust \gls{pid} using loop shaping to control a bicycle based on the point mass model.
 Cerone et al. \cite{cerone2010StabilizationOA} proposed an \gls{lpv}-based stabilisation method for riderless bicycles, which uses a parameter-varying approach to handle the dynamic changes in speed. The study demonstrated that stability can be maintained between two specific speeds by discretising the continuous-time system, thereby addressing the nonlinearity inherent in the bicycle dynamics.
 Tapken et al. \cite{tapken2018modelling} studied modelling the kinetic and dynamic aspects of bicycles, employing tools such as CAD modelling and Simscape Multibody to simulate and control the motion of a real mini-bike.
 Since researchers neglect some parameters in the bicycle models to simplify computations, some uncertainties arise. Therefore, a robust controller can mitigate the errors generated by such models. Robust controllers include the \gls{smc}, which was proposed by Chen and Dao \cite{chen2010}, and the \gls{lqr}, which was proposed by Anjumol and Jisha \cite{anjumol2014}. The controllers proposed in the literature are largely tested in simulations rather than on a real bicycle. This leads to ignoring the emerging uncertainties from real-life models.
@@ -57,7 +57,7 @@ A comparative study by Yu et al. \cite{yu2018} investigated the effectiveness of
 Data-driven control techniques have emerged as a result of autonomous systems' dynamic and complicated character. These techniques use measurement data directly to infer control actions, without the need for accurate system modelling. When there are unknown process disturbance or model flaws, data-driven approaches are especially beneficial.
 
 %\subsection{Data-Driven Model Predictive Control (MPC)}
-One popular method for managing systems with limitations is Model Predictive Control (MPC). Conventional MPC predicts system behaviour using a mathematical model. To reduce modelling errors, data-driven MPC can use input-output data directly to predict future states.
+One popular method for managing systems with limitations is MPC. Conventional MPC predicts system behaviour using a mathematical model. To reduce modelling errors, data-driven MPC can use input-output data directly to predict future states.
 
 A developed formulation is the data-driven min-max MPC, which aims to robustly stabilise the system while minimizing the worst-case cost. In \cite{xie2024}, Xie et al. proposed a robust min-max MPC framework that, using noisy input-state data and formulating the control problem as an SDP, guarantees robust stability and constraint satisfaction while reducing conservatism compared to traditional data-driven MPC approaches. Moreover, in \cite{xie2024robust}, an adaptive scheme for implementing the online data-driven min-max MPC is developed. This is achieved by integrating new data which reduces the model uncertainty over time. The min-max optimisation along with the online adaptation is proved to enhance the robustness.
 %\subsection{\improvement{Remove header and comparison}{Comparative Analysis of Data-Driven MPC Methods}}
@@ -89,6 +89,6 @@ This thesis is structured as follows:
 \autoref{chap:introduction} provides an introduction, including the background, motivation, literature review, and objectives of the research.
 In \autoref{chap:theory}, the theoretical foundations are discussed, focusing on bicycle modelling beside data-driven control techniques.
 \autoref{chap:simulations} describes the simulation setup and the implementation of the state-feedback controllers and the simulation results.
-\autoref{chap:experimental_work} \autoref{chap:results} presents the experimental work, including the setup and data collection from the mini-bike, along with the results.
+\autoref{chap:experimental_work} presents the experimental work, including the setup and data collection from the mini-bike, along with the results.
 \autoref{chap:conclusion} concludes the report and discusses future work.
 

@@ -9,7 +9,7 @@ For controlling the bicycle, the data-driven MPC is compared with an LQR contoll
 
 \section{Bicycle Modelling}
 \label{sec:bike_modelling}
-	To model the riderless bicycle, it can be treated as an inverted pendulum. There are some (assumptions) parameters that are neglected such as: elasticity of bicycle parts, the tire-road friction, etc. A simple second-order model of the bicycle can be derived given that the rear-speed is constant, the bicycle rolling on the horizontal plane, and initially, the steer axis $\lambda$ is in a vertical position as in Figure \ref{fig:bike_model}. Using the Conservation of Angular Momentum, the following Equation \ref{eq:bike_second_order} is acquired to balance the bicycle.
+	To model the riderless bicycle, it can be treated as an inverted pendulum. There are some parameters that are neglected such as: elasticity of bicycle parts, the tire-road friction, etc. A simple second-order model of the bicycle can be derived given that the rear-speed is constant, the bicycle rolling on the horizontal plane, and initially, the steer axis $\lambda$ is in a vertical position as in Figure \ref{fig:bike_model}. Using the Conservation of Angular Momentum, the following Equation \ref{eq:bike_second_order} is acquired to balance the bicycle.
 	\begin{equation}
 		\label{eq:bike_second_order}
 		\ddot{\varphi} - \frac{g}{h} \varphi = - \frac{av}{hl} \dot{\delta} - \frac{v^2}{h l} \delta,
