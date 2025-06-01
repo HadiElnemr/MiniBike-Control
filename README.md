@@ -25,6 +25,15 @@ Changing the "lambda" variable in any file corresponds to changing the fork angl
 # MiniBike Usage
 The codes for the MiniBike are developed in C++ using STM32CubeIDE. The main codes used for this project are found in the folder `3. MiniBike HAL library version_GMR encoder_2022.10 .18`. The main.c file is in the Core folder. While the balancing codes for controlling the MiniBike are in the Balance folder in the `control.c` file. The coefficients from the LQR controller or the data-driven min-max MPC can be put in this file.
 
+# Figures and Videos
+
+The videos for the 4 Experiments on the MiniBike are available on YouTube:
+- [Experiment 1: LQR Controller - Fork angle]()
+- [Experiment 2: LQR Controller - No fork angle](https://youtu.be/qTIksTb5YaA)
+- [Experiment 3: Data-driven State-feedback - Fork angle](https://youtu.be/mC_d1Ofcoeo)
+- [Experiment 4: Data-driven State-feedback - No fork angle](https://youtu.be/T9LTtMo9YNM)
+
+
 # References
 
 [1] Yifan Xie, Julian Berberich, and Frank Allgöwer. “Data-Driven Min-Max MPC
