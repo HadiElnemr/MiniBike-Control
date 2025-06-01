@@ -1,39 +1,31 @@
 # MiniBike-Control
-Research Project - MiniBike Control
 
-### TODOs:
-- [X] Explore MiniBike Control codes
-    - [X] Understand LQR and PID controllers for longitudinal and steering control
-    - [x] Explore how to reverse bike direction
-    - [x] Explore how to use STM32 coding IDEs.
-    - [x] STM32CubeIDE exploration
-    - [ ] Understand Difference between the 3 directories provided for the bike
-        - [x] 1: Control Codes with main file found in USER directory
-        - [x] 2: Control Codes with main file not found in USER directory
-        - [x] 3: Equipped with HAL Libraries (Hardware Abstraction Layer) which should facilitate the development of the code. But no control codes found!
+This is a research project that was done at IST - Stuttgart University as part of my Infotech Master's studies.
+The title of the project is "Implementation of a Data-driven State-feedback Controller for a Self-stabilising bicycle".
+The purpose of this project is to test the data-driven min-max MPC developed in [1] on a model-scale bicycle, MiniBike, from WHEELTEC company.
 
-- [X] Read papers
-    - [X] Read & Understand Data-driven MPC for Linear Systems paper (paper 1)
-        - [X] How to implement code?
-          - Matlab codes available
-    - [ ] Read paper for Robustness and Adaption (paper 2)
-    - [X] Read Bicycle B.Sc. thesis
-        - [X] See modelling & controller
-    - [X] Read Survey of Bicycle modelling
-    - [X] Translate and Read MiniBike Documentation
+# Setup
 
-- [ ] Understand how to implement Data-driven MPC simulation for MiniBike
-  - [ ] Use the codes from the Data-driven MPC for Linear Systems paper
-  - [X] Find A and B matrices
-    - [X] Measure Lambda (fork angle) and rtau
-    - [ ] Compare models from
-      - [X] Morlock B.Sc. thesis
-      - [ ] Survey of Bicycle Modelling
-      - [X] MiniBike Documentation
-    - [ ]
+The project uses Matlab with the following toolboxes:
+- Yalmip
 
-- [ ] Run Mini-bike
-  - [X] Produce Hex codes from Original codes
-  - [ ] Produce Hex codes from Modified codes (LQR again but with fork angle considered)
-  - [ ] Try other IDE: STM32CubeIDE
-  - [ ] Run the bike with the new codes
+The MiniBike  is controlled via an STM32 microcontroller, which is connected to a PC via USB. The controller is implemented in C and uses the STM32 HAL library.
+
+Softwares used:
+- STM32CubeIDE
+- FlyMCU
+
+# Usage
+To run the matlab files,
+
+# References
+
+[1] Yifan Xie, Julian Berberich, and Frank Allgöwer. “Data-Driven Min-Max MPC
+for Linear Systems”. In: 2024 American Control Conference (ACC). 2024, pp. 3184–
+3189. doi: 10.23919/ACC60939.2024.10644295.
+[2] Yifan Xie, Julian Berberich, and Frank Allgöwer. “Data-Driven Min-Max MPC
+for Linear Systems: Robustness and Adaptation”. In: arXiv preprint arXiv:2404.19096
+(2024). url: https://arxiv.org/abs/2404.19096.
+[3] Karl J. Åström, Richard E. Klein, and Anders Lennartsson. “Bicycle Dynamics
+and Control”. In: IEEE Control Systems Magazine 25.4 (2005), pp. 26–47. doi:
+10.1109/MCS.2005.1499389.
